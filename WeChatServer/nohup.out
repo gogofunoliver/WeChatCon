@@ -1,0 +1,926 @@
+http://0.0.0.0:80/
+Handle Post webdata is b'<xml><ToUserName><![CDATA[gh_dfb632fb5407]]></ToUserName>\n<FromUserName><![CDATA[oHBF6wUHaE4L2yUfhKMBqcrjoi0g]]></FromUserName>\n<CreateTime>1499010911</CreateTime>\n<MsgType><![CDATA[text]]></MsgType>\n<Content><![CDATA[\xe8\xae\xb0\xe5\xbd\x95\xe3\x80\x82\xe3\x80\x82\xe3\x80\x82\xe6\x88\x91\xe4\xb8\x8d\xe7\x9f\xa5\xe9\x81\x93]]></Content>\n<MsgId>6438202839504522628</MsgId>\n</xml>'
+Handle Post webdata is b'<xml><ToUserName><![CDATA[gh_dfb632fb5407]]></ToUserName>\n<FromUserName><![CDATA[oHBF6wUHaE4L2yUfhKMBqcrjoi0g]]></FromUserName>\n<CreateTime>1499010916</CreateTime>\n<MsgType><![CDATA[text]]></MsgType>\n<Content><![CDATA[\xe6\x9f\xa5\xe8\xaf\xa2]]></Content>\n<MsgId>6438202860979359110</MsgId>\n</xml>'
+Handle Post webdata is b'<xml><ToUserName><![CDATA[gh_dfb632fb5407]]></ToUserName>\n<FromUserName><![CDATA[oHBF6wUHaE4L2yUfhKMBqcrjoi0g]]></FromUserName>\n<CreateTime>1499011388</CreateTime>\n<MsgType><![CDATA[text]]></MsgType>\n<Content><![CDATA[\xe8\xae\xb0\xe5\xbd\x95 \xe6\x9c\x89\xe4\xb8\xaa\xe5\xa4\xa7\xe7\x93\x9c\xe7\x9a\xae]]></Content>\n<MsgId>6438204888203922880</MsgId>\n</xml>'
+Handle Post webdata is b'<xml><ToUserName><![CDATA[gh_dfb632fb5407]]></ToUserName>\n<FromUserName><![CDATA[oHBF6wUHaE4L2yUfhKMBqcrjoi0g]]></FromUserName>\n<CreateTime>1499042403</CreateTime>\n<MsgType><![CDATA[text]]></MsgType>\n<Content><![CDATA[\xe8\xae\xb0\xe5\xbd\x95  \xe6\x88\x91\xe4\xbb\x8a\xe5\xa4\xa9\xe8\xa6\x81\xe7\x90\x86\xe8\xb5\x94]]></Content>\n<MsgId>6438338096614609223</MsgId>\n</xml>'
+Handle Post webdata is b'<xml><ToUserName><![CDATA[gh_dfb632fb5407]]></ToUserName>\n<FromUserName><![CDATA[oHBF6wUHaE4L2yUfhKMBqcrjoi0g]]></FromUserName>\n<CreateTime>1499042407</CreateTime>\n<MsgType><![CDATA[text]]></MsgType>\n<Content><![CDATA[\xe6\x9f\xa5\xe8\xaf\xa2]]></Content>\n<MsgId>6438338113794478410</MsgId>\n</xml>'
+Handle Post webdata is b'<xml><ToUserName><![CDATA[gh_dfb632fb5407]]></ToUserName>\n<FromUserName><![CDATA[oHBF6wUHaE4L2yUfhKMBqcrjoi0g]]></FromUserName>\n<CreateTime>1499050859</CreateTime>\n<MsgType><![CDATA[text]]></MsgType>\n<Content><![CDATA[\xe6\x9f\xa5\xe8\xaf\xa2\xe6\xb5\x81]]></Content>\n<MsgId>6438374414858065555</MsgId>\n</xml>'
+Handle Post webdata is b'<xml><ToUserName><![CDATA[gh_dfb632fb5407]]></ToUserName>\n<FromUserName><![CDATA[oHBF6wUHaE4L2yUfhKMBqcrjoi0g]]></FromUserName>\n<CreateTime>1499050869</CreateTime>\n<MsgType><![CDATA[text]]></MsgType>\n<Content><![CDATA[\xe6\x9f\xa5\xe8\xaf\xa2 \xe8\xae\xb0\xe5\xbd\x95]]></Content>\n<MsgId>6438374457807738520</MsgId>\n</xml>'
+Handle Post webdata is b'<xml><ToUserName><![CDATA[gh_dfb632fb5407]]></ToUserName>\n<FromUserName><![CDATA[oHBF6wUHaE4L2yUfhKMBqcrjoi0g]]></FromUserName>\n<CreateTime>1499050883</CreateTime>\n<MsgType><![CDATA[text]]></MsgType>\n<Content><![CDATA[\xe8\xae\xb0\xe5\xbd\x95  \xe6\x98\x8e\xe5\xa4\xa9\xe8\xa6\x81\xe5\xb9\xb2\xe5\x98\x9b]]></Content>\n<MsgId>6438374517937280671</MsgId>\n</xml>'
+Handle Post webdata is b'<xml><ToUserName><![CDATA[gh_dfb632fb5407]]></ToUserName>\n<FromUserName><![CDATA[oHBF6wUHaE4L2yUfhKMBqcrjoi0g]]></FromUserName>\n<CreateTime>1499054413</CreateTime>\n<MsgType><![CDATA[event]]></MsgType>\n<Event><![CDATA[CLICK]]></Event>\n<EventKey><![CDATA[CHI]]></EventKey>\n</xml>'
+Handle Post webdata is b'<xml><ToUserName><![CDATA[gh_dfb632fb5407]]></ToUserName>\n<FromUserName><![CDATA[oHBF6wUHaE4L2yUfhKMBqcrjoi0g]]></FromUserName>\n<CreateTime>1499054416</CreateTime>\n<MsgType><![CDATA[event]]></MsgType>\n<Event><![CDATA[CLICK]]></Event>\n<EventKey><![CDATA[SLEEP]]></EventKey>\n</xml>'
+Handle Post webdata is b'<xml><ToUserName><![CDATA[gh_dfb632fb5407]]></ToUserName>\n<FromUserName><![CDATA[oHBF6wUHaE4L2yUfhKMBqcrjoi0g]]></FromUserName>\n<CreateTime>1499063389</CreateTime>\n<MsgType><![CDATA[text]]></MsgType>\n<Content><![CDATA[\xe8\xae\xb0\xe5\xbd\x95 \xe4\xbd\xa0\xe6\x98\xaf\xe4\xbd\xa0\xe6\x91\xb8\xe8\xbf\x87]]></Content>\n<MsgId>6438428230798286347</MsgId>\n</xml>'
+Handle Post webdata is b'<xml><ToUserName><![CDATA[gh_dfb632fb5407]]></ToUserName>\n<FromUserName><![CDATA[oHBF6wUHaE4L2yUfhKMBqcrjoi0g]]></FromUserName>\n<CreateTime>1499063392</CreateTime>\n<MsgType><![CDATA[text]]></MsgType>\n<Content><![CDATA[\xe6\x9f\xa5\xe8\xaf\xa2]]></Content>\n<MsgId>6438428243683188237</MsgId>\n</xml>'
+Handle Post webdata is b'<xml><ToUserName><![CDATA[gh_dfb632fb5407]]></ToUserName>\n<FromUserName><![CDATA[oHBF6wUHaE4L2yUfhKMBqcrjoi0g]]></FromUserName>\n<CreateTime>1499063530</CreateTime>\n<MsgType><![CDATA[event]]></MsgType>\n<Event><![CDATA[CLICK]]></Event>\n<EventKey><![CDATA[AMBARI_CHECK]]></EventKey>\n</xml>'
+Handle Post webdata is b'<xml><ToUserName><![CDATA[gh_dfb632fb5407]]></ToUserName>\n<FromUserName><![CDATA[oHBF6wUHaE4L2yUfhKMBqcrjoi0g]]></FromUserName>\n<CreateTime>1499064771</CreateTime>\n<MsgType><![CDATA[text]]></MsgType>\n<Content><![CDATA[\xe5\x95\xa6\xe5\x95\xa6\xe5\x95\xa6\xe5\x95\xa6]]></Content>\n<MsgId>6438434166443090289</MsgId>\n</xml>'
+Handle Post webdata is b'<xml><ToUserName><![CDATA[gh_dfb632fb5407]]></ToUserName>\n<FromUserName><![CDATA[oHBF6wUHaE4L2yUfhKMBqcrjoi0g]]></FromUserName>\n<CreateTime>1499064783</CreateTime>\n<MsgType><![CDATA[text]]></MsgType>\n<Content><![CDATA[\xe6\x9f\xa5\xe8\xaf\xa2]]></Content>\n<MsgId>6438434217982697851</MsgId>\n</xml>'
+Handle Post webdata is b'<xml><ToUserName><![CDATA[gh_dfb632fb5407]]></ToUserName>\n<FromUserName><![CDATA[oHBF6wUHaE4L2yUfhKMBqcrjoi0g]]></FromUserName>\n<CreateTime>1499064802</CreateTime>\n<MsgType><![CDATA[text]]></MsgType>\n<Content><![CDATA[\xe8\xae\xb0\xe5\xbd\x95 \xe6\x88\x91\xe5\x92\x8c\xe4\xbd\xa0\xe5\xa4\xa7\xe7\xa5\x9e]]></Content>\n<MsgId>6438434299587076489</MsgId>\n</xml>'
+Handle Post webdata is b'<xml><ToUserName><![CDATA[gh_dfb632fb5407]]></ToUserName>\n<FromUserName><![CDATA[oHBF6wUHaE4L2yUfhKMBqcrjoi0g]]></FromUserName>\n<CreateTime>1499064818</CreateTime>\n<MsgType><![CDATA[text]]></MsgType>\n<Content><![CDATA[\xe6\x9f\xa5\xe8\xaf\xa2]]></Content>\n<MsgId>6438434368306553237</MsgId>\n</xml>'
+Handle Post webdata is b'<xml><ToUserName><![CDATA[gh_dfb632fb5407]]></ToUserName>\n<FromUserName><![CDATA[oHBF6wUHaE4L2yUfhKMBqcrjoi0g]]></FromUserName>\n<CreateTime>1499067576</CreateTime>\n<MsgType><![CDATA[text]]></MsgType>\n<Content><![CDATA[\xe8\xae\xb0\xe5\xbd\x95 \xe7\x93\x9c\xe7\x9a\xae \xe8\xa7\x86\xe5\x8a\x9b600\xe5\xba\xa6]]></Content>\n<MsgId>6438446213826356415</MsgId>\n</xml>'
+Handle Post webdata is b'<xml><ToUserName><![CDATA[gh_dfb632fb5407]]></ToUserName>\n<FromUserName><![CDATA[oHBF6wUHaE4L2yUfhKMBqcrjoi0g]]></FromUserName>\n<CreateTime>1499067581</CreateTime>\n<MsgType><![CDATA[text]]></MsgType>\n<Content><![CDATA[\xe6\x9f\xa5\xe8\xaf\xa2]]></Content>\n<MsgId>6438446235301192901</MsgId>\n</xml>'
+Handle Post webdata is b'<xml><ToUserName><![CDATA[gh_dfb632fb5407]]></ToUserName>\n<FromUserName><![CDATA[oHBF6wUHaE4L2yUfhKMBqcrjoi0g]]></FromUserName>\n<CreateTime>1499067609</CreateTime>\n<MsgType><![CDATA[text]]></MsgType>\n<Content><![CDATA[\xe8\xae\xb0\xe5\xbd\x95 \xe7\x93\x9c\xe7\x9a\xae7-25\xe7\x94\x9f\xe6\x97\xa5\xef\xbc\x8c\xe9\x80\x81\xe6\xb3\xa1\xe9\x9d\xa2]]></Content>\n<MsgId>6438446355560277201</MsgId>\n</xml>'
+Handle Post webdata is b'<xml><ToUserName><![CDATA[gh_dfb632fb5407]]></ToUserName>\n<FromUserName><![CDATA[oHBF6wUHaE4L2yUfhKMBqcrjoi0g]]></FromUserName>\n<CreateTime>1499067621</CreateTime>\n<MsgType><![CDATA[text]]></MsgType>\n<Content><![CDATA[\xe8\xae\xb0\xe5\xbd\x95 11\xe6\x9c\x8818\xe6\x9f\xa5\xe4\xbd\x93\xe9\x87\x8d]]></Content>\n<MsgId>6438446407099884756</MsgId>\n</xml>'
+Handle Post webdata is b'<xml><ToUserName><![CDATA[gh_dfb632fb5407]]></ToUserName>\n<FromUserName><![CDATA[oHBF6wUHaE4L2yUfhKMBqcrjoi0g]]></FromUserName>\n<CreateTime>1499067641</CreateTime>\n<MsgType><![CDATA[text]]></MsgType>\n<Content><![CDATA[\xe8\xae\xb0\xe5\xbd\x95 1\xe6\x9c\x8830\xe5\x8f\xb7 \xe8\xbd\xae\xe6\xbb\x91\xe9\xaa\x8c\xe8\xb4\xa7]]></Content>\n<MsgId>6438446492999230691</MsgId>\n</xml>'
+Handle Post webdata is b'<xml><ToUserName><![CDATA[gh_dfb632fb5407]]></ToUserName>\n<FromUserName><![CDATA[oHBF6wUHaE4L2yUfhKMBqcrjoi0g]]></FromUserName>\n<CreateTime>1499067643</CreateTime>\n<MsgType><![CDATA[text]]></MsgType>\n<Content><![CDATA[\xe6\x9f\xa5\xe8\xaf\xa2]]></Content>\n<MsgId>6438446501589165285</MsgId>\n</xml>'182.254.86.139:13578 - - [02/Jul/2017 23:55:12] "HTTP/1.1 POST /wx" - 200 OK
+182.254.86.149:15736 - - [02/Jul/2017 23:55:16] "HTTP/1.1 POST /wx" - 200 OK
+182.254.86.149:28140 - - [03/Jul/2017 00:03:08] "HTTP/1.1 POST /wx" - 200 OK
+47.93.127.220:59296 - - [03/Jul/2017 00:41:26] "HTTP/1.1 GET /" - 404 Not Found
+47.90.92.26:59514 - - [03/Jul/2017 02:34:35] "HTTP/1.1 GET /" - 404 Not Found
+212.237.34.224:46831 - - [03/Jul/2017 03:50:49] "HTTP/1.1 GET /muieblackcat" - 404 Not Found
+212.237.34.224:48210 - - [03/Jul/2017 03:50:55] "HTTP/1.1 GET //phpMyAdmin/scripts/setup.php" - 404 Not Found
+212.237.34.224:49650 - - [03/Jul/2017 03:51:01] "HTTP/1.1 GET //phpmyadmin/scripts/setup.php" - 404 Not Found
+212.237.34.224:51005 - - [03/Jul/2017 03:51:07] "HTTP/1.1 GET //pma/scripts/setup.php" - 404 Not Found
+212.237.34.224:52364 - - [03/Jul/2017 03:51:14] "HTTP/1.1 GET //myadmin/scripts/setup.php" - 404 Not Found
+212.237.34.224:54012 - - [03/Jul/2017 03:51:20] "HTTP/1.1 GET //MyAdmin/scripts/setup.php" - 404 Not Found
+80.82.78.38:49799 - - [03/Jul/2017 07:03:13] "HTTP/1.1 GET /cache/global/img/gs.gif" - 404 Not Found
+183.57.53.196:22585 - - [03/Jul/2017 07:13:43] "HTTP/1.1 GET //phpMyAdmin/scripts/setup.php" - 404 Not Found
+183.57.53.196:46326 - - [03/Jul/2017 07:22:55] "HTTP/1.1 GET /muieblackcat" - 404 Not Found
+182.254.86.144:48243 - - [03/Jul/2017 08:40:03] "HTTP/1.1 POST /wx" - 200 OK
+182.254.86.149:52689 - - [03/Jul/2017 08:40:07] "HTTP/1.1 POST /wx" - 200 OK
+61.151.226.199:38761 - - [03/Jul/2017 08:40:22] "HTTP/1.1 GET /wx" - 200 OK
+114.215.45.79:27699 - - [03/Jul/2017 10:39:43] "HTTP/1.1 GET /" - 404 Not Found
+182.254.86.139:20493 - - [03/Jul/2017 11:00:59] "HTTP/1.1 POST /wx" - 200 OK
+182.254.86.139:37222 - - [03/Jul/2017 11:01:09] "HTTP/1.1 POST /wx" - 200 OK
+182.254.86.149:60442 - - [03/Jul/2017 11:01:23] "HTTP/1.1 POST /wx" - 200 OK
+101.226.33.201:34885 - - [03/Jul/2017 11:03:07] "HTTP/1.1 GET /wx" - 200 OK
+101.226.64.174:54468 - - [03/Jul/2017 11:34:05] "HTTP/1.1 GET /wx" - 200 OK
+Traceback (most recent call last):
+  File "/wechat/WeChatServer/ServerEntry.py", line 71, in POST
+    print("\u6682\u4e14\u4e0d\u5904\u7406")
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-4: ordinal not in range(128)
+182.254.86.154:54020 - - [03/Jul/2017 12:00:13] "HTTP/1.1 POST /wx" - 200 OK
+Traceback (most recent call last):
+  File "/wechat/WeChatServer/ServerEntry.py", line 71, in POST
+    print("\u6682\u4e14\u4e0d\u5904\u7406")
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-4: ordinal not in range(128)
+182.254.86.139:57937 - - [03/Jul/2017 12:00:16] "HTTP/1.1 POST /wx" - 200 OK
+54.193.44.120:45382 - - [03/Jul/2017 14:21:26] "HTTP/1.1 GET /" - 404 Not Found
+101.226.64.174:23795 - - [03/Jul/2017 14:25:40] "HTTP/1.1 GET /" - 404 Not Found
+182.254.86.149:10810 - - [03/Jul/2017 14:29:49] "HTTP/1.1 POST /wx" - 200 OK
+182.254.86.154:15667 - - [03/Jul/2017 14:29:53] "HTTP/1.1 POST /wx" - 200 OK
+Traceback (most recent call last):
+  File "/wechat/WeChatServer/ServerEntry.py", line 71, in POST
+    print("\u6682\u4e14\u4e0d\u5904\u7406")
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-4: ordinal not in range(128)
+182.254.86.144:39071 - - [03/Jul/2017 14:32:11] "HTTP/1.1 POST /wx" - 200 OK
+182.254.86.139:27570 - - [03/Jul/2017 14:52:51] "HTTP/1.1 POST /wx" - 200 OK
+182.254.86.149:42798 - - [03/Jul/2017 14:53:03] "HTTP/1.1 POST /wx" - 200 OK
+182.254.86.154:12099 - - [03/Jul/2017 14:53:22] "HTTP/1.1 POST /wx" - 200 OK
+182.254.86.139:33299 - - [03/Jul/2017 14:53:38] "HTTP/1.1 POST /wx" - 200 OK
+118.190.88.57:56918 - - [03/Jul/2017 15:12:56] "HTTP/1.1 GET /" - 404 Not Found
+121.199.70.200:55029 - - [03/Jul/2017 15:35:32] "HTTP/1.1 GET /" - 404 Not Found
+182.254.86.154:26398 - - [03/Jul/2017 15:39:36] "HTTP/1.1 POST /wx" - 200 OK
+182.254.86.156:32607 - - [03/Jul/2017 15:39:41] "HTTP/1.1 POST /wx" - 200 OK
+182.254.86.154:15204 - - [03/Jul/2017 15:40:09] "HTTP/1.1 POST /wx" - 200 OK
+182.254.86.139:31868 - - [03/Jul/2017 15:40:21] "HTTP/1.1 POST /wx" - 200 OK
+182.254.86.149:58715 - - [03/Jul/2017 15:40:41] "HTTP/1.1 POST /wx" - 200 OK
+182.254.86.149:62428 - - [03/Jul/2017 15:40:44] "HTTP/1.1 POST /wx" - 200 OK
+182.254.86.154:29357 - - [03/Jul/2017 15:43:02] "HTTP/1.1 POST /wx" - 200 OK
+182.254.86.149:58158 - - [03/Jul/2017 15:55:15] "HTTP/1.1 POST /wx" - 200 OK
+180.153.160.24:42544 - - [03/Jul/2017 15:55:25] "HTTP/1.1 GET /wx" - 200 OK
+Traceback (most recent call last):
+  File "/wechat/WeChatServer/ServerEntry.py", line 71, in POST
+    print("\u6682\u4e14\u4e0d\u5904\u7406")
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-4: ordinal not in range(128)
+182.254.86.158:12565 - - [03/Jul/2017 16:14:30] "HTTP/1.1 POST /wx" - 200 OK
+182.254.86.148:24336 - - [03/Jul/2017 16:18:16] "HTTP/1.1 POST /wx" - 200 OK
+182.254.86.153:46985 - - [03/Jul/2017 16:18:31] "HTTP/1.1 POST /wx" - 200 OK
+182.254.86.153:18408 - - [03/Jul/2017 16:32:34] "HTTP/1.1 POST /wx" - 200 OK
+182.254.86.153:36940 - - [03/Jul/2017 16:32:49] "HTTP/1.1 POST /wx" - 200 OK
+Traceback (most recent call last):
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 255, in process
+    return p(lambda: process(processors))
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 642, in processor
+    h()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 737, in __call__
+    for mod in sys.modules.values():
+RuntimeError: dictionary changed size during iteration
+
+177.21.36.234:33811 - - [03/Jul/2017 17:46:47] "HTTP/1.1 GET /" - 500 Internal Server Error
+14.17.3.64:44353 - - [03/Jul/2017 17:49:05] "HTTP/1.1 GET /wx" - 200 OK
+47.90.92.26:33215 - - [03/Jul/2017 18:39:32] "HTTP/1.1 GET /" - 404 Not Found
+186.204.171.167:59443 - - [03/Jul/2017 18:52:24] "HTTP/1.1 GET /hndUnblock.cgi" - 404 Not Found
+186.204.171.167:59447 - - [03/Jul/2017 18:52:25] "HTTP/1.1 GET /tmUnblock.cgi" - 404 Not Found
+186.204.171.167:59452 - - [03/Jul/2017 18:52:25] "HTTP/1.1 GET /moo" - 404 Not Found
+Traceback (most recent call last):
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 255, in process
+    return p(lambda: process(processors))
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 642, in processor
+    h()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 738, in __call__
+    self.check(mod)
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 757, in check
+    reload(mod)
+  File "/usr/lib64/python3.4/importlib/__init__.py", line 149, in reload
+    methods.exec(module)
+  File "<frozen importlib._bootstrap>", line 1134, in exec
+AttributeError: 'NoneType' object has no attribute 'name'
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 255, in process
+    return p(lambda: process(processors))
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 642, in processor
+    h()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 738, in __call__
+    self.check(mod)
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 757, in check
+    reload(mod)
+  File "/usr/lib64/python3.4/importlib/__init__.py", line 149, in reload
+    methods.exec(module)
+  File "<frozen importlib._bootstrap>", line 1134, in exec
+AttributeError: 'NoneType' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 255, in process
+    return p(lambda: process(processors))
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 658, in processor
+    result = handler()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 255, in <lambda>
+    return p(lambda: process(processors))
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 264, in process
+    raise self.internalerror()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 545, in internalerror
+    return debugerror()
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 313, in debugerror
+    return web._InternalError(djangoerror())
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 303, in djangoerror
+    return t(exception_type, exception_value, frames)
+  File "/usr/lib/python3.4/site-packages/web/template.py", line 904, in __call__
+    return BaseTemplate.__call__(self, *a, **kw)
+  File "/usr/lib/python3.4/site-packages/web/template.py", line 831, in __call__
+    return self.t(*a, **kw)
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 193, in __template__
+    </div>
+  File "/usr/lib/python3.4/site-packages/web/webapi.py", line 364, in input
+    out = rawinput(_method)
+  File "/usr/lib/python3.4/site-packages/web/webapi.py", line 341, in rawinput
+    a = cgi.FieldStorage(fp=fp, environ=e, keep_blank_values=1)
+  File "/usr/lib64/python3.4/cgi.py", line 561, in __init__
+    self.read_single()
+  File "/usr/lib64/python3.4/cgi.py", line 734, in read_single
+    self.read_binary()
+  File "/usr/lib64/python3.4/cgi.py", line 756, in read_binary
+    self.file.write(data)
+TypeError: must be str, not bytes
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 255, in process
+    return p(lambda: process(processors))
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 642, in processor
+    h()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 738, in __call__
+    self.check(mod)
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 757, in check
+    reload(mod)
+  File "/usr/lib64/python3.4/importlib/__init__.py", line 149, in reload
+    methods.exec(module)
+  File "<frozen importlib._bootstrap>", line 1134, in exec
+AttributeError: 'NoneType' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 255, in process
+    return p(lambda: process(processors))
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 658, in processor
+    result = handler()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 255, in <lambda>
+    return p(lambda: process(processors))
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 264, in process
+    raise self.internalerror()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 545, in internalerror
+    return debugerror()
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 313, in debugerror
+    return web._InternalError(djangoerror())
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 303, in djangoerror
+    return t(exception_type, exception_value, frames)
+  File "/usr/lib/python3.4/site-packages/web/template.py", line 904, in __call__
+    return BaseTemplate.__call__(self, *a, **kw)
+  File "/usr/lib/python3.4/site-packages/web/template.py", line 831, in __call__
+    return self.t(*a, **kw)
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 193, in __template__
+    </div>
+  File "/usr/lib/python3.4/site-packages/web/webapi.py", line 364, in input
+    out = rawinput(_method)
+  File "/usr/lib/python3.4/site-packages/web/webapi.py", line 341, in rawinput
+    a = cgi.FieldStorage(fp=fp, environ=e, keep_blank_values=1)
+  File "/usr/lib64/python3.4/cgi.py", line 561, in __init__
+    self.read_single()
+  File "/usr/lib64/python3.4/cgi.py", line 734, in read_single
+    self.read_binary()
+  File "/usr/lib64/python3.4/cgi.py", line 756, in read_binary
+    self.file.write(data)
+TypeError: must be str, not bytes
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 255, in process
+    return p(lambda: process(processors))
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 643, in processor
+    return handler()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 255, in <lambda>
+    return p(lambda: process(processors))
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 264, in process
+    raise self.internalerror()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 545, in internalerror
+    return debugerror()
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 313, in debugerror
+    return web._InternalError(djangoerror())
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 303, in djangoerror
+    return t(exception_type, exception_value, frames)
+  File "/usr/lib/python3.4/site-packages/web/template.py", line 904, in __call__
+    return BaseTemplate.__call__(self, *a, **kw)
+  File "/usr/lib/python3.4/site-packages/web/template.py", line 831, in __call__
+    return self.t(*a, **kw)
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 193, in __template__
+    </div>
+  File "/usr/lib/python3.4/site-packages/web/webapi.py", line 364, in input
+    out = rawinput(_method)
+  File "/usr/lib/python3.4/site-packages/web/webapi.py", line 341, in rawinput
+    a = cgi.FieldStorage(fp=fp, environ=e, keep_blank_values=1)
+  File "/usr/lib64/python3.4/cgi.py", line 561, in __init__
+    self.read_single()
+  File "/usr/lib64/python3.4/cgi.py", line 734, in read_single
+    self.read_binary()
+  File "/usr/lib64/python3.4/cgi.py", line 756, in read_binary
+    self.file.write(data)
+TypeError: must be str, not bytes
+
+TypeError('must be str, not bytes',)
+Traceback (most recent call last):
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 255, in process
+    return p(lambda: process(processors))
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 642, in processor
+    h()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 738, in __call__
+    self.check(mod)
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 757, in check
+    reload(mod)
+  File "/usr/lib64/python3.4/importlib/__init__.py", line 149, in reload
+    methods.exec(module)
+  File "<frozen importlib._bootstrap>", line 1134, in exec
+AttributeError: 'NoneType' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 255, in process
+    return p(lambda: process(processors))
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 658, in processor
+    result = handler()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 255, in <lambda>
+    return p(lambda: process(processors))
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 264, in process
+    raise self.internalerror()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 545, in internalerror
+    return debugerror()
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 313, in debugerror
+    return web._InternalError(djangoerror())
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 303, in djangoerror
+    return t(exception_type, exception_value, frames)
+  File "/usr/lib/python3.4/site-packages/web/template.py", line 904, in __call__
+    return BaseTemplate.__call__(self, *a, **kw)
+  File "/usr/lib/python3.4/site-packages/web/template.py", line 831, in __call__
+    return self.t(*a, **kw)
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 193, in __template__
+    </div>
+  File "/usr/lib/python3.4/site-packages/web/webapi.py", line 364, in input
+    out = rawinput(_method)
+  File "/usr/lib/python3.4/site-packages/web/webapi.py", line 341, in rawinput
+    a = cgi.FieldStorage(fp=fp, environ=e, keep_blank_values=1)
+  File "/usr/lib64/python3.4/cgi.py", line 561, in __init__
+    self.read_single()
+  File "/usr/lib64/python3.4/cgi.py", line 734, in read_single
+    self.read_binary()
+  File "/usr/lib64/python3.4/cgi.py", line 756, in read_binary
+    self.file.write(data)
+TypeError: must be str, not bytes
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 255, in process
+    return p(lambda: process(processors))
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 643, in processor
+    return handler()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 255, in <lambda>
+    return p(lambda: process(processors))
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 264, in process
+    raise self.internalerror()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 545, in internalerror
+    return debugerror()
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 313, in debugerror
+    return web._InternalError(djangoerror())
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 303, in djangoerror
+    return t(exception_type, exception_value, frames)
+  File "/usr/lib/python3.4/site-packages/web/template.py", line 904, in __call__
+    return BaseTemplate.__call__(self, *a, **kw)
+  File "/usr/lib/python3.4/site-packages/web/template.py", line 831, in __call__
+    return self.t(*a, **kw)
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 193, in __template__
+    </div>
+  File "/usr/lib/python3.4/site-packages/web/webapi.py", line 364, in input
+    out = rawinput(_method)
+  File "/usr/lib/python3.4/site-packages/web/webapi.py", line 341, in rawinput
+    a = cgi.FieldStorage(fp=fp, environ=e, keep_blank_values=1)
+  File "/usr/lib64/python3.4/cgi.py", line 561, in __init__
+    self.read_single()
+  File "/usr/lib64/python3.4/cgi.py", line 734, in read_single
+    self.read_binary()
+  File "/usr/lib64/python3.4/cgi.py", line 756, in read_binary
+    self.file.write(data)
+TypeError: must be str, not bytes
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.4/site-packages/web/wsgiserver/wsgiserver3.py", line 1089, in communicate
+    req.respond()
+  File "/usr/lib/python3.4/site-packages/web/wsgiserver/wsgiserver3.py", line 877, in respond
+    self.server.gateway(self).respond()
+  File "/usr/lib/python3.4/site-packages/web/wsgiserver/wsgiserver3.py", line 1980, in respond
+    response = self.req.server.wsgi_app(self.env, self.start_response)
+  File "/usr/lib/python3.4/site-packages/web/httpserver.py", line 324, in __call__
+    return self.app(environ, xstart_response)
+  File "/usr/lib/python3.4/site-packages/web/httpserver.py", line 294, in __call__
+    return self.app(environ, start_response)
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 295, in wsgi
+    result = self.handle_with_processors()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 267, in handle_with_processors
+    return process(self.processors)
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 264, in process
+    raise self.internalerror()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 545, in internalerror
+    return debugerror()
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 313, in debugerror
+    return web._InternalError(djangoerror())
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 303, in djangoerror
+    return t(exception_type, exception_value, frames)
+  File "/usr/lib/python3.4/site-packages/web/template.py", line 904, in __call__
+    return BaseTemplate.__call__(self, *a, **kw)
+  File "/usr/lib/python3.4/site-packages/web/template.py", line 831, in __call__
+    return self.t(*a, **kw)
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 193, in __template__
+    </div>
+  File "/usr/lib/python3.4/site-packages/web/webapi.py", line 364, in input
+    out = rawinput(_method)
+  File "/usr/lib/python3.4/site-packages/web/webapi.py", line 341, in rawinput
+    a = cgi.FieldStorage(fp=fp, environ=e, keep_blank_values=1)
+  File "/usr/lib64/python3.4/cgi.py", line 561, in __init__
+    self.read_single()
+  File "/usr/lib64/python3.4/cgi.py", line 734, in read_single
+    self.read_binary()
+  File "/usr/lib64/python3.4/cgi.py", line 756, in read_binary
+    self.file.write(data)
+TypeError: must be str, not bytes
+Traceback (most recent call last):
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 255, in process
+    return p(lambda: process(processors))
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 642, in processor
+    h()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 738, in __call__
+    self.check(mod)
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 757, in check
+    reload(mod)
+  File "/usr/lib64/python3.4/importlib/__init__.py", line 149, in reload
+    methods.exec(module)
+  File "<frozen importlib._bootstrap>", line 1134, in exec
+AttributeError: 'NoneType' object has no attribute 'name'
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 255, in process
+    return p(lambda: process(processors))
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 642, in processor
+    h()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 738, in __call__
+    self.check(mod)
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 757, in check
+    reload(mod)
+  File "/usr/lib64/python3.4/importlib/__init__.py", line 149, in reload
+    methods.exec(module)
+  File "<frozen importlib._bootstrap>", line 1134, in exec
+AttributeError: 'NoneType' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 255, in process
+    return p(lambda: process(processors))
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 658, in processor
+    result = handler()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 255, in <lambda>
+    return p(lambda: process(processors))
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 264, in process
+    raise self.internalerror()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 545, in internalerror
+    return debugerror()
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 313, in debugerror
+    return web._InternalError(djangoerror())
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 303, in djangoerror
+    return t(exception_type, exception_value, frames)
+  File "/usr/lib/python3.4/site-packages/web/template.py", line 904, in __call__
+    return BaseTemplate.__call__(self, *a, **kw)
+  File "/usr/lib/python3.4/site-packages/web/template.py", line 831, in __call__
+    return self.t(*a, **kw)
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 193, in __template__
+    </div>
+  File "/usr/lib/python3.4/site-packages/web/webapi.py", line 364, in input
+    out = rawinput(_method)
+  File "/usr/lib/python3.4/site-packages/web/webapi.py", line 341, in rawinput
+    a = cgi.FieldStorage(fp=fp, environ=e, keep_blank_values=1)
+  File "/usr/lib64/python3.4/cgi.py", line 561, in __init__
+    self.read_single()
+  File "/usr/lib64/python3.4/cgi.py", line 734, in read_single
+    self.read_binary()
+  File "/usr/lib64/python3.4/cgi.py", line 756, in read_binary
+    self.file.write(data)
+TypeError: must be str, not bytes
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 255, in process
+    return p(lambda: process(processors))
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 642, in processor
+    h()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 738, in __call__
+    self.check(mod)
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 757, in check
+    reload(mod)
+  File "/usr/lib64/python3.4/importlib/__init__.py", line 149, in reload
+    methods.exec(module)
+  File "<frozen importlib._bootstrap>", line 1134, in exec
+AttributeError: 'NoneType' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 255, in process
+    return p(lambda: process(processors))
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 658, in processor
+    result = handler()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 255, in <lambda>
+    return p(lambda: process(processors))
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 264, in process
+    raise self.internalerror()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 545, in internalerror
+    return debugerror()
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 313, in debugerror
+    return web._InternalError(djangoerror())
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 303, in djangoerror
+    return t(exception_type, exception_value, frames)
+  File "/usr/lib/python3.4/site-packages/web/template.py", line 904, in __call__
+    return BaseTemplate.__call__(self, *a, **kw)
+  File "/usr/lib/python3.4/site-packages/web/template.py", line 831, in __call__
+    return self.t(*a, **kw)
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 193, in __template__
+    </div>
+  File "/usr/lib/python3.4/site-packages/web/webapi.py", line 364, in input
+    out = rawinput(_method)
+  File "/usr/lib/python3.4/site-packages/web/webapi.py", line 341, in rawinput
+    a = cgi.FieldStorage(fp=fp, environ=e, keep_blank_values=1)
+  File "/usr/lib64/python3.4/cgi.py", line 561, in __init__
+    self.read_single()
+  File "/usr/lib64/python3.4/cgi.py", line 734, in read_single
+    self.read_binary()
+  File "/usr/lib64/python3.4/cgi.py", line 756, in read_binary
+    self.file.write(data)
+TypeError: must be str, not bytes
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 255, in process
+    return p(lambda: process(processors))
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 643, in processor
+    return handler()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 255, in <lambda>
+    return p(lambda: process(processors))
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 264, in process
+    raise self.internalerror()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 545, in internalerror
+    return debugerror()
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 313, in debugerror
+    return web._InternalError(djangoerror())
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 303, in djangoerror
+    return t(exception_type, exception_value, frames)
+  File "/usr/lib/python3.4/site-packages/web/template.py", line 904, in __call__
+    return BaseTemplate.__call__(self, *a, **kw)
+  File "/usr/lib/python3.4/site-packages/web/template.py", line 831, in __call__
+    return self.t(*a, **kw)
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 193, in __template__
+    </div>
+  File "/usr/lib/python3.4/site-packages/web/webapi.py", line 364, in input
+    out = rawinput(_method)
+  File "/usr/lib/python3.4/site-packages/web/webapi.py", line 341, in rawinput
+    a = cgi.FieldStorage(fp=fp, environ=e, keep_blank_values=1)
+  File "/usr/lib64/python3.4/cgi.py", line 561, in __init__
+    self.read_single()
+  File "/usr/lib64/python3.4/cgi.py", line 734, in read_single
+    self.read_binary()
+  File "/usr/lib64/python3.4/cgi.py", line 756, in read_binary
+    self.file.write(data)
+TypeError: must be str, not bytes
+
+TypeError('must be str, not bytes',)
+Traceback (most recent call last):
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 255, in process
+    return p(lambda: process(processors))
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 642, in processor
+    h()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 738, in __call__
+    self.check(mod)
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 757, in check
+    reload(mod)
+  File "/usr/lib64/python3.4/importlib/__init__.py", line 149, in reload
+    methods.exec(module)
+  File "<frozen importlib._bootstrap>", line 1134, in exec
+AttributeError: 'NoneType' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 255, in process
+    return p(lambda: process(processors))
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 658, in processor
+    result = handler()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 255, in <lambda>
+    return p(lambda: process(processors))
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 264, in process
+    raise self.internalerror()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 545, in internalerror
+    return debugerror()
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 313, in debugerror
+    return web._InternalError(djangoerror())
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 303, in djangoerror
+    return t(exception_type, exception_value, frames)
+  File "/usr/lib/python3.4/site-packages/web/template.py", line 904, in __call__
+    return BaseTemplate.__call__(self, *a, **kw)
+  File "/usr/lib/python3.4/site-packages/web/template.py", line 831, in __call__
+    return self.t(*a, **kw)
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 193, in __template__
+    </div>
+  File "/usr/lib/python3.4/site-packages/web/webapi.py", line 364, in input
+    out = rawinput(_method)
+  File "/usr/lib/python3.4/site-packages/web/webapi.py", line 341, in rawinput
+    a = cgi.FieldStorage(fp=fp, environ=e, keep_blank_values=1)
+  File "/usr/lib64/python3.4/cgi.py", line 561, in __init__
+    self.read_single()
+  File "/usr/lib64/python3.4/cgi.py", line 734, in read_single
+    self.read_binary()
+  File "/usr/lib64/python3.4/cgi.py", line 756, in read_binary
+    self.file.write(data)
+TypeError: must be str, not bytes
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 255, in process
+    return p(lambda: process(processors))
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 643, in processor
+    return handler()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 255, in <lambda>
+    return p(lambda: process(processors))
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 264, in process
+    raise self.internalerror()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 545, in internalerror
+    return debugerror()
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 313, in debugerror
+    return web._InternalError(djangoerror())
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 303, in djangoerror
+    return t(exception_type, exception_value, frames)
+  File "/usr/lib/python3.4/site-packages/web/template.py", line 904, in __call__
+    return BaseTemplate.__call__(self, *a, **kw)
+  File "/usr/lib/python3.4/site-packages/web/template.py", line 831, in __call__
+    return self.t(*a, **kw)
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 193, in __template__
+    </div>
+  File "/usr/lib/python3.4/site-packages/web/webapi.py", line 364, in input
+    out = rawinput(_method)
+  File "/usr/lib/python3.4/site-packages/web/webapi.py", line 341, in rawinput
+    a = cgi.FieldStorage(fp=fp, environ=e, keep_blank_values=1)
+  File "/usr/lib64/python3.4/cgi.py", line 561, in __init__
+    self.read_single()
+  File "/usr/lib64/python3.4/cgi.py", line 734, in read_single
+    self.read_binary()
+  File "/usr/lib64/python3.4/cgi.py", line 756, in read_binary
+    self.file.write(data)
+TypeError: must be str, not bytes
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.4/site-packages/web/wsgiserver/wsgiserver3.py", line 1089, in communicate
+    req.respond()
+  File "/usr/lib/python3.4/site-packages/web/wsgiserver/wsgiserver3.py", line 877, in respond
+    self.server.gateway(self).respond()
+  File "/usr/lib/python3.4/site-packages/web/wsgiserver/wsgiserver3.py", line 1980, in respond
+    response = self.req.server.wsgi_app(self.env, self.start_response)
+  File "/usr/lib/python3.4/site-packages/web/httpserver.py", line 324, in __call__
+    return self.app(environ, xstart_response)
+  File "/usr/lib/python3.4/site-packages/web/httpserver.py", line 294, in __call__
+    return self.app(environ, start_response)
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 295, in wsgi
+    result = self.handle_with_processors()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 267, in handle_with_processors
+    return process(self.processors)
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 264, in process
+    raise self.internalerror()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 545, in internalerror
+    return debugerror()
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 313, in debugerror
+    return web._InternalError(djangoerror())
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 303, in djangoerror
+    return t(exception_type, exception_value, frames)
+  File "/usr/lib/python3.4/site-packages/web/template.py", line 904, in __call__
+    return BaseTemplate.__call__(self, *a, **kw)
+  File "/usr/lib/python3.4/site-packages/web/template.py", line 831, in __call__
+    return self.t(*a, **kw)
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 193, in __template__
+    </div>
+  File "/usr/lib/python3.4/site-packages/web/webapi.py", line 364, in input
+    out = rawinput(_method)
+  File "/usr/lib/python3.4/site-packages/web/webapi.py", line 341, in rawinput
+    a = cgi.FieldStorage(fp=fp, environ=e, keep_blank_values=1)
+  File "/usr/lib64/python3.4/cgi.py", line 561, in __init__
+    self.read_single()
+  File "/usr/lib64/python3.4/cgi.py", line 734, in read_single
+    self.read_binary()
+  File "/usr/lib64/python3.4/cgi.py", line 756, in read_binary
+    self.file.write(data)
+TypeError: must be str, not bytes
+Traceback (most recent call last):
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 255, in process
+    return p(lambda: process(processors))
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 642, in processor
+    h()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 738, in __call__
+    self.check(mod)
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 757, in check
+    reload(mod)
+  File "/usr/lib64/python3.4/importlib/__init__.py", line 149, in reload
+    methods.exec(module)
+  File "<frozen importlib._bootstrap>", line 1134, in exec
+AttributeError: 'NoneType' object has no attribute 'name'
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 255, in process
+    return p(lambda: process(processors))
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 642, in processor
+    h()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 738, in __call__
+    self.check(mod)
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 757, in check
+    reload(mod)
+  File "/usr/lib64/python3.4/importlib/__init__.py", line 149, in reload
+    methods.exec(module)
+  File "<frozen importlib._bootstrap>", line 1134, in exec
+AttributeError: 'NoneType' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 255, in process
+    return p(lambda: process(processors))
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 658, in processor
+    result = handler()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 255, in <lambda>
+    return p(lambda: process(processors))
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 264, in process
+    raise self.internalerror()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 545, in internalerror
+    return debugerror()
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 313, in debugerror
+    return web._InternalError(djangoerror())
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 303, in djangoerror
+    return t(exception_type, exception_value, frames)
+  File "/usr/lib/python3.4/site-packages/web/template.py", line 904, in __call__
+    return BaseTemplate.__call__(self, *a, **kw)
+  File "/usr/lib/python3.4/site-packages/web/template.py", line 831, in __call__
+    return self.t(*a, **kw)
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 193, in __template__
+    </div>
+  File "/usr/lib/python3.4/site-packages/web/webapi.py", line 364, in input
+    out = rawinput(_method)
+  File "/usr/lib/python3.4/site-packages/web/webapi.py", line 341, in rawinput
+    a = cgi.FieldStorage(fp=fp, environ=e, keep_blank_values=1)
+  File "/usr/lib64/python3.4/cgi.py", line 561, in __init__
+    self.read_single()
+  File "/usr/lib64/python3.4/cgi.py", line 734, in read_single
+    self.read_binary()
+  File "/usr/lib64/python3.4/cgi.py", line 756, in read_binary
+    self.file.write(data)
+TypeError: must be str, not bytes
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 255, in process
+    return p(lambda: process(processors))
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 642, in processor
+    h()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 738, in __call__
+    self.check(mod)
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 757, in check
+    reload(mod)
+  File "/usr/lib64/python3.4/importlib/__init__.py", line 149, in reload
+    methods.exec(module)
+  File "<frozen importlib._bootstrap>", line 1134, in exec
+AttributeError: 'NoneType' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 255, in process
+    return p(lambda: process(processors))
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 658, in processor
+    result = handler()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 255, in <lambda>
+    return p(lambda: process(processors))
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 264, in process
+    raise self.internalerror()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 545, in internalerror
+    return debugerror()
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 313, in debugerror
+    return web._InternalError(djangoerror())
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 303, in djangoerror
+    return t(exception_type, exception_value, frames)
+  File "/usr/lib/python3.4/site-packages/web/template.py", line 904, in __call__
+    return BaseTemplate.__call__(self, *a, **kw)
+  File "/usr/lib/python3.4/site-packages/web/template.py", line 831, in __call__
+    return self.t(*a, **kw)
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 193, in __template__
+    </div>
+  File "/usr/lib/python3.4/site-packages/web/webapi.py", line 364, in input
+    out = rawinput(_method)
+  File "/usr/lib/python3.4/site-packages/web/webapi.py", line 341, in rawinput
+    a = cgi.FieldStorage(fp=fp, environ=e, keep_blank_values=1)
+  File "/usr/lib64/python3.4/cgi.py", line 561, in __init__
+    self.read_single()
+  File "/usr/lib64/python3.4/cgi.py", line 734, in read_single
+    self.read_binary()
+  File "/usr/lib64/python3.4/cgi.py", line 756, in read_binary
+    self.file.write(data)
+TypeError: must be str, not bytes
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 255, in process
+    return p(lambda: process(processors))
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 643, in processor
+    return handler()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 255, in <lambda>
+    return p(lambda: process(processors))
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 264, in process
+    raise self.internalerror()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 545, in internalerror
+    return debugerror()
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 313, in debugerror
+    return web._InternalError(djangoerror())
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 303, in djangoerror
+    return t(exception_type, exception_value, frames)
+  File "/usr/lib/python3.4/site-packages/web/template.py", line 904, in __call__
+    return BaseTemplate.__call__(self, *a, **kw)
+  File "/usr/lib/python3.4/site-packages/web/template.py", line 831, in __call__
+    return self.t(*a, **kw)
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 193, in __template__
+    </div>
+  File "/usr/lib/python3.4/site-packages/web/webapi.py", line 364, in input
+    out = rawinput(_method)
+  File "/usr/lib/python3.4/site-packages/web/webapi.py", line 341, in rawinput
+    a = cgi.FieldStorage(fp=fp, environ=e, keep_blank_values=1)
+  File "/usr/lib64/python3.4/cgi.py", line 561, in __init__
+    self.read_single()
+  File "/usr/lib64/python3.4/cgi.py", line 734, in read_single
+    self.read_binary()
+  File "/usr/lib64/python3.4/cgi.py", line 756, in read_binary
+    self.file.write(data)
+TypeError: must be str, not bytes
+
+TypeError('must be str, not bytes',)
+Traceback (most recent call last):
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 255, in process
+    return p(lambda: process(processors))
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 642, in processor
+    h()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 738, in __call__
+    self.check(mod)
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 757, in check
+    reload(mod)
+  File "/usr/lib64/python3.4/importlib/__init__.py", line 149, in reload
+    methods.exec(module)
+  File "<frozen importlib._bootstrap>", line 1134, in exec
+AttributeError: 'NoneType' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 255, in process
+    return p(lambda: process(processors))
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 658, in processor
+    result = handler()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 255, in <lambda>
+    return p(lambda: process(processors))
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 264, in process
+    raise self.internalerror()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 545, in internalerror
+    return debugerror()
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 313, in debugerror
+    return web._InternalError(djangoerror())
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 303, in djangoerror
+    return t(exception_type, exception_value, frames)
+  File "/usr/lib/python3.4/site-packages/web/template.py", line 904, in __call__
+    return BaseTemplate.__call__(self, *a, **kw)
+  File "/usr/lib/python3.4/site-packages/web/template.py", line 831, in __call__
+    return self.t(*a, **kw)
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 193, in __template__
+    </div>
+  File "/usr/lib/python3.4/site-packages/web/webapi.py", line 364, in input
+    out = rawinput(_method)
+  File "/usr/lib/python3.4/site-packages/web/webapi.py", line 341, in rawinput
+    a = cgi.FieldStorage(fp=fp, environ=e, keep_blank_values=1)
+  File "/usr/lib64/python3.4/cgi.py", line 561, in __init__
+    self.read_single()
+  File "/usr/lib64/python3.4/cgi.py", line 734, in read_single
+    self.read_binary()
+  File "/usr/lib64/python3.4/cgi.py", line 756, in read_binary
+    self.file.write(data)
+TypeError: must be str, not bytes
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 255, in process
+    return p(lambda: process(processors))
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 643, in processor
+    return handler()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 255, in <lambda>
+    return p(lambda: process(processors))
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 264, in process
+    raise self.internalerror()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 545, in internalerror
+    return debugerror()
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 313, in debugerror
+    return web._InternalError(djangoerror())
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 303, in djangoerror
+    return t(exception_type, exception_value, frames)
+  File "/usr/lib/python3.4/site-packages/web/template.py", line 904, in __call__
+    return BaseTemplate.__call__(self, *a, **kw)
+  File "/usr/lib/python3.4/site-packages/web/template.py", line 831, in __call__
+    return self.t(*a, **kw)
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 193, in __template__
+    </div>
+  File "/usr/lib/python3.4/site-packages/web/webapi.py", line 364, in input
+    out = rawinput(_method)
+  File "/usr/lib/python3.4/site-packages/web/webapi.py", line 341, in rawinput
+    a = cgi.FieldStorage(fp=fp, environ=e, keep_blank_values=1)
+  File "/usr/lib64/python3.4/cgi.py", line 561, in __init__
+    self.read_single()
+  File "/usr/lib64/python3.4/cgi.py", line 734, in read_single
+    self.read_binary()
+  File "/usr/lib64/python3.4/cgi.py", line 756, in read_binary
+    self.file.write(data)
+TypeError: must be str, not bytes
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.4/site-packages/web/wsgiserver/wsgiserver3.py", line 1089, in communicate
+    req.respond()
+  File "/usr/lib/python3.4/site-packages/web/wsgiserver/wsgiserver3.py", line 877, in respond
+    self.server.gateway(self).respond()
+  File "/usr/lib/python3.4/site-packages/web/wsgiserver/wsgiserver3.py", line 1980, in respond
+    response = self.req.server.wsgi_app(self.env, self.start_response)
+  File "/usr/lib/python3.4/site-packages/web/httpserver.py", line 324, in __call__
+    return self.app(environ, xstart_response)
+  File "/usr/lib/python3.4/site-packages/web/httpserver.py", line 294, in __call__
+    return self.app(environ, start_response)
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 295, in wsgi
+    result = self.handle_with_processors()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 267, in handle_with_processors
+    return process(self.processors)
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 264, in process
+    raise self.internalerror()
+  File "/usr/lib/python3.4/site-packages/web/application.py", line 545, in internalerror
+    return debugerror()
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 313, in debugerror
+    return web._InternalError(djangoerror())
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 303, in djangoerror
+    return t(exception_type, exception_value, frames)
+  File "/usr/lib/python3.4/site-packages/web/template.py", line 904, in __call__
+    return BaseTemplate.__call__(self, *a, **kw)
+  File "/usr/lib/python3.4/site-packages/web/template.py", line 831, in __call__
+    return self.t(*a, **kw)
+  File "/usr/lib/python3.4/site-packages/web/debugerror.py", line 193, in __template__
+    </div>
+  File "/usr/lib/python3.4/site-packages/web/webapi.py", line 364, in input
+    out = rawinput(_method)
+  File "/usr/lib/python3.4/site-packages/web/webapi.py", line 341, in rawinput
+    a = cgi.FieldStorage(fp=fp, environ=e, keep_blank_values=1)
+  File "/usr/lib64/python3.4/cgi.py", line 561, in __init__
+    self.read_single()
+  File "/usr/lib64/python3.4/cgi.py", line 734, in read_single
+    self.read_binary()
+  File "/usr/lib64/python3.4/cgi.py", line 756, in read_binary
+    self.file.write(data)
+TypeError: must be str, not bytes

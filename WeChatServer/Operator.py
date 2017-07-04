@@ -60,6 +60,14 @@ class Operate(object):
         return content
 
     @staticmethod
-    def remove(msg):
-        pass
+    def remove(msg, fromUser):
+        user_handler = UserHandler()
+        if (user_handler.verify_user(fromUser) == 0):
+            # Qulified User
+            file_handler = FileHandler(fromUser)
+            file_handler.remove_record(msg)
+            content = "已删除"
+        else:
+            content = "你不是马**或怼她的人，没权限使用记录和提醒功能"
+        return content
 

@@ -9,12 +9,9 @@ class Record(object):
 
 class FileHandler(object):
     def __init__(self, user):
-        self.index = 0
         self.__data__ = "/wechat/data/" + user + ".data"
         if os.path.exists(self.__data__):
-            self.index = int(os.popen("tail -n 1 " + self.__data__ + " |awk -F#@# '{print $1}'").read())
-            self.index +=1
-            print("Index: {0}".format(self.index))
+            pass
         else:
             file_handler = codecs.open(self.__data__, "w")
             try:
@@ -27,18 +24,43 @@ class FileHandler(object):
     def add_record(self, msg):
         local_time = time.strftime('%Y-%m-%d#@#%H:%M:%S', time.localtime(time.time()))
         appender = codecs.open(self.__data__, 'a+', 'utf-8')
-        line = '%d'%self.index + "#@#" + local_time + "##@@##" + msg + "\n"
+        line = local_time + "##@@##" + msg + "\n"
         appender.write(line)
         appender.close()
 
 
     def read_all_record(self):
         file_handler = codecs.open(self.__data__, 'r', 'utf-8')
-        all_text = file_handler.read()
+        index = 1
+        ret_text = ""
+        for line in file_handler.readlines():
+            line = str(index) + ": " + line
+            ret_text += line
+            index+=1
         file_handler.close()
-        all_text = all_text.replace("#@#", " ")
-        all_text = all_text.replace("##@@##", "\t")
-        return all_text
+
+        ret_text = ret_text.replace("#@#", " ")
+        ret_text = ret_text.replace("##@@##", "\t")
+        return ret_text
 
     def remove_record(self, key):
-        pass
+        file_handler = codecs.open(self.__data__, 'r', 'utf-8')
+        index = 1
+        new_text = ""
+        for line in file_handler.readlines():
+            if index == int(key):
+                index += 1
+                continue
+
+            new_text += line
+            index += 1
+        file_handler.close()
+
+        file_handler = codecs.open(self.__data__, 'w', 'utf-8')
+        file_handler.write(new_text)
+        file_handler.close()
+
+
+
+
+

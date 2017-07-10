@@ -21,6 +21,17 @@ class FileHandler(object):
             finally:
                 file_handler.close()
 
+    @staticmethod
+    def create_file_if_no(file_path):
+        ret = 0
+        if os.path.exists(file_path):
+            pass
+        else:
+            file_handler = codecs.open(file_path, "w")
+            file_handler.close()
+            ret = 1
+        return ret
+
     def add_record(self, msg):
         local_time = time.strftime('%Y-%m-%d#@#%H:%M:%S', time.localtime(time.time()))
         appender = codecs.open(self.__data__, 'a+', 'utf-8')

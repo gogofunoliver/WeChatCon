@@ -48,12 +48,15 @@ class Handle(object):
                 cnstr = recMsg.Content.decode()
 
                 #print(cnstr)
-                action_str = cnstr[0:2]
-                msg_str = cnstr[3:]
+                action_str = cnstr.split(" ", 1)[0]
+                if action_str == cnstr:
+                    msg_str = ""
+                else:
+                    msg_str = cnstr.split(" ", 1)[1]
 
                 func = OperationType.get_operate_function(OperationType.get_operate_type(action_str))
                 if (func == OperationType.UnDefined):
-                    content = "不能识别你的操作"
+                    content = "不能识别你的操作，无效命令"
                 else:
                     content = func(msg_str, recMsg.FromUserName)
             else:

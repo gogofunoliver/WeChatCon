@@ -8,12 +8,16 @@ class WeatherHandler(object):
 
     def getWeather(self, city):
         url = self.URL + '?key=' + self.Key + '&location=' + city + '&language=zh-Hans&unit=c'
+        ret_str = ""
 
         r = requests.get(url)
-        print(r.content)
-        jason=r.json()
-        return self.parseJason(r.json())
-
+        if r.status_code == 404:
+            ret_str = "Failed"
+        else:
+            print(r.content)
+            jason=r.json()
+            ret_str = self.parseJason(r.json())
+        return ret_str
         #member
         #URL
         #Key

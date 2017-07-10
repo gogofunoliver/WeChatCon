@@ -9,6 +9,7 @@ from UserHandler import UserHandler
 from FileHandler import FileHandler
 import traceback
 from Operator import *
+from Resource import *
 
 class Handle(object):
     def GET(self):
@@ -56,11 +57,11 @@ class Handle(object):
 
                 func = OperationType.get_operate_function(OperationType.get_operate_type(action_str))
                 if (func == OperationType.UnDefined):
-                    content = "不能识别你的操作，无效命令"
+                    content = Resource.getMsg("Unidentified") + "\n" + Resource.getMsg("Menu")
                 else:
                     content = func(msg_str, recMsg.FromUserName)
             else:
-                content = "暂且不处理"
+                content = Resource.getMsg("WrongTypeMsg")
                 #return "success
 
             replyMsg = reply.TextMsg(toUser, fromUser, content)

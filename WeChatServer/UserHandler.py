@@ -100,12 +100,13 @@ class UserHandler(object):
             else:
                 cities.remove(city)
                 if len(cities):
-                    file_handler = codecs.open(record_file, 'w', 'utf-8')
-                    file_handler.write(" ".join(cities))
-                    file_handler.close()
-                    content = "以取消订阅{0}的天气。新的订阅城市为：{1}".format(city, " ".join(cities))
+                    content = "已取消订阅{0}的天气。新的订阅城市为：{1}".format(city, " ".join(cities))
                 else:
-                    content = "以取消订阅{0}的天气。现在未订阅任何城市天气".format(city)
+                    content = "已取消订阅{0}的天气。现在未订阅任何城市天气".format(city)
+
+                file_handler = codecs.open(record_file, 'w', 'utf-8')
+                file_handler.write(" ".join(cities))
+                file_handler.close()
         else:
             content = "未订阅任何城市天气"
         return content

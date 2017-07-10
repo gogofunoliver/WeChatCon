@@ -3,6 +3,7 @@ from FileHandler import *
 from WeatherHandler import WeatherHandler
 import receive
 import reply
+from Resource import *
 
 class OperationType(object):
     Read = 1
@@ -50,7 +51,7 @@ class Operate(object):
             file_handler = FileHandler(fromUser)
             content = file_handler.read_all_record()
         else:
-            content = "你不是马**或怼她的人，没权限使用记录和提醒功能"
+            content = Resource.getMsg("QualifiedUser")
         return content
 
     @staticmethod
@@ -61,14 +62,14 @@ class Operate(object):
     def write(msg, fromUser):
         user_handler = UserHandler()
         if len(msg.split()) == 0:
-            content = "记录不能为空"
+            content = Resource.getMsg("EmptyMsg")
         elif (user_handler.verify_user(fromUser) == 0):
             # Qulified User
             file_handler = FileHandler(fromUser)
             file_handler.add_record(msg)
-            content = "已记录"
+            content = Resource.getMsg("Recorded")
         else:
-            content = "你不是马**或怼她的人，没权限使用记录和提醒功能"
+            content = Resource.getMsg("QualifiedUser")
         return content
 
     @staticmethod
@@ -78,9 +79,9 @@ class Operate(object):
             # Qulified User
             file_handler = FileHandler(fromUser)
             file_handler.remove_record(msg)
-            content = "已删除"
+            content = Resource.getMsg("Removed")
         else:
-            content = "你不是马**或怼她的人，没权限使用记录和提醒功能"
+            content = Resource.getMsg("QualifiedUser")
         return content
 
     #msg including city
@@ -89,13 +90,13 @@ class Operate(object):
         content = ""
         size_city = len(msg.split())
         if size_city > 1:
-            content = "错误：一次只能订阅一个城市"
+            content = Resource.getMsg("MultiCityError")
         elif size_city == 0:
             cities = UserHandler.show_user_sub_city(fromUser)
             if len(cities.split()) != 0:
-                content = "您订阅了这些城市的天气：{0}".format(UserHandler.show_user_sub_city(fromUser))
+                content = "{0} {1}".format(Resource.getMsg("WeatherHead"), UserHandler.show_user_sub_city(fromUser))
             else:
-                content = "未订阅任何城市天气"
+                content = Resource.getMsg("NoSubCity")
         else:
             content = UserHandler.sub_user_for_weather(fromUser, msg)
         return content
@@ -105,25 +106,25 @@ class Operate(object):
         content = ""
         city_size = len(msg.split())
         if city_size > 1:
-            content = "目前只支持一次查询一个城市的天气"
+            content = Resource.getMsg("OneCityCheck")
         elif city_size == 0:
-            content = "请指定城市名称"
+            content = Resource.getMsg("SpecifyCity")
         else:
             weather = WeatherHandler()
             ret = weather.getWeather(msg)
             if ret != "Failed":
                 content = ret
             else:
-                content = "没有该城市，请检查城市名称"
+                content = Resource.getMsg("WrongCity")
         return content
 
     @staticmethod
     def unSubWeather(msg, fromUser):
         city_size = len(msg.split())
         if city_size > 1:
-            content = "目前只支持一次取消一个城市的天气"
+            content = Resource.getMsg("OnCitySub")
         elif city_size == 0:
-            content = "请指定城市名称"
+            content = Resource.getMsg("SpecifyCity")
         else:
             content = UserHandler.unSub_Weahter(fromUser,msg)
         return content

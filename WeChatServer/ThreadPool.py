@@ -3,6 +3,7 @@ from time import sleep
 from WeatherHandler import WeatherHandler
 from WeChatCon import WeChatHandler
 from utill import *
+from FileHandler import *
 import os, codecs
 
 class RootThread(object):
@@ -20,6 +21,7 @@ class SleepSecRun(RootThread):
     def run(func_name, *arg):
         while(1):
             pass
+
 
 class PublisherToSub(RootThread):
     def __init__(self, thread_name = "myThread"):

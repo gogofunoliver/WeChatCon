@@ -47,6 +47,7 @@ class UserHandler(object):
     @staticmethod
     def sub_user_for_weather(user, new_city):
         first_sub = 0
+
         record_file = "/wechat/data/weather/" +  user + "_weather.data"
         first_sub = FileHandler.create_file_if_no(record_file)
 

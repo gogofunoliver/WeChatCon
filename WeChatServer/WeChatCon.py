@@ -24,6 +24,7 @@ class WeChatHandler(object):
         self.weChatToken = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential"
         self.weChatPreview = "https://api.weixin.qq.com/cgi-bin/message/mass/preview"
         self.token_file = "/wechat/data/token/token_file.data"
+        self.custSend = "https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token="
 
         self.jsonTextInputTep = '{ \
                 "@@TYPE@@": "@@USER@@", \
@@ -64,19 +65,47 @@ class WeChatHandler(object):
         token = self.getWeChatToken()
         previewURL = self.weChatPreview + "?access_token=" + token
         status = ""
+        ret = 0
         if type == "towxname":
             postInput = self.jsonTextInputTep.replace("@@TYPE@@", type)
             postInput = self.jsonTextInputTep.replace("@@USER@@", to_user)
             postInput = postInput.replace("@@MSG@@", msg)
             r = requests.post(previewURL, data=postInput.encode("utf-8"))
             status = r.content
+            ret = r.json()['errcode']
         elif type == "touser":
             postInput = self.jsonTextInputTep.replace("@@TYPE@@", type)
             postInput = postInput.replace("@@USER@@", to_user)
             postInput = postInput.replace("@@MSG@@", msg)
             r = requests.post(previewURL, data=postInput.encode("utf-8"))
             status = r.content
+            ret = r.json()['errcode']
         print(status)
+        return ret
+
+
+    #send to a WeChat user to preview the an article or a msg
+    def sendMsgViaCust(self, msg, type="towxname", to_user="szwlove"):
+        token = self.getWeChatToken()
+        sending_url = self.custSend + token
+        status = ""
+        ret = 0
+        if type == "towxname":
+            postInput = self.jsonTextInputTep.replace("@@TYPE@@", type)
+            postInput = self.jsonTextInputTep.replace("@@USER@@", to_user)
+            postInput = postInput.replace("@@MSG@@", msg)
+            r = requests.post(sending_url, data=postInput.encode("utf-8"))
+            status = r.content
+            ret = r.json()['errcode']
+        elif type == "touser":
+            postInput = self.jsonTextInputTep.replace("@@TYPE@@", type)
+            postInput = postInput.replace("@@USER@@", to_user)
+            postInput = postInput.replace("@@MSG@@", msg)
+            r = requests.post(sending_url, data=postInput.encode("utf-8"))
+            status = r.content
+            ret = r.json()['errcode']
+        print(status)
+        return ret
 
 
     #send MSG to dedicated group with ID

@@ -10,6 +10,7 @@ from FileHandler import FileHandler
 import traceback
 from Operator import *
 from Resource import *
+from HealthyNotifier import HealthyNotifier
 
 class Handle(object):
     def GET(self):
@@ -55,11 +56,13 @@ class Handle(object):
                 else:
                     msg_str = cnstr.split(" ", 1)[1]
 
-                func = OperationType.get_operate_function(OperationType.get_operate_type(action_str))
-                if (func == OperationType.UnDefined):
-                    content = Resource.getMsg("Unidentified") + "\n" + Resource.getMsg("Menu")
-                else:
-                    content = func(msg_str, recMsg.FromUserName)
+                content = HealthyNotifier.get_instance().check_wait(toUser, cnstr)
+                if content == "":
+                    func = OperationType.get_operate_function(OperationType.get_operate_type(action_str))
+                    if (func == OperationType.UnDefined):
+                        content = Resource.getMsg("Unidentified") + "\n" + Resource.getMsg("Menu")
+                    else:
+                        content = func(msg_str, recMsg.FromUserName)
             else:
                 content = Resource.getMsg("WrongTypeMsg")
                 #return "success

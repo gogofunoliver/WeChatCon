@@ -1,6 +1,8 @@
 import time
 from WeChatCon import *
-from ThreadPool import *
+#from ThreadPool import *
+import json
+import threading
 
 class Utill(object):
     @staticmethod
@@ -13,14 +15,14 @@ class Utill(object):
         return ret
 
 class Tester(object):
-    def __init__(self):
-        pass
+    def test(self, msg):
+        print("test : %s" % msg)
+        threading.Timer(3,self.test2, ("bbbb",)).start()
 
-    @staticmethod
-    def test():
-        print("test")
+    def test2(self, msg2):
+        print("test2 : %s" % msg2)
+
 '''
 if __name__ == "__main__":
-    ThreadPool.get_instance().add_thread(PublisherToSub.run, "Publiser")
-    ThreadPool.get_instance().run_threads()
+    threading.Timer(3, Tester().test, ("aaa", )).start()
 '''

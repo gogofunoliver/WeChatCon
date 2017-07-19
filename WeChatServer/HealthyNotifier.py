@@ -8,6 +8,7 @@ from time import sleep
 from FileHandler import FileHandler
 from WeChatCon import WeChatHandler
 from DBHandler import DBHandler
+from Resource import Resource
 
 class HealthyNotifier(RootThread):
     __singleton = None
@@ -43,23 +44,32 @@ class HealthyNotifier(RootThread):
             wechat_con = WeChatHandler()
 
             for user in self.user_list:
-                wechat_con.sendMsgToOneAsPreview(msg + "请回复“是”打卡。", "touser", user)
+                wechat_con.sendMsgToOneAsPreview(msg + Resource.getMsg("ReYes"), "touser", user)
                 self.user_wait_list.append(user)
                 threading.Timer(300, self.clear_wait, (user,)).start()
 
     def clear_wait(self, user_open_id):
         if user_open_id in self.user_wait_list:
             self.user_wait_list.remove(user_open_id)
-            WeChatHandler().sendMsgToOneAsPreview("五分钟内未打卡，已记录。", "touser", user_open_id)
-            DBHandler().insert("INSERT into HealthyRecord VALUES (null, '%s', '未打卡', null)" % user_open_id)
+            WeChatHandler().sendMsgToOneAsPreview(Resource.getMsg("FiveMins"), "touser", user_open_id)
+            DBHandler().insert("INSERT into HealthyRecord VALUES (null, '%s', 'N', null)" % user_open_id)
+        else:
+            #has record into DB when user reply the correct message
+            pass
 
     def check_wait(self, user, msg):
         content = ""
         if user in self.user_wait_list and user == self.user_list[0] and msg == "是":
-            content = "大神打卡成功 O.o o.O"
+            DBHandler().insert("INSERT into HealthyRecord VALUES (null, '%s', 'Y', null)" % user)
+            counts = DBHandler().select("SELECT CreateData from HealthyRecord WHERE IsRecord = 'Y' and CreateData > '2017-07' \
+            and CreateData < '2017-08' AND Open_ID = '%s'" % user)[0]
+            content = Resource.getMsg("RecordFmt") % (Resource.getMsg("GodSub"), str(counts))
             self.user_wait_list.remove(user)
         elif user in self.user_wait_list and user == self.user_list[1] and msg == "是":
-            content = "蠢货打卡成功 O.o o.O"
+            DBHandler().insert("INSERT into HealthyRecord VALUES (null, '%s', 'Y', null)" % user)
+            counts = DBHandler().select("SELECT CreateData from HealthyRecord WHERE IsRecord = 'Y' and CreateData > '2017-07' \
+            and CreateData < '2017-08' AND Open_ID = '%s'" % user)[0]
+            content =  Resource.getMsg("RecordFmt") % (Resource.getMsg("LingSub"), str(counts))
             self.user_wait_list.remove(user)
         return content
 
@@ -67,7 +77,7 @@ class HealthyNotifier(RootThread):
         content = ""
         local_time = time.strftime('%H:%M', time.localtime(time.time()))
         if local_time in self.healthy_metrics.get("meal"):
-            content = "吃饭时间到，乖乖吃饭去，瓜皮。"
+            content = Resource.getMsg("EatTime")
         return  content
 
 
@@ -75,19 +85,19 @@ class HealthyNotifier(RootThread):
         content = ""
         local_time = time.strftime('%H:%M', time.localtime(time.time()))
         if local_time in self.healthy_metrics.get("getup"):
-            content = "起床咯，晒屁屁咯，瓜皮。"
+            content = Resource.getMsg("WeakTime")
         return  content
 
     def __sleep_check(self):
         content = ""
         local_time = time.strftime('%H:%M', time.localtime(time.time()))
         if local_time in self.healthy_metrics.get("sleep"):
-            content = "睡觉时间到，乖乖睡觉去，瓜皮。"
+            content = Resource.getMsg("SleepTime")
         return content
 
     def __nap_check(self):
         content = ""
         local_time = time.strftime('%H:%M', time.localtime(time.time()))
         if local_time in self.healthy_metrics.get("nap"):
-            content = "午睡时间到，乖乖睡觉去，瓜皮。"
+            content = Resource.getMsg("NapTime")
         return content

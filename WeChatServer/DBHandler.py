@@ -3,6 +3,7 @@
 
 import pymysql.cursors
 from time import sleep
+from Resource import Resource
 
 class DBHandler(object):
     def __init__(self):
@@ -46,12 +47,9 @@ class DBHandler(object):
 
 '''
 if __name__ == "__main__":
-    db = DBHandler()
-    sql = "SELECT * FROM HealthyRecord WHERE ID = 2 "
-    result = db.select(sql)
-    lines = result[0]
-    rows = result[1]
-    print("lines : %s" % lines)
-    for row in rows:
-        print("ID:%d\tSOpen_ID:%s\tContent:%s\tDataStr:%s" % row)
+    user = 'oHBF6wR4kUe4KUNtMMN4J0LKXsPE'
+    counts = DBHandler().select("SELECT CreateData from HealthyRecord WHERE IsRecord = 'Y' and CreateData > '2017-07' \
+    and CreateData < '2017-08' AND Open_ID = '%s'" % user)[0]
+    content = Resource.getMsg("RecordFmt") % (Resource.getMsg("LingSub"), str(counts))
+    print(content)
 '''

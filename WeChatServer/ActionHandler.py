@@ -56,8 +56,8 @@ class ActionsExecutor(object):
 
     @staticmethod
     def run(user):
-        actions = ActionsExecutor.auto_actions_handlers.get(user, "no")
         while(1):
+            actions = ActionsExecutor.auto_actions_handlers.get(user, "no")
             while type(actions) == list and len(actions) > 0:
                 #FIFS
                 action = actions.pop(0)

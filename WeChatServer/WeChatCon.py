@@ -14,8 +14,7 @@ class WechatRefresher(object):
     def start():
         wechat_con = WeChatHandler()
         sleep_time = int(wechat_con.getWeChatToken("true")) - 100
-        timer = threading.Timer(sleep_time, WechatRefresher.start)
-        timer.start()
+        threading.Timer(sleep_time, WechatRefresher.start).start()
 
 class WeChatHandler(object):
     def __init__(self):

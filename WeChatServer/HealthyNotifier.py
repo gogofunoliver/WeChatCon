@@ -1,5 +1,6 @@
  # -*- coding: utf-8 -*-
 # filename: HealthyNotifier.py
+
 import threading, os
 from ThreadPool import RootThread
 import time
@@ -33,22 +34,23 @@ class HealthyNotifier(RootThread):
     def run(self, *argv):
         while (1):
             print("time : {0}".format(time.strftime('%H:%M', time.localtime(time.time()))))
-            self.notify(self.sleep_check())
+            self.__notify(self.__sleep_check())
             sleep(60)
 
-    def notify(self, msg):
+    #Private
+    def __notify(self, msg):
         if msg != "":
             wechat_con = WeChatHandler()
 
             for user in self.user_list:
-                wechat_con.sendMsgViaCust(msg + "请回复“是”打卡。", "touser", user)
+                wechat_con.sendMsgToOneAsPreview(msg + "请回复“是”打卡。", "touser", user)
                 self.user_wait_list.append(user)
                 threading.Timer(300, self.clear_wait, (user,)).start()
 
     def clear_wait(self, user_open_id):
         if user_open_id in self.user_wait_list:
             self.user_wait_list.remove(user_open_id)
-            WeChatHandler().sendMsgViaCust("五分钟内未打卡，已记录。", "touser", user_open_id)
+            WeChatHandler().sendMsgToOneAsPreview("五分钟内未打卡，已记录。", "touser", user_open_id)
             DBHandler().insert("INSERT into HealthyRecord VALUES (null, '%s', '未打卡', null)" % user_open_id)
 
     def check_wait(self, user, msg):
@@ -61,7 +63,7 @@ class HealthyNotifier(RootThread):
             self.user_wait_list.remove(user)
         return content
 
-    def meal_check(self):
+    def __meal_check(self):
         content = ""
         local_time = time.strftime('%H:%M', time.localtime(time.time()))
         if local_time in self.healthy_metrics.get("meal"):
@@ -69,21 +71,21 @@ class HealthyNotifier(RootThread):
         return  content
 
 
-    def getup_check(self):
+    def __getup_check(self):
         content = ""
         local_time = time.strftime('%H:%M', time.localtime(time.time()))
         if local_time in self.healthy_metrics.get("getup"):
             content = "起床咯，晒屁屁咯，瓜皮。"
         return  content
 
-    def sleep_check(self):
+    def __sleep_check(self):
         content = ""
         local_time = time.strftime('%H:%M', time.localtime(time.time()))
         if local_time in self.healthy_metrics.get("sleep"):
             content = "睡觉时间到，乖乖睡觉去，瓜皮。"
         return content
 
-    def nap_check(self):
+    def __nap_check(self):
         content = ""
         local_time = time.strftime('%H:%M', time.localtime(time.time()))
         if local_time in self.healthy_metrics.get("nap"):

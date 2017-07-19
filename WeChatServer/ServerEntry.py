@@ -11,6 +11,7 @@ import traceback
 from Operator import *
 from Resource import *
 from HealthyNotifier import HealthyNotifier
+from ActionHandler import ActionsExecutor
 
 class Handle(object):
     def GET(self):
@@ -44,6 +45,7 @@ class Handle(object):
             webData = web.data()
             print("Handle Post webdata is {0}".format(webData))
             recMsg = receive.parse_xml(webData)
+
             if isinstance(recMsg, receive.Msg) and recMsg.MsgType == 'text':
                 toUser = recMsg.FromUserName
                 fromUser = recMsg.ToUserName
@@ -60,12 +62,16 @@ class Handle(object):
                 if content == "":
                     func = OperationType.get_operate_function(OperationType.get_operate_type(action_str))
                     if (func == OperationType.UnDefined):
-                        content = Resource.getMsg("Unidentified") + "\n" + Resource.getMsg("Menu")
+                        if ActionsExecutor.has_manual_actions(toUser):
+                            ActionsExecutor.exuecte_actions(toUser, action_str)
+                            return "success"
+                        else:
+                            content = Resource.getMsg("Unidentified") + "\n" + Resource.getMsg("Menu")
                     else:
                         content = func(msg_str, recMsg.FromUserName)
             else:
                 content = Resource.getMsg("WrongTypeMsg")
-                #return "success
+                #return "success"
 
             replyMsg = reply.TextMsg(toUser, fromUser, content)
             return replyMsg.send()

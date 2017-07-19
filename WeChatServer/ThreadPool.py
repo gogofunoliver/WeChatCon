@@ -5,6 +5,8 @@ from WeChatCon import WeChatHandler
 from utill import *
 from FileHandler import *
 import os, codecs
+from DBHandler import DBHandler
+from Resource import Resource
 
 class RootThread(object):
     def __int__(self):
@@ -12,16 +14,6 @@ class RootThread(object):
 
     def run(self):
         pass
-
-class SleepSecRun(RootThread):
-    def __init__(self):
-        pass
-
-    @staticmethod
-    def run(func_name, *arg):
-        while(1):
-            pass
-
 
 class PublisherToSub(RootThread):
     def __init__(self, thread_name = "myThread"):
@@ -35,17 +27,14 @@ class PublisherToSub(RootThread):
             if Utill.night_check_time() == -1:
                 sleep(60)
                 continue
-
-            weather_dir = "/wechat/data/weather/"
-            for file in  os.listdir(weather_dir):
-                user_name = file.split("_")[0]
-                file_handler = codecs.open(weather_dir + file, "r", "utf-8")
-                #oHBF6wUHaE4L2yUfhKMBqcrjoi0g
-                if  user_name == "oHBF6wR4kUe4KUNtMMN4J0LKXsPE":
-                    sub_weather_text = "蠢货专属的天气预报：@_@\n"
+            user_sub_result = DBHandler().select("SELECT Open_ID,Cities from WeatherSub")
+            for user_sub in user_sub_result[1]:
+                user = user_sub[0]
+                cities = user_sub[1].split()
+                if user == "oHBF6wR4kUe4KUNtMMN4J0LKXsPE":
+                    sub_weather_text = Resource.getMsg("StupidHead")
                 else:
-                    sub_weather_text = "您订阅的天气：\n"
-                cities = file_handler.readline().split()
+                    sub_weather_text = Resource.getMsg("NormalHead")
 
                 if len(cities) == 0: #in case empty files
                     continue
@@ -59,7 +48,7 @@ class PublisherToSub(RootThread):
                 # wechat define 2 types sending way"
                 # "touser" : sending wit OpenID
                 # "towxname" sending with wechat name
-                wechat_con.sendMsgToOneAsPreview(sub_weather_text, "touser", user_name)
+                wechat_con.sendMsgToOneAsPreview(sub_weather_text, "touser", user)
                 #end for to send weather for a person
             #sending per 2 hours
             sleep(7200)
@@ -77,8 +66,8 @@ class ThreadPool(object):
             ThreadPool.__singleton = ThreadPool()
         return ThreadPool.__singleton
 
-    def add_thread(self, func, *argc):
-        self.tThreads.append(threading.Thread(target=func, args=argc))
+    def add_thread(self, thread_name, func, *argc):
+        self.tThreads.append(threading.Thread(name=thread_name, target=func, args=argc))
 
     def remove_thread(self):
         pass

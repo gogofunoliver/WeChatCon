@@ -1,3 +1,6 @@
+ # -*- coding: utf-8 -*-
+# filename: DBHanlder.py
+
 import pymysql.cursors
 from time import sleep
 
@@ -21,12 +24,15 @@ class DBHandler(object):
         return (affected_lines, rows);
 
     def update(self, sql):
-        pass
+        return self.write_db(sql)
 
     def delete(self, sql):
-        pass
+        return self.write_db(sql)
 
     def insert(self, sql):
+        return self.write_db(sql)
+
+    def write_db(self, sql):
         self.cursor.execute(sql)
         self.connection.commit()
         affected_lines = self.cursor.rowcount

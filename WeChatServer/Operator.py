@@ -45,11 +45,15 @@ class OperationType(object):
 class Operate(object):
     @staticmethod
     def check(msg, fromUser):
+        content = ""
         user_handler = UserHandler()
         if (user_handler.verify_user(fromUser) == 0):
             # Qulified User
-            file_handler = FileHandler(fromUser)
-            content = file_handler.read_all_record()
+            note_set = DBHandler().select("SELECT RecoreData,Note from Notepad WHERE Open_ID = '%s'" % fromUser)
+            index = 1
+            for line in note_set[1]:
+                content = content + str(index) + ") " + line[0].strftime("%Y-%m-%d %H:%M:%S") + " " + line[1] + "\n"
+                index += 1
         else:
             content = Resource.getMsg("QualifiedUser")
         return content
@@ -65,9 +69,10 @@ class Operate(object):
             content = Resource.getMsg("EmptyMsg")
         elif (user_handler.verify_user(fromUser) == 0):
             # Qulified User
-            file_handler = FileHandler(fromUser)
-            file_handler.add_record(msg)
-            content = Resource.getMsg("Recorded")
+            if int(DBHandler().insert("INSERT into Notepad VALUES (null, '%s', null, '%s')" % (fromUser, msg))) == 1:
+                content = Resource.getMsg("Recorded")
+            else:
+                content = Resource.getMsg("FailRecord")
         else:
             content = Resource.getMsg("QualifiedUser")
         return content
@@ -77,8 +82,12 @@ class Operate(object):
         user_handler = UserHandler()
         if (user_handler.verify_user(fromUser) == 0):
             # Qulified User
-            file_handler = FileHandler(fromUser)
-            file_handler.remove_record(msg)
+            note_set = DBHandler().select("SELECT IND from Notepad WHERE Open_ID = '%s'" % fromUser)
+            index = 1
+            for line in note_set[1]:
+                if msg == str(index):
+                    DBHandler().delete("DELETE from Notepad where IND = '%d'" % line[0])
+                index += 1
             content = Resource.getMsg("Removed")
         else:
             content = Resource.getMsg("QualifiedUser")
@@ -91,12 +100,6 @@ class Operate(object):
         size_city = len(msg.split())
         if size_city > 1:
             content = Resource.getMsg("MultiCityError")
-        elif size_city == 0:
-            cities = UserHandler.show_user_sub_city(fromUser)
-            if len(cities.split()) != 0:
-                content = "{0} {1}".format(Resource.getMsg("WeatherHead"), UserHandler.show_user_sub_city(fromUser))
-            else:
-                content = Resource.getMsg("NoSubCity")
         else:
             content = UserHandler.sub_user_for_weather(fromUser, msg)
         return content

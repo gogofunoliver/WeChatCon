@@ -24,7 +24,7 @@ class ActionsExecutor(object):
     @staticmethod
     def add_auto_action(user, fun_action):
         old_actions = ActionsExecutor.auto_actions_handlers.get(user, "no")
-        if old_actions != "no" and len(old_actions) != 0:
+        if type(old_actions) == list and len(old_actions) != 0:
             old_actions.append(fun_action)
             ActionsExecutor.auto_actions_handlers[user] = old_actions
         else:
@@ -32,7 +32,7 @@ class ActionsExecutor(object):
 
     def add_manual_action(user, fun_action):
         old_actions = ActionsExecutor.manual_action_handlers.get(user, "no")
-        if old_actions != "no" and len(old_actions) != 0:
+        if type(old_actions) == list and len(old_actions) != 0:
             old_actions.append(fun_action)
             ActionsExecutor.manual_action_handlers[user] = old_actions
         else:

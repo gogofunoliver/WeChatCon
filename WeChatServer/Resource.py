@@ -4,6 +4,8 @@
 
 #Oliver: Summarize all kinds of language in this class to support Global language msg
 
+import random
+
 class Resource(object):
     #Private
     __CN_MSG = {
@@ -36,14 +38,30 @@ class Resource(object):
         "RecordFmt" : "%s 本月已累计打卡%s天",
         #BirthDayHandler
         "Birth" : "嘉玲，生日快乐（我怕我忘了，提前做好了程序）。",
-        "MustHappy" : "你必须开心，也必须正确回复！~~o.o",
+        "MustHappy" : "你必须开心，也必须正确回复！~~o.o~~ 再说句：",
         "IHappy" : "我很开心",
-        "AlwaysHappy" : "那就一直好好地开心~~ ，这是我希望的o.o",
+        "AlwaysHappy" : "那就好，要一直好好地开心咯~~ ，这也是我希望的啦o.o （最后一条啦）",
         "ReplyHappy" : "回复“我很开心”（违心也可以）~~"
 
     }
+
+    __BirthWirhes = { 1 : "生日快乐，天天开心。",
+                      2 : "生日快乐，明年更美丽。不过我说的是心情，不是外表。",
+                      3 : "生日快乐，天天涨停。不过我说的是体重，不是股票。",
+                      4 : "生日快乐，越来越。。。蠢。偶尔蠢蠢，可爱~~哈哈哈",
+                      5 : "生日快乐，工资涨一块。",
+                      6 : "生日快乐，不快乐，不给涨。",
+                      7 : "生日快乐，体重来二斤。。",
+                      8 : "生日快乐，不过这句我要骂你，怼你，蠢！十条信息随机选。选中这条就是你的命。",
+                      9 : "生日快乐，明年从ladyboy走向lady...",
+                      10 : "生日快乐，梦到。。。天上飘着最俗。。最有用的钱。。哈哈哈",
+                      }
 
     @staticmethod
     def getMsg(msg_type):
         #add  other languages later
         return Resource.__CN_MSG.get(msg_type, "NoMsg")
+
+    @staticmethod
+    def get_random_birth_msg():
+        return  Resource.__BirthWirhes.get(random.randint(1, len(Resource.__BirthWirhes)), "生日快乐。短暂，难忘才好~~")

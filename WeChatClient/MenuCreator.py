@@ -33,12 +33,12 @@ class MenuCreator(object):
                "sub_button":[  \
                     {	\
                        "type":"click", \
-                       "name":"吃货",   \
+                       "name":"吃世界",   \
                        "key":"FOODY"  \
                     }, \
                     {	\
                         "type":"click", \
-                        "name":"吃货",   \
+                        "name":"看世界",   \
                         "key":"TRAVEL"  \
                     } \
                 ]  \
@@ -49,12 +49,12 @@ class MenuCreator(object):
                      {	\
                         "type":"click", \
                         "name":"马儿爱吃草",   \
-                        "key":"CHI"  \
+                        "key":"MA_CHI"  \
                       }, \
                       {	\
                          "type":"click", \
                          "name":"马儿爱睡觉",   \
-                         "key":"SLEEP"  \
+                         "key":"MA_SLEEP"  \
                        } \
                   ]  \
              } \

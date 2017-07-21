@@ -12,6 +12,8 @@ from Operator import *
 from Resource import *
 from HealthyNotifier import HealthyNotifier
 from ActionHandler import ActionsExecutor
+from WeChatEventHandler import EventRouter
+from TypeDef import TypeDef
 
 class Handle(object):
     def GET(self):
@@ -45,12 +47,12 @@ class Handle(object):
             webData = web.data()
             print("Handle Post webdata is {0}".format(webData))
             recMsg = receive.parse_xml(webData)
+            toUser = recMsg.FromUserName
+            fromUser = recMsg.ToUserName
+            content = ""
 
             if isinstance(recMsg, receive.Msg) and recMsg.MsgType == 'text':
-                toUser = recMsg.FromUserName
-                fromUser = recMsg.ToUserName
                 cnstr = recMsg.Content.decode()
-
                 #print(cnstr)
                 action_str = cnstr.split(" ", 1)[0]
                 if action_str == cnstr:
@@ -60,8 +62,8 @@ class Handle(object):
 
                 content = HealthyNotifier.get_instance().check_wait(toUser, cnstr)
                 if content == "":
-                    func = OperationType.get_operate_function(OperationType.get_operate_type(action_str))
-                    if (func == OperationType.UnDefined):
+                    func = OperationType.get_operate_function(action_str)
+                    if (func == TypeDef.Undefined):
                         if ActionsExecutor.has_manual_actions(toUser):
                             ActionsExecutor.exuecte_actions(toUser, action_str)
                             return "success"
@@ -69,9 +71,11 @@ class Handle(object):
                             content = Resource.getMsg("Unidentified") + "\n" + Resource.getMsg("Menu")
                     else:
                         content = func(msg_str, recMsg.FromUserName)
+            elif isinstance(recMsg, receive.Msg) and recMsg.MsgType == 'event':
+                    func = EventRouter.get_envent_func(recMsg.event, recMsg.key_value)
+                    content = func()
             else:
                 content = Resource.getMsg("WrongTypeMsg")
-                #return "success"
 
             replyMsg = reply.TextMsg(toUser, fromUser, content)
             return replyMsg.send()

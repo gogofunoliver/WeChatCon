@@ -9,7 +9,8 @@ from WeChatCon import WeChatHandler
 from Resource import Resource
 from ActionHandler import *
 
-class BirthDayNotifier (RootThread):
+class BirthDayNotifier(RootThread):
+
     def __del__(self):
         pass
 
@@ -49,7 +50,7 @@ class BirthDayNotifier (RootThread):
 
     def check_reply(self, user, msg):
         if msg != Resource.getMsg("IHappy"):
-            WeChatHandler().sendMsgViaCust(Resource.getMsg("MustHappy"), "touser", user)
+            WeChatHandler().sendMsgViaCust(Resource.getMsg("MustHappy") + Resource.get_random_birth_msg(), "touser", user)
             ActionsExecutor.add_manual_action(user, Action(self.check_reply, user, "NoHappy"))
         else:
             WeChatHandler().sendMsgViaCust(Resource.getMsg("AlwaysHappy"), "touser", user)

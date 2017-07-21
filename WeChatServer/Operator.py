@@ -4,42 +4,22 @@ from WeatherHandler import WeatherHandler
 import receive
 import reply
 from Resource import *
+from TypeDef import TypeDef
 
 class OperationType(object):
-    Read = 1
-    Write = 2
-    Check = 3
-    Remove = 4
-    WeatherSub = 5
-    WeatherChk = 6
-    WeatherUnSub = 7
-    UnDefined = 8
-
-    @staticmethod
-    def get_operate_type(action):
-        actions = {
-            "查询" : OperationType.Read,
-            "记录" : OperationType.Write,
-            "查询" : OperationType.Check,
-            "删除" : OperationType.Remove,
-            "天气订阅" : OperationType.WeatherSub,
-            "天气查询" : OperationType.WeatherChk,
-            "取消订阅" : OperationType.WeatherUnSub
-        }
-        return actions.get(action, OperationType.UnDefined)
 
     @staticmethod
     def get_operate_function(action):
         actions = {
-            OperationType.Read : Operate.read,
-            OperationType.Write : Operate.write,
-            OperationType.Check : Operate.check,
-            OperationType.Remove : Operate.remove,
-            OperationType.WeatherSub : Operate.subWeather,
-            OperationType.WeatherChk : Operate.checkWeather,
-            OperationType.WeatherUnSub : Operate.unSubWeather,
+            TypeDef.OP_Read : Operate.read,
+            TypeDef.OP_Write : Operate.write,
+            TypeDef.OP_Check : Operate.check,
+            TypeDef.OP_Remove : Operate.remove,
+            TypeDef.OP_WeatherSub : Operate.subWeather,
+            TypeDef.OP_WeatherChk : Operate.checkWeather,
+            TypeDef.OP_WeatherUnSub : Operate.unSubWeather,
         }
-        return actions.get(action, OperationType.UnDefined)
+        return actions.get(action, TypeDef.Undefined)
 
 
 class Operate(object):
@@ -59,6 +39,7 @@ class Operate(object):
         return content
 
     @staticmethod
+
     def  read(msg):
         pass
 

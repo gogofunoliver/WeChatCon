@@ -61,6 +61,7 @@ class HealthyNotifier(RootThread):
         content = ""
         if user in self.user_wait_list and user == self.user_list[0] and msg == "是":
             DBHandler().insert("INSERT into HealthyRecord VALUES (null, '%s', 'Y', null)" % user)
+
             counts = DBHandler().select("SELECT CreateData from HealthyRecord WHERE IsRecord = 'Y' and CreateData > '2017-07' \
             and CreateData < '2017-08' AND Open_ID = '%s'" % user)[0]
             content = Resource.getMsg("RecordFmt") % (Resource.getMsg("GodSub"), str(counts))

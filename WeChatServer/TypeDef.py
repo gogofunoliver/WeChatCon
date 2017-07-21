@@ -9,18 +9,20 @@ class TypeDef(object):
     OP_WeatherChk = "天气查询"
     OP_WeatherUnSub = "取消订阅"
 
-
-    SystemEvent = [ "subscribe",
-                      "unsubscribe"
-                      "LOCATION",
-    ]
-
-    CustEvent = [ "CLICK", "VIEW"]
-
+    Event_Location = "LOCATION"
     Event_SUB = "subscribe"
     Event_UnSub = "unsubscribe"
     Event_Foody = "FOODY"
     Event_Tavel = "TRAVEL"
     Event_Ma_Eat = "MA_CHI"
     Event_Ma_Sleep = "MA_SLEEP"
+
+    SystemEvent = [ Event_SUB,
+                    Event_UnSub,
+                    Event_Location,
+    ]
+
+    CustEvent = [ "CLICK", "VIEW"]
+
+
 

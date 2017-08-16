@@ -3,8 +3,10 @@ import json
 import time
 from time import sleep
 import threading
+import logging
 
 from WeatherHandler import WeatherHandler
+from DBHandler import DBHandler
 
 class WechatRefresher(object):
     def __init__(self):
@@ -18,12 +20,16 @@ class WechatRefresher(object):
 
 class WeChatHandler(object):
     def __init__(self):
+        self.logger = logging.getLogger("root.WeChatCon")
         self.appID = "wx3efb6e041b52017b"
         self.secrect = "cd937c454a10339fab500e5e093d63b8"
         self.weChatToken = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential"
         self.weChatPreview = "https://api.weixin.qq.com/cgi-bin/message/mass/preview"
         self.token_file = "/wechat/data/token/token_file.data"
         self.custSend = "https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token="
+        self.userInfo = "https://api.weixin.qq.com/cgi-bin/user/info?access_token=%s&openid=%s&lang=en"
+        self.allUesr = "https://api.weixin.qq.com/cgi-bin/user/get?access_token=%s"
+        self.getAllNews = "https://api.weixin.qq.com/cgi-bin/material/batchget_material?access_token=%s"
 
         self.jsonTextInputTep = '{ \
                 "@@TYPE@@": "@@USER@@", \
@@ -33,11 +39,58 @@ class WeChatHandler(object):
                  "msgtype": "text" \
                 }'
 
+    def getUserInfo(self, user_open_ID):
+        token = self.getWeChatToken()
+        requst_url = self.userInfo % (token, user_open_ID)
+        weChatTokenJ = requests.get(requst_url)
+        if weChatTokenJ.status_code == 200:
+            return weChatTokenJ.json()
+        pass
+
+    def getAllUserOpenID(self):
+        token = self.getWeChatToken()
+        Tx_return = requests.get(self.allUesr % token)
+        return Tx_return.json()
+
+    def getAllNewsIntoDB(self):
+        input_jason = { "type":"news",
+                        "offset":0,
+                        "count":20, }
+
+        req_url = self.getAllNews % self.getWeChatToken()
+        Tx_return = requests.post(req_url, data=json.dumps(input_jason).encode('utf-8'))
+        Tx_return.encoding = 'utf-8'
+        all_news = Tx_return.json()['item']
+        for news in all_news:
+            if DBHandler().select("SELECT Title from HistoryArticle WHERE Media_ID = '%s'" % news['media_id'])[0] == 0:
+                detail = news['content']['news_item'][0] #multi-article in 1 post
+                sql = "INSERT into HistoryArticle VALUES (null, '%s', 'zh_CN', '%s', '%s', '%s', null)" \
+                      % (news['media_id'], detail['title'].replace("\'", "\\\'"), detail['url'],
+                         time.strftime("%Y-%m-%d %X", time.localtime(news['update_time'])))
+                self.logger.info("Execute sql: %s" % sql)
+                DBHandler().insert(sql)
+
+    def postNewsToUser(self, open_ID, media_ID):
+        json_input = {
+            "touser": open_ID,
+            "msgtype": "mpnews",
+            "mpnews":
+                {
+                    "media_id": media_ID
+                }
+        }
+
+        r = requests.post(self.custSend + self.getWeChatToken(), data=json.dumps(json_input).encode("utf-8"))
+        status = r.content
+        ret = r.json()['errcode']
+        self.logger.info("Sent to <%s> news. Status: <%s>, <%s>" % (open_ID, ret, status))
+
+
     def getWeChatToken(self, refresh = "false"):
         if refresh == "true":
             url = self.weChatToken + "&appid=" + self.appID + "&secret=" + self.secrect
             weChatTokenJ = requests.get(url)
-            print(weChatTokenJ.content)
+            self.logger.info(weChatTokenJ.content)
             #weChatTokenJ="kUZExF2MAWEragNE0VH_4VDcYrPkAWimc_I2jRFaoOmX5jNdPZSzYwUz0ynt1Wnwh-taWFDsAbCeMrTiAvwLFqzZiY6_2ci84xLWT7Uuh84pDI0ulXBRujqmXKw-lIAVOQVdABAVXC"
 
             if (weChatTokenJ.status_code == 200):
@@ -56,7 +109,7 @@ class WeChatHandler(object):
             token_file = open(self.token_file, "r");
             token = token_file.readline().strip()
             token_file.close()
-            print("Sucess: get token {0}".format(token))
+            self.logger.info("Sucess: get token {0}".format(token))
             return token
 
     #send to a WeChat user to preview the an article or a msg
@@ -67,7 +120,7 @@ class WeChatHandler(object):
         ret = 0
         if type == "towxname":
             postInput = self.jsonTextInputTep.replace("@@TYPE@@", type)
-            postInput = self.jsonTextInputTep.replace("@@USER@@", to_user)
+            postInput = postInput.replace("@@USER@@", to_user)
             postInput = postInput.replace("@@MSG@@", msg)
             r = requests.post(previewURL, data=postInput.encode("utf-8"))
             status = r.content
@@ -79,6 +132,7 @@ class WeChatHandler(object):
             r = requests.post(previewURL, data=postInput.encode("utf-8"))
             status = r.content
             ret = r.json()['errcode']
+        self.logger.info("Sent to : %s. Msg : %s. Status: <%s>, <%s>" % (to_user, msg, ret, status))
         print(status)
         return ret
 
@@ -91,7 +145,7 @@ class WeChatHandler(object):
         ret = 0
         if type == "towxname":
             postInput = self.jsonTextInputTep.replace("@@TYPE@@", type)
-            postInput = self.jsonTextInputTep.replace("@@USER@@", to_user)
+            postInput = postInput.replace("@@USER@@", to_user)
             postInput = postInput.replace("@@MSG@@", msg)
             r = requests.post(sending_url, data=postInput.encode("utf-8"))
             status = r.content
@@ -103,6 +157,7 @@ class WeChatHandler(object):
             r = requests.post(sending_url, data=postInput.encode("utf-8"))
             status = r.content
             ret = r.json()['errcode']
+        self.logger.info("Sent to : %s. Msg : %s. Status: <%s>, <%s>" % (to_user, msg, ret, status))
         print(status)
         return ret
 

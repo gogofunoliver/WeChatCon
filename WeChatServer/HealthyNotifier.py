@@ -9,6 +9,8 @@ from FileHandler import FileHandler
 from WeChatCon import WeChatHandler
 from DBHandler import DBHandler
 from Resource import Resource
+import logging
+from utill import Utill
 
 class HealthyNotifier(RootThread):
     __singleton = None
@@ -20,6 +22,7 @@ class HealthyNotifier(RootThread):
         return HealthyNotifier.__singleton
 
     def __init__(self, msg):
+        self.logger = logging.getLogger("root.HealthyNotifier")
         self.healthy_metrics = {
             "meal" : ("12:00", "18:40"),
             "sleep" : ("23:30"),
@@ -41,17 +44,21 @@ class HealthyNotifier(RootThread):
     #Private
     def __notify(self, msg):
         if msg != "":
-            wechat_con = WeChatHandler()
-
             for user in self.user_list:
-                wechat_con.sendMsgToOneAsPreview(msg + Resource.getMsg("ReYes"), "touser", user)
+                ret = WeChatHandler().sendMsgViaCust(msg + Resource.getMsg("ReYes"), "touser", user)
+                if int(ret) != 0:
+                    print("HealthyNotifier Cust Msg failed..Use preview")
+                    WeChatHandler().sendMsgToOneAsPreview(msg + Resource.getMsg("ReYes"), "touser", user)
                 self.user_wait_list.append(user)
                 threading.Timer(300, self.clear_wait, (user,)).start()
 
     def clear_wait(self, user_open_id):
         if user_open_id in self.user_wait_list:
             self.user_wait_list.remove(user_open_id)
-            WeChatHandler().sendMsgToOneAsPreview(Resource.getMsg("FiveMins"), "touser", user_open_id)
+            ret = WeChatHandler().sendMsgViaCust(Resource.getMsg("FiveMins"), "touser", user_open_id)
+            if int(ret) != 0:
+                print("HealthyNotifier Cust Msg failed..Use preview")
+                WeChatHandler().sendMsgToOneAsPreview(Resource.getMsg("FiveMins"), "touser", user_open_id)
             DBHandler().insert("INSERT into HealthyRecord VALUES (null, '%s', 'N', null)" % user_open_id)
         else:
             #has record into DB when user reply the correct message
@@ -59,19 +66,23 @@ class HealthyNotifier(RootThread):
 
     def check_wait(self, user, msg):
         content = ""
+        counts = 0
         if user in self.user_wait_list and user == self.user_list[0] and msg == "是":
             DBHandler().insert("INSERT into HealthyRecord VALUES (null, '%s', 'Y', null)" % user)
-
-            counts = DBHandler().select("SELECT CreateData from HealthyRecord WHERE IsRecord = 'Y' and CreateData > '2017-07' \
-            and CreateData < '2017-08' AND Open_ID = '%s'" % user)[0]
+            counts = DBHandler().select("SELECT CreateData from HealthyRecord WHERE IsRecord = 'Y' and CreateData > '2017-08' \
+            and CreateData < '2017-09' AND Open_ID = '%s'" % user)[0]
             content = Resource.getMsg("RecordFmt") % (Resource.getMsg("GodSub"), str(counts))
             self.user_wait_list.remove(user)
+            if Utill.is_last_day():
+                content = content + Resource.getMsg("BillHealty") % (counts, counts)
         elif user in self.user_wait_list and user == self.user_list[1] and msg == "是":
             DBHandler().insert("INSERT into HealthyRecord VALUES (null, '%s', 'Y', null)" % user)
-            counts = DBHandler().select("SELECT CreateData from HealthyRecord WHERE IsRecord = 'Y' and CreateData > '2017-07' \
-            and CreateData < '2017-08' AND Open_ID = '%s'" % user)[0]
+            counts = DBHandler().select("SELECT CreateData from HealthyRecord WHERE IsRecord = 'Y' and CreateData > '2017-08' \
+            and CreateData < '2017-09' AND Open_ID = '%s'" % user)[0]
             content =  Resource.getMsg("RecordFmt") % (Resource.getMsg("LingSub"), str(counts))
             self.user_wait_list.remove(user)
+            if Utill.is_last_day():
+                content = content + Resource.getMsg("BillHealty") % (counts, counts)
         return content
 
     def __meal_check(self):
@@ -79,7 +90,7 @@ class HealthyNotifier(RootThread):
         local_time = time.strftime('%H:%M', time.localtime(time.time()))
         if local_time in self.healthy_metrics.get("meal"):
             content = Resource.getMsg("EatTime")
-        return  content
+        return content
 
 
     def __getup_check(self):

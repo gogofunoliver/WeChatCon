@@ -8,6 +8,7 @@ import reply
 from UserHandler import UserHandler
 from FileHandler import FileHandler
 import traceback
+import logging
 from Operator import *
 from Resource import *
 from HealthyNotifier import HealthyNotifier
@@ -16,6 +17,9 @@ from WeChatEventHandler import EventRouter
 from TypeDef import TypeDef
 
 class Handle(object):
+    def __init__(self):
+        self.logger = logging.getLogger("root.ServerEntry")
+
     def GET(self):
         try:
             data = web.input()
@@ -45,40 +49,92 @@ class Handle(object):
     def POST(self):
         try:
             webData = web.data()
-            print("Handle Post webdata is {0}".format(webData))
+            self.logger.info("Handle Post webdata is {0}".format(webData))
             recMsg = receive.parse_xml(webData)
             toUser = recMsg.FromUserName
             fromUser = recMsg.ToUserName
             content = ""
 
-            if isinstance(recMsg, receive.Msg) and recMsg.MsgType == 'text':
+            user_info = WeChatHandler().getUserInfo(toUser)
+            if user_info['subscribe'] == 0:
+                lang = "en"
+            else:
+                lang = user_info['language']
+
+            if isinstance(recMsg, receive.Msg) and recMsg.MsgType == 'voice':
+                if recMsg.Recognition is None or len(recMsg.Recognition) == 0:
+                    content = "Invalid Message"
+                else:
+                    user_say = recMsg.Recognition.replace("。", "").replace("，", "")
+                    content = Resource.getMsg("USay") + user_say + "\n"
+
+                    if user_say == TypeDef.OP_Delete_VM:
+                        action_str = user_say
+                        msg_str = ""
+                    elif user_say == TypeDef.OP_Create_VM:
+                        action_str = user_say
+                        msg_str = ""
+                    #e.g. 记录测试测试测试测试。。。> 4
+                    elif len(user_say) >= 4 and user_say[0:2] == TypeDef.OP_Write:
+                        action_str = TypeDef.OP_Write
+                        msg_str = user_say[2:]
+                    #天气查询，天气订阅，取消订阅，历史记录
+                    elif len(user_say) >= 4:
+                        #non-record operaiton
+                        action_str = user_say[0:4]
+                        msg_str =  user_say[4:]
+                    elif len(user_say) == 1:
+                        action_str = user_say
+                        msg_str = ""
+                    else:
+                        action_str = user_say[0:2]
+                        msg_str = user_say[2:]
+
+                    check_resoult = HealthyNotifier.get_instance().check_wait(toUser, user_say)
+                    if check_resoult == "":
+                        func = OperationType.get_operate_function(action_str)
+                        if func == TypeDef.Undefined:
+                            if ActionsExecutor.has_manual_actions(toUser):
+                                content += ActionsExecutor.exuecte_actions(toUser, action_str)
+                            else:
+                                content += Resource.getMsg("Unidentified", lang) + "\n" + Resource.getMsg("Menu", lang)
+                        else:
+                            content += func(msg_str, recMsg.FromUserName, lang)
+                    else:
+                        content += check_resoult
+
+            elif isinstance(recMsg, receive.Msg) and recMsg.MsgType == 'text':
                 cnstr = recMsg.Content.decode()
+                self.logger.info("received msg : %s" % cnstr)
                 #print(cnstr)
                 action_str = cnstr.split(" ", 1)[0]
                 if action_str == cnstr:
                     msg_str = ""
                 else:
-                    msg_str = cnstr.split(" ", 1)[1]
+                    msg_str = cnstr.split(" ", 1)[1].strip()
 
                 content = HealthyNotifier.get_instance().check_wait(toUser, cnstr)
                 if content == "":
                     func = OperationType.get_operate_function(action_str)
-                    if (func == TypeDef.Undefined):
+                    if func == TypeDef.Undefined:
                         if ActionsExecutor.has_manual_actions(toUser):
-                            ActionsExecutor.exuecte_actions(toUser, action_str)
-                            return "success"
+                            content = ActionsExecutor.exuecte_actions(toUser, action_str)
                         else:
-                            content = Resource.getMsg("Unidentified") + "\n" + Resource.getMsg("Menu")
+                            content = Resource.getMsg("Unidentified", lang) + "\n" + Resource.getMsg("Menu", lang)
                     else:
-                        content = func(msg_str, recMsg.FromUserName)
+                        content = func(msg_str, recMsg.FromUserName, lang)
             elif isinstance(recMsg, receive.Msg) and recMsg.MsgType == 'event':
                     func = EventRouter.get_envent_func(recMsg.event, recMsg.key_value)
-                    content = func()
+                    content = func(toUser)
             else:
-                content = Resource.getMsg("WrongTypeMsg")
+                content = Resource.getMsg("WrongTypeMsg", lang)
 
-            replyMsg = reply.TextMsg(toUser, fromUser, content)
-            return replyMsg.send()
+            if content is None or len(content) == 0:
+                return "success"
+            else:
+                self.logger.info("Reply : %s" % content)
+                replyMsg = reply.TextMsg(toUser, fromUser, content)
+                return replyMsg.send()
 
         except Exception as Argment:
             traceback.print_exc()

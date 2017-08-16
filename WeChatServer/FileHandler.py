@@ -2,10 +2,12 @@ import sys, io, os
 import time
 import codecs
 
+
 class Record(object):
     def __init__(self, msg):
         self.local_time = time.strftime('%Y-%m-%d@@%H:%M:%S', time.localtime(time.time()))
         self.msg = msg
+
 
 class FileHandler(object):
     def __init__(self, user):
@@ -68,6 +70,7 @@ class FileHandler(object):
         file_handler.close()
 
         file_handler = codecs.open(self.__data__, 'w', 'utf-8')
+
         file_handler.write(new_text)
         file_handler.close()
 

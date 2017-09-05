@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="oliver_cn_gogofun@123.207.172.207">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.2">
+    <root id="1"/>
+    <schema id="2" parent="1" name="oliver_cn_gogofun">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="test"/>
+    <table id="6" parent="2" name="AWS_Record"/>
+    <table id="7" parent="2" name="HealthyRecord"/>
+    <table id="8" parent="2" name="HistoryArticle"/>
+    <table id="9" parent="2" name="JokeList"/>
+    <table id="10" parent="2" name="NotePad"/>
+    <table id="11" parent="2" name="UserInfo"/>
+    <table id="12" parent="2" name="WeatherSub"/>
+    <table id="13" parent="2" name="test"/>
+    <column id="14" parent="6" name="IND">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="15" parent="6" name="ResourceType">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="16" parent="6" name="ResID">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="17" parent="6" name="Message">
+      <Position>4</Position>
+      <DataType>varchar(500)|0</DataType>
+    </column>
+    <column id="18" parent="6" name="Region">
+      <Position>5</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <index id="19" parent="6" name="AWS_Record_IND_uindex">
+      <ColNames>IND</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="20" parent="6" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>IND</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="21" parent="6" name="AWS_Record_IND_uindex">
+      <ColNames>IND</ColNames>
+      <UnderlyingIndexName>AWS_Record_IND_uindex</UnderlyingIndexName>
+    </key>
+    <column id="22" parent="7" name="IND">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="23" parent="7" name="Open_ID">
+      <Position>2</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="24" parent="7" name="IsRecord">
+      <Position>3</Position>
+      <DataType>varchar(5)|0</DataType>
+    </column>
+    <column id="25" parent="7" name="CreateData">
+      <Position>4</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <index id="26" parent="7" name="HealthyRecord_IND_uindex">
+      <ColNames>IND</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="27" parent="7" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>IND</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="28" parent="7" name="HealthyRecord_IND_uindex">
+      <ColNames>IND</ColNames>
+      <UnderlyingIndexName>HealthyRecord_IND_uindex</UnderlyingIndexName>
+    </key>
+    <column id="29" parent="8" name="IDX">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="30" parent="8" name="Media_ID">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="31" parent="8" name="Language">
+      <Position>3</Position>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <column id="32" parent="8" name="Title">
+      <Position>4</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="33" parent="8" name="Url">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="34" parent="8" name="Content">
+      <Position>6</Position>
+      <DataType>datetime|0</DataType>
+    </column>
+    <column id="35" parent="8" name="LastUpate">
+      <Position>7</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <index id="36" parent="8" name="HistoryArticle_IDX_uindex">
+      <ColNames>IDX</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="37" parent="8" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>IDX</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="38" parent="8" name="HistoryArticle_IDX_uindex">
+      <ColNames>IDX</ColNames>
+      <UnderlyingIndexName>HistoryArticle_IDX_uindex</UnderlyingIndexName>
+    </key>
+    <column id="39" parent="9" name="Content">
+      <Position>1</Position>
+      <DataType>varchar(1000)|0</DataType>
+    </column>
+    <column id="40" parent="10" name="IND">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="41" parent="10" name="Open_ID">
+      <Position>2</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="42" parent="10" name="RecoreData">
+      <Position>3</Position>
+      <DataType>timestamp|0</DataType>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <column id="43" parent="10" name="Note">
+      <Position>4</Position>
+      <DataType>varchar(500)|0</DataType>
+    </column>
+    <column id="44" parent="11" name="Open_ID">
+      <Position>1</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="45" parent="11" name="VIP">
+      <Position>2</Position>
+      <DataType>varchar(5)|0</DataType>
+    </column>
+    <column id="46" parent="11" name="WechatName">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="47" parent="11" name="CnName">
+      <Position>4</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="48" parent="11" name="Sex">
+      <Position>5</Position>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <column id="49" parent="11" name="EnName">
+      <Position>6</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="50" parent="11" name="Birth">
+      <Position>7</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <column id="51" parent="11" name="AnyBackup">
+      <Position>8</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="52" parent="11" name="Address">
+      <Position>9</Position>
+      <DataType>varchar(100)|0</DataType>
+    </column>
+    <column id="53" parent="11" name="Backup2">
+      <Position>10</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <index id="54" parent="11" name="UserInfo_Open_ID_uindex">
+      <ColNames>Open_ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="55" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>Open_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="56" parent="11" name="UserInfo_Open_ID_uindex">
+      <ColNames>Open_ID</ColNames>
+      <UnderlyingIndexName>UserInfo_Open_ID_uindex</UnderlyingIndexName>
+    </key>
+    <column id="57" parent="12" name="Open_ID">
+      <Position>1</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="58" parent="12" name="Cities">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="59" parent="12" name="UpdateTime">
+      <Position>3</Position>
+      <DataType>timestamp|0</DataType>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <index id="60" parent="12" name="WeatherSub_Open_ID_uindex">
+      <ColNames>Open_ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="61" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>Open_ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="62" parent="12" name="WeatherSub_Open_ID_uindex">
+      <ColNames>Open_ID</ColNames>
+      <UnderlyingIndexName>WeatherSub_Open_ID_uindex</UnderlyingIndexName>
+    </key>
+    <column id="63" parent="13" name="t1">
+      <Position>1</Position>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+  </database-model>
+</dataSource>

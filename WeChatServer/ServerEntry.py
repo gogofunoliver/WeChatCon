@@ -15,6 +15,7 @@ from HealthyNotifier import HealthyNotifier
 from ActionHandler import ActionsExecutor
 from WeChatEventHandler import EventRouter
 from TypeDef import TypeDef
+from WeChatDownload import GoogleCaller
 
 class Handle(object):
     def __init__(self):
@@ -66,8 +67,10 @@ class Handle(object):
                     content = "Invalid Message"
                 else:
                     user_say = recMsg.Recognition.replace("。", "").replace("，", "")
-                    content = Resource.getMsg("USay") + user_say + "\n"
+                    content = Resource.getMsg("USay") + user_say + "\n" + "Media ID: " + recMsg.MediaId + "\n"
+                    ActionsExecutor.add_auto_action(Action(GoogleCaller().callGoogle, recMsg.MediaId))
 
+                    '''
                     if user_say == TypeDef.OP_Delete_VM:
                         action_str = user_say
                         msg_str = ""
@@ -102,7 +105,7 @@ class Handle(object):
                             content += func(msg_str, recMsg.FromUserName, lang)
                     else:
                         content += check_resoult
-
+                 '''
             elif isinstance(recMsg, receive.Msg) and recMsg.MsgType == 'text':
                 cnstr = recMsg.Content.decode()
                 self.logger.info("received msg : %s" % cnstr)

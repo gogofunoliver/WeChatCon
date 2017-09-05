@@ -193,7 +193,7 @@ class Operate(object):
             msg = Resource.getMsg("DeletedEC2", lang) % "，".join(delete_list)
         else:
             msg = Resource.getMsg("NoInstance", lang)
-        WeChatHandler().sendMsgToOneAsPreview(msg)
+        WeChatHandler().sendMsgToOneAsPreview(msg, "touser", fromUser)
 
     @staticmethod
     def onCreateVM2(fromUser, lang):
@@ -214,5 +214,5 @@ class Operate(object):
         msg = "Create VM id <%s> with AMI <%s>. Private IP <%s>, Public IP <%s>" % \
               (vm['id'], vm['ami'], vm['private_ip'], vm['public_ip'])
         print(msg)
-        WeChatHandler().sendMsgToOneAsPreview(msg)
+        WeChatHandler().sendMsgToOneAsPreview(msg, "touser", fromUser)
         print("onCreateVM2 out")

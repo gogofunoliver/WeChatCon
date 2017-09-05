@@ -16,6 +16,7 @@ class UserHandler(object):
         "oHBF6wUHaE4L2yUfhKMBqcrjoi0g": 1, #oliver
         "oHBF6wR4kUe4KUNtMMN4J0LKXsPE": 2, #chun
         "oHBF6wTt-wD22eAwEJLVozjcQjxo": 3, #Jesse
+        "oHBF6wRiecgOOlymR73g-Xa8OcD8": 4, #Oliver2
     }
 
     user_name = {

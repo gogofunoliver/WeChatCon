@@ -69,16 +69,16 @@ class HealthyNotifier(RootThread):
         counts = 0
         if user in self.user_wait_list and user == self.user_list[0] and msg == "是":
             DBHandler().insert("INSERT into HealthyRecord VALUES (null, '%s', 'Y', null)" % user)
-            counts = DBHandler().select("SELECT CreateData from HealthyRecord WHERE IsRecord = 'Y' and CreateData > '2017-08' \
-            and CreateData < '2017-09' AND Open_ID = '%s'" % user)[0]
+            counts = DBHandler().select("SELECT CreateData from HealthyRecord WHERE IsRecord = 'Y' and CreateData > '2017-09' \
+            and CreateData < '2017-10' AND Open_ID = '%s'" % user)[0]
             content = Resource.getMsg("RecordFmt") % (Resource.getMsg("GodSub"), str(counts))
             self.user_wait_list.remove(user)
             if Utill.is_last_day():
                 content = content + Resource.getMsg("BillHealty") % (counts, counts)
         elif user in self.user_wait_list and user == self.user_list[1] and msg == "是":
             DBHandler().insert("INSERT into HealthyRecord VALUES (null, '%s', 'Y', null)" % user)
-            counts = DBHandler().select("SELECT CreateData from HealthyRecord WHERE IsRecord = 'Y' and CreateData > '2017-08' \
-            and CreateData < '2017-09' AND Open_ID = '%s'" % user)[0]
+            counts = DBHandler().select("SELECT CreateData from HealthyRecord WHERE IsRecord = 'Y' and CreateData > '2017-09' \
+            and CreateData < '2017-10' AND Open_ID = '%s'" % user)[0]
             content =  Resource.getMsg("RecordFmt") % (Resource.getMsg("LingSub"), str(counts))
             self.user_wait_list.remove(user)
             if Utill.is_last_day():

@@ -21,7 +21,7 @@ class BirthDayNotifier(RootThread):
     def run(self, arg):
         today_match = {"": ""}
         while(1):
-            all_user_birth = DBHandler().select("SELECT Open_ID,BirthDay from UserInfo")
+            all_user_birth = DBHandler().select("SELECT Open_ID,Birth from UserInfo")
             for user_line in all_user_birth[1]:
                 user_id = user_line[0]
                 if user_line[1] is not None:

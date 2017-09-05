@@ -29,7 +29,7 @@ class WeChatEventHanlder(Operate):
                                   'country']).replace("\'", "\\\'"))
             DBHandler().insert(user_insert_sql)
         else:
-            update_sql = "UPDATE UserInfo SET WechatName = '%s',Sex='%s',Location='%s' WHERE Open_ID = '%s'"\
+            update_sql = "UPDATE UserInfo SET WechatName = '%s',Sex='%s',Address='%s' WHERE Open_ID = '%s'"\
                          %  (user_dict['nickname'], TypeDef.sex_dict[user_dict['sex']],
                          (user_dict['city'] + ',' + user_dict['province'] + ',' + user_dict['country']).replace("\'", "\\\'"),
                             user_open_ID)

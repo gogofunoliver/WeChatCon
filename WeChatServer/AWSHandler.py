@@ -27,7 +27,7 @@ class AWSHandler(object):
 
             message_to_send = aws_msg["message"]
             wechat_con = WeChatHandler()
-            if int(wechat_con.sendMsgToOneAsPreview(message_to_send, "touser", "oHBF6wUHaE4L2yUfhKMBqcrjoi0g")) == 0:
+            if int(wechat_con.sendMsgToOneAsPreview(message_to_send, "touser", "oHBF6wRiecgOOlymR73g-Xa8OcD8")) == 0:
                 return "sending to wechat successfully"
             else:
                 return "failed sending to wechat"

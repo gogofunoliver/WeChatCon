@@ -139,24 +139,18 @@ class WeChatHandler(object):
 
     #send to a WeChat user to preview the an article or a msg
     def sendMsgViaCust(self, msg, type="towxname", to_user="szwlove"):
+        wechatInput = {
+            "touser": to_user,
+            "text": {
+                "content": msg,
+            },
+            "msgtype": "text",
+        }
         token = self.getWeChatToken()
         sending_url = self.custSend + token
-        status = ""
-        ret = 0
-        if type == "towxname":
-            postInput = self.jsonTextInputTep.replace("@@TYPE@@", type)
-            postInput = postInput.replace("@@USER@@", to_user)
-            postInput = postInput.replace("@@MSG@@", msg)
-            r = requests.post(sending_url, data=postInput.encode("utf-8"))
-            status = r.content
-            ret = r.json()['errcode']
-        elif type == "touser":
-            postInput = self.jsonTextInputTep.replace("@@TYPE@@", type)
-            postInput = postInput.replace("@@USER@@", to_user)
-            postInput = postInput.replace("@@MSG@@", msg)
-            r = requests.post(sending_url, data=postInput.encode("utf-8"))
-            status = r.content
-            ret = r.json()['errcode']
+        r = requests.post(sending_url, data=json.dumps(wechatInput, ensure_ascii=False).encode("utf-8"))
+        status = r.content
+        ret = r.json()['errcode']
         self.logger.info("Sent to : %s. Msg : %s. Status: <%s>, <%s>" % (to_user, msg, ret, status))
         print(status)
         return ret

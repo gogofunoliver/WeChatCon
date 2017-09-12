@@ -5,6 +5,7 @@ import web
 from WeChatCon import *
 from DBHandler import DBHandler
 
+
 class AWSHandler(object):
     def GET(self):
         try:

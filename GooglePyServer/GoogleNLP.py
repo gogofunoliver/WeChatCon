@@ -8,7 +8,7 @@ import web
 
 class GoogleNLPPorocesor(object):
     def __init__(self):
-        self.api_key = "AIzaSyAY76WK33RjZQ8vr-leUBoIftmqLsrBuM8"
+        self.api_key = os.environ.get('GOOGLE_KEY', 'Unknown')
         pass
 
     def voiceToText(self, voiceInput):

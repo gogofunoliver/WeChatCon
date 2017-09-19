@@ -4,6 +4,7 @@
 import traceback
 import requests
 import json
+import os
 import web
 
 class GoogleNLPPorocesor(object):
@@ -11,15 +12,24 @@ class GoogleNLPPorocesor(object):
         self.api_key = os.environ.get('GOOGLE_KEY', 'Unknown')
         pass
 
-    def voiceToText(self, voiceInput):
+    def voiceToText(self, voiceInput, lang = "cmn-Hans-CN"):
         content = ""
         try:
+            if lang == "SetZH":
+                language = "cmn-Hans-CN"
+            elif lang == "SetEN":
+                language = "en-US"
+            elif lang == "SetCT":
+                language = "yue-Hant-HK"
+            else:
+                language = "cmn-Hans-CN"
+
             google_nlp_input = {
                 "config":
                     {
                         "encoding": "AMR",
                         "sampleRateHertz": 8000,
-                        "languageCode": "cmn-Hans-CN",
+                        "languageCode": language,
                         "enableWordTimeOffsets": False
                     },
                 "audio":

@@ -36,6 +36,7 @@ class WeChatEventHanlder(Operate):
             DBHandler().update(update_sql)
 
         return_msg = Resource.getMsg("WlcMsg", user_dict['language'])
+        '''
         if user_dict['language'] == "zh_CN":
             sql_query = "Select IDX,Media_ID,Title from HistoryArticle"
         else:
@@ -48,6 +49,7 @@ class WeChatEventHanlder(Operate):
         threading.Timer(3, WeChatHandler().sendMsgViaCust,
                         (Resource.getMsg("Menu", user_dict['language']), "touser", user_open_ID)
                         ).start()
+       '''
         return return_msg
 
     @staticmethod
@@ -116,6 +118,22 @@ class WeChatEventHanlder(Operate):
         lang = user_dict['language']
         return Resource.getMsg("AboutMe", lang)
 
+    @staticmethod
+    def onSetZH(user_open_ID):
+        TypeDef.LANG = TypeDef.Event_SetZH
+        return "设置中文"
+
+    @staticmethod
+    def onSetEN(user_open_ID):
+        TypeDef.LANG = TypeDef.Event_SetEN
+        return "Set English"
+
+    @staticmethod
+    def onSetCT(user_open_ID):
+        TypeDef.LANG = TypeDef.Event_SetCT
+        return "Set Cantonese"
+
+
 
 class EventRouter(object):
     __sys_event = { TypeDef.Event_SUB : WeChatEventHanlder.onSub,
@@ -132,6 +150,9 @@ class EventRouter(object):
                  TypeDef.Event_ApplyVM : WeChatEventHanlder.onCreateVMByClick,
                  TypeDef.Event_About_Me : WeChatEventHanlder.showAboutMe,
                  TypeDef.Event_RemoveVM : WeChatEventHanlder.onRemoveVMByClick,
+                 TypeDef.Event_SetEN : WeChatEventHanlder.onSetEN,
+                 TypeDef.Event_SetZH : WeChatEventHanlder.onSetZH,
+                 TypeDef.Event_SetCT: WeChatEventHanlder.onSetCT,
     }
 
     @staticmethod

@@ -27,7 +27,11 @@ class TypeDef(object):
     Event_ApplyVM = "ApplyVM"
     Event_RemoveVM = "RemoveVM"
     Event_About_Me = "About_Me"
+    Event_SetZH = "SetZH"
+    Event_SetEN = "SetEN"
+    Event_SetCT = "SetCT"
 
+    LANG = Event_SetZH
 
     SystemEvent = [ Event_SUB,
                     Event_UnSub,

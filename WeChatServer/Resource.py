@@ -10,8 +10,9 @@ class Resource(object):
     #Private
     __MSG = {
         "en" : {
-            "WlcMsg" : "Thanks for subscribing our channel. We aim to eat everywhere and travel to everywhere you want " \
-                   "without any language specifications. History articles as below. Reply \"View No.\" to check (e.g. View 1)\n----------------\n",
+            "WlcMsg" : "Welcome to follow us. You can test the voice recognition feature..",
+            #"WlcMsg" : "Thanks for subscribing our channel. We aim to eat everywhere and travel to everywhere you want " \
+            #       "without any language specifications. History articles as below. Reply \"View No.\" to check (e.g. View 1)\n----------------\n",
             "Menu" : "The Support Command as below\n------------------\n"
                      "View No. (eg. View 1)\n"
                      "History (eg. History)\n"
@@ -47,9 +48,10 @@ class Resource(object):
         },
 
         "zh_CN" : {
-            "WlcMsg": "欢迎关注我们。我们会根据你的手机语言推送相关的语言游记，以及文章。" \
-                             "希望我们可以让旅游和生活没有语言障碍~~" \
-                             "以下为历史文章，回复“文章 序号”查看\n*****************\n",
+            "WlcMsg": "欢迎关注并测试语音识别功能",
+            #"WlcMsg": "欢迎关注我们。我们会根据你的手机语言推送相关的语言游记，以及文章。" \
+            #                 "希望我们可以让旅游和生活没有语言障碍~~" \
+            #                 "以下为历史文章，回复“文章 序号”查看\n*****************\n",
             "Menu" : "详细支持的命令格式如下（你也可以对着麦克风喊出如下的命令）："
                      "\n*****************\n"
                      "天气查询 城市名\n"

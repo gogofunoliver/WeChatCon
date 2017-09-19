@@ -25,6 +25,7 @@ class Handle(object):
         try:
             data = web.input()
             if len(data) == 0:
+
                 return "hello, this is handle view"
             #wechat authoticaiton
             signature = data.signature
@@ -66,8 +67,9 @@ class Handle(object):
                 if recMsg.Recognition is None or len(recMsg.Recognition) == 0:
                     content = "Invalid Message"
                 else:
-                    user_say = recMsg.Recognition.replace("。", "").replace("，", "")
-                    content = Resource.getMsg("USay") + user_say + "\n" + "Media ID: " + recMsg.MediaId + "\n"
+                    user_say = recMsg.Recognition#.replace("。", "").replace("，", "")
+                    #content = Resource.getMsg("USay") + user_say + "\n" + "Media ID: " + recMsg.MediaId + "\n"
+                    content = "微信识别：" + user_say
                     ActionsExecutor.add_auto_action(Action(GoogleCaller().callGoogle, recMsg.MediaId, toUser))
 
                     '''

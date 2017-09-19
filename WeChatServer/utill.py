@@ -102,19 +102,11 @@ class Test1(object):
         self.__lock.release()
 
 if __name__ == "__main__":
-    #aws_create_vm_cmd = "/root/aws_script/terraform_sample/aws_start.sh"
-    #os.system(aws_create_vm_cmd)
-    resut = Utill.is_last_day()
-    vm_status = os.popen("cd /root/aws_script/terraform_sample; terraform show")
-    vm = {}
-    for line in vm_status.readlines():
-        key_value = line.split("=")
-        if type(key_value) == list and len(key_value) == 2:
-            key = key_value[0].strip()
-            value = key_value[1].strip().strip("\n")
-            vm[key] = value
-    vm_status.close()
-
-    msg = "Create VM id <%s> with AMI <%s>. Public IP <%s>, Private IP <%s>" % \
-          (vm['id'], vm['ami'], vm['private_ip'], vm['public_ip'])
-    print(msg)
+   from WeChatDownload import BaiduCaller
+   import base64, sys, os
+   f = open("/tmp/voice.amr", "rb")
+   speech = base64.b64encode(f.read())
+   str_s = str(speech, encoding="gbk")
+   size = os.path.getsize("/tmp/voice.amr")
+   BaiduCaller().callBaidu(size, str_s)
+   pass

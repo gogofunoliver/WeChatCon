@@ -28,9 +28,12 @@ class GoogleHanlder(object):
         analysis = {}
         try:
             webData = web.data()
+            all_input = json.loads(webData)
+            audio = all_input['audio']
+            lang = all_input['lang']
             process = GoogleNLPPorocesor()
             #google
-            text = process.voiceToText(webData)
+            text = process.voiceToText(audio, lang)
             print(text)
             analysis = process.anlysisText(text[0]['transcript'])
             print(analysis)

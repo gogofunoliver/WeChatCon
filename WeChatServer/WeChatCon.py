@@ -4,6 +4,7 @@ import time
 from time import sleep
 import threading
 import logging
+import traceback
 
 from WeatherHandler import WeatherHandler
 from DBHandler import DBHandler
@@ -30,6 +31,8 @@ class WeChatHandler(object):
         self.userInfo = "https://api.weixin.qq.com/cgi-bin/user/info?access_token=%s&openid=%s&lang=en"
         self.allUesr = "https://api.weixin.qq.com/cgi-bin/user/get?access_token=%s"
         self.getAllNews = "https://api.weixin.qq.com/cgi-bin/material/batchget_material?access_token=%s"
+        self.downLoadVoiceUrl = "https://api.weixin.qq.com/cgi-bin/media/get?access_token=%s&media_id=%s"
+        self.uploadVoiceUrl = "https://api.weixin.qq.com/cgi-bin/media/upload?access_token=%s&type=voice"
 
         self.jsonTextInputTep = '{ \
                 "@@TYPE@@": "@@USER@@", \
@@ -154,6 +157,32 @@ class WeChatHandler(object):
         self.logger.info("Sent to : %s. Msg : %s. Status: <%s>, <%s>" % (to_user, msg, ret, status))
         print(status)
         return ret
+
+    def downloadVoiceAsFile(self, mediaID, saveFile):
+        token = self.getWeChatToken()
+        url = self.downLoadVoiceUrl % (token, mediaID)
+
+        ret = requests.get(url)
+        with open(saveFile, "wb") as fh:
+            fh.write(ret.content)
+
+        pass
+
+    def uploadVoiceFile(self, voiceFile):
+        token = self.getWeChatToken()
+        url = self.uploadVoiceUrl % token
+
+        files = {"file" : open(voiceFile, "rb")}
+
+        retMsg = ""
+        try:
+            ret = requests.post(url, files=files)
+            retMsg = ret.json()["media_id"]
+            print(retMsg)
+        except Exception as Ex:
+            traceback.print_exc()
+        finally:
+            return retMsg
 
 
     #send MSG to dedicated group with ID

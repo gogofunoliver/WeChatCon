@@ -10,6 +10,14 @@
           <option name="port" value="22" />
         </fileTransfer>
       </webServer>
+      <webServer id="8e717085-63eb-4977-8399-9415ea47758e" name="fcr_google" url="http://fcr_google">
+        <fileTransfer host="fcr_google" port="22" privateKey="$USER_HOME$/fcr_google.ira" accessType="SFTP" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>

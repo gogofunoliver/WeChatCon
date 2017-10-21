@@ -5,7 +5,7 @@
       <paths name="google2">
         <serverdata>
           <mappings>
-            <mapping deploy="/home/admin/PyCode" local="$PROJECT_DIR$" web="google" />
+            <mapping deploy="/home/wechat/PyCode" local="$PROJECT_DIR$" web="google" />
           </mappings>
         </serverdata>
       </paths>

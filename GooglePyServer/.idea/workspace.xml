@@ -10,17 +10,17 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/GooglePyServer$googlepy27.coverage" NAME="googlepy27 Coverage Results" MODIFIED="1507559837881" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LocalPyServer$googlepy27.coverage" NAME="googlepy27 Coverage Results" MODIFIED="1505144286175" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LocalPyServer$LocalPyServer.coverage" NAME="LocalPyServer Coverage Results" MODIFIED="1504443153570" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="Main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="19" />
+            <state relative-caret-position="150">
+              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding>
                 <element signature="e#45#55#0" expanded="true" />
               </folding>
@@ -28,63 +28,45 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GoogleHanlder.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GoogleHanlder.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GoogleHanlder.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="35" column="27" lean-forward="false" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="27" />
+            <state relative-caret-position="435">
+              <caret line="34" column="32" lean-forward="false" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
               <folding>
-                <element signature="e#54#69#0" expanded="true" />
+                <element signature="e#63#78#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="__builtin__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.PyCharm2017.1/system/python_stubs/2024536394/__builtin__.py">
+      <file leaf-file-name="LexConnector.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/LexConnector.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34447">
-              <caret line="1813" column="8" lean-forward="false" selection-start-line="1813" selection-start-column="8" selection-end-line="1813" selection-end-column="8" />
-              <folding />
+            <state relative-caret-position="335">
+              <caret line="35" column="26" lean-forward="false" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="application.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.PyCharm2017.1/system/remote_sources/2024536394/1020429489/web/application.py">
+        <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.2/remote_sources/-1172822587/1020429489/web/application.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8056">
+            <state relative-caret-position="6360">
               <caret line="437" column="0" lean-forward="false" selection-start-line="437" selection-start-column="0" selection-end-line="437" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="httpserver.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.PyCharm2017.1/system/remote_sources/2024536394/1020429489/web/httpserver.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5662">
-              <caret line="305" column="0" lean-forward="false" selection-start-line="305" selection-start-column="0" selection-end-line="305" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.PyCharm2017.1/system/remote_sources/2024536394/1020429489/web/wsgiserver/__init__.py">
+        <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.2/remote_sources/-1172822587/1020429489/boto3/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="26068">
-              <caret line="1374" column="0" lean-forward="false" selection-start-line="1374" selection-start-column="0" selection-end-line="1374" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="threading.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.PyCharm2017.1/system/remote_sources/2024536394/1046329483/threading.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="14744">
-              <caret line="776" column="0" lean-forward="false" selection-start-line="776" selection-start-column="0" selection-end-line="776" selection-end-column="0" />
+            <state relative-caret-position="1200">
+              <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -93,10 +75,10 @@
       <file leaf-file-name="GoogleNLP.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GoogleNLP.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="18" column="21" lean-forward="false" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+            <state relative-caret-position="630">
+              <caret line="46" column="23" lean-forward="false" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
               <folding>
-                <element signature="e#51#67#0" expanded="true" />
+                <element signature="e#59#75#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -111,12 +93,18 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>api_key</find>
+    </findStrings>
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Main.py" />
-        <option value="$PROJECT_DIR$/GoogleNLP.py" />
+        <option value="$PROJECT_DIR$/LexConnector.py" />
         <option value="$PROJECT_DIR$/GoogleHanlder.py" />
+        <option value="$PROJECT_DIR$/GoogleNLP.py" />
       </list>
     </option>
   </component>
@@ -127,10 +115,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="817" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -147,35 +134,18 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LocalPyServer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="&lt; py27.13 (ssh://admin@google2:22/usr/bin/python) &gt;" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LocalPyServer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LocalPyServer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
+          <expand>
+            <path>
+              <item name="GooglePyServer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GooglePyServer" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -197,6 +167,32 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.googlepy27">
+    <configuration name="LocalPyServer" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\admin\AppData\Local\Programs\Python\Python36-32\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="LocalPyServer" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main.py" />
+      <option name="PARAMETERS" value="80" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+    </configuration>
     <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -293,15 +289,6 @@
       <module name="LocalPyServer" />
       <method />
     </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
       <command value="run" />
       <scripts />
@@ -345,44 +332,32 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method />
     </configuration>
-    <configuration default="false" name="LocalPyServer" type="PythonConfigurationType" factoryName="Python">
+    <configuration name="googlepy27" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="" value="" />
+        <env name="GOOGLE_APPLICATION_CREDENTIALS" value="/home/admin/.google/my-szw-proxy-59714cda7a7f.json" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\admin\AppData\Local\Programs\Python\Python36-32\python.exe" />
+      <option name="SDK_HOME" value="ssh://wechat@google2:22/usr/bin/python" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="LocalPyServer" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main.py" />
-      <option name="PARAMETERS" value="80" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="googlepy27" type="PythonConfigurationType" factoryName="Python">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-        <env name="GOOGLE_APPLICATION_CREDENTIALS" value="/home/admin/.google/my-szw-proxy-59714cda7a7f.json" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="LocalPyServer" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <PathMappingSettings>
+        <option name="pathMappings">
+          <list>
+            <mapping local-root="$PROJECT_DIR$" remote-root="/home/wechat/PyCode" />
+          </list>
+        </option>
+      </PathMappingSettings>
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main.py" />
       <option name="PARAMETERS" value="18080" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
-      <method />
     </configuration>
     <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Python.LocalPyServer" />
@@ -412,39 +387,51 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="0" y="23" width="1440" height="817" extended-state="0" />
     <editor active="true" />
     <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26895565" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.49394855" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31699347" sideWeight="0.5173979" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31699347" sideWeight="0.48260212" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42520776" sideWeight="0.26323318" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.49394855" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.4969743" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25113463" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32692307" sideWeight="0.823319" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42156863" sideWeight="0.77231467" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.4969743" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42083332" sideWeight="0.7367668" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31687242" sideWeight="0.47997138" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="processedProjectFiles" value="true" />
+    <option name="version" value="1" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/LexConnector.py</url>
+          <line>20</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/LexConnector.py</url>
+          <line>43</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -452,11 +439,31 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="20" />
+      <option name="time" value="28" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/GoogleNLP.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="18" column="21" lean-forward="false" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+          <folding>
+            <element signature="e#59#75#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GoogleHanlder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="35" column="27" lean-forward="false" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="27" />
+          <folding>
+            <element signature="e#63#78#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -467,52 +474,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2017.1/system/python_stubs/2024536394/__builtin__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34447">
-          <caret line="1813" column="8" lean-forward="false" selection-start-line="1813" selection-start-column="8" selection-end-line="1813" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2017.1/system/remote_sources/2024536394/1020429489/web/application.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8056">
-          <caret line="437" column="0" lean-forward="false" selection-start-line="437" selection-start-column="0" selection-end-line="437" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2017.1/system/remote_sources/2024536394/1020429489/web/httpserver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5662">
-          <caret line="305" column="0" lean-forward="false" selection-start-line="305" selection-start-column="0" selection-end-line="305" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2017.1/system/remote_sources/2024536394/1020429489/web/wsgiserver/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26068">
-          <caret line="1374" column="0" lean-forward="false" selection-start-line="1374" selection-start-column="0" selection-end-line="1374" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2017.1/system/remote_sources/2024536394/1046329483/threading.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14744">
-          <caret line="776" column="0" lean-forward="false" selection-start-line="776" selection-start-column="0" selection-end-line="776" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2017.1/system/python_stubs/2024536394/__builtin__.py" />
+    <entry file="file://$USER_HOME$/.PyCharm2017.1/system/remote_sources/2024536394/1020429489/web/application.py" />
+    <entry file="file://$USER_HOME$/.PyCharm2017.1/system/remote_sources/2024536394/1020429489/web/httpserver.py" />
+    <entry file="file://$USER_HOME$/.PyCharm2017.1/system/remote_sources/2024536394/1020429489/web/wsgiserver/__init__.py" />
+    <entry file="file://$USER_HOME$/.PyCharm2017.1/system/remote_sources/2024536394/1046329483/threading.py" />
     <entry file="file://$PROJECT_DIR$/GoogleNLP.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="703">
           <caret line="40" column="30" lean-forward="false" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
           <folding>
-            <element signature="e#51#67#0" expanded="true" />
+            <element signature="e#59#75#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -522,7 +494,7 @@
         <state relative-caret-position="760">
           <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
           <folding>
-            <element signature="e#54#69#0" expanded="true" />
+            <element signature="e#63#78#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -542,57 +514,22 @@
         <state relative-caret-position="133">
           <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding>
-            <element signature="e#54#69#0" expanded="true" />
+            <element signature="e#63#78#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2017.1/system/python_stubs/2024536394/__builtin__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34447">
-          <caret line="1813" column="8" lean-forward="false" selection-start-line="1813" selection-start-column="8" selection-end-line="1813" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2017.1/system/remote_sources/2024536394/1020429489/web/application.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8056">
-          <caret line="437" column="0" lean-forward="false" selection-start-line="437" selection-start-column="0" selection-end-line="437" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2017.1/system/remote_sources/2024536394/1020429489/web/httpserver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5662">
-          <caret line="305" column="0" lean-forward="false" selection-start-line="305" selection-start-column="0" selection-end-line="305" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2017.1/system/remote_sources/2024536394/1020429489/web/wsgiserver/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26068">
-          <caret line="1374" column="0" lean-forward="false" selection-start-line="1374" selection-start-column="0" selection-end-line="1374" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2017.1/system/remote_sources/2024536394/1046329483/threading.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14744">
-          <caret line="776" column="0" lean-forward="false" selection-start-line="776" selection-start-column="0" selection-end-line="776" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2017.1/system/python_stubs/2024536394/__builtin__.py" />
+    <entry file="file://$USER_HOME$/.PyCharm2017.1/system/remote_sources/2024536394/1020429489/web/application.py" />
+    <entry file="file://$USER_HOME$/.PyCharm2017.1/system/remote_sources/2024536394/1020429489/web/httpserver.py" />
+    <entry file="file://$USER_HOME$/.PyCharm2017.1/system/remote_sources/2024536394/1020429489/web/wsgiserver/__init__.py" />
+    <entry file="file://$USER_HOME$/.PyCharm2017.1/system/remote_sources/2024536394/1046329483/threading.py" />
     <entry file="file://$PROJECT_DIR$/GoogleNLP.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="589">
           <caret line="31" column="94" lean-forward="false" selection-start-line="31" selection-start-column="94" selection-end-line="31" selection-end-column="94" />
           <folding>
-            <element signature="e#51#67#0" expanded="true" />
+            <element signature="e#59#75#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -612,25 +549,18 @@
         <state relative-caret-position="703">
           <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding>
-            <element signature="e#54#69#0" expanded="true" />
+            <element signature="e#63#78#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2017.1/system/remote_sources/2024536394/1020429489/web/application.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8303">
-          <caret line="437" column="0" lean-forward="false" selection-start-line="437" selection-start-column="0" selection-end-line="437" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2017.1/system/remote_sources/2024536394/1020429489/web/application.py" />
     <entry file="file://$PROJECT_DIR$/GoogleNLP.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
           <caret line="6" column="10" lean-forward="true" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
           <folding>
-            <element signature="e#51#67#0" expanded="true" />
+            <element signature="e#59#75#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -650,7 +580,7 @@
         <state relative-caret-position="703">
           <caret line="37" column="54" lean-forward="false" selection-start-line="37" selection-start-column="54" selection-end-line="37" selection-end-column="54" />
           <folding>
-            <element signature="e#54#69#0" expanded="true" />
+            <element signature="e#63#78#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -670,7 +600,7 @@
         <state relative-caret-position="551">
           <caret line="37" column="54" lean-forward="false" selection-start-line="37" selection-start-column="54" selection-end-line="37" selection-end-column="54" />
           <folding>
-            <element signature="e#54#69#0" expanded="true" />
+            <element signature="e#63#78#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -690,7 +620,7 @@
         <state relative-caret-position="703">
           <caret line="37" column="54" lean-forward="true" selection-start-line="37" selection-start-column="54" selection-end-line="37" selection-end-column="54" />
           <folding>
-            <element signature="e#54#69#0" expanded="true" />
+            <element signature="e#63#78#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -710,7 +640,7 @@
         <state relative-caret-position="874">
           <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
           <folding>
-            <element signature="e#54#69#0" expanded="true" />
+            <element signature="e#63#78#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -730,7 +660,7 @@
         <state relative-caret-position="874">
           <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
           <folding>
-            <element signature="e#54#69#0" expanded="true" />
+            <element signature="e#63#78#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -750,7 +680,7 @@
         <state relative-caret-position="760">
           <caret line="40" column="45" lean-forward="false" selection-start-line="40" selection-start-column="45" selection-end-line="40" selection-end-column="45" />
           <folding>
-            <element signature="e#54#69#0" expanded="true" />
+            <element signature="e#63#78#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -770,7 +700,7 @@
         <state relative-caret-position="171">
           <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
           <folding>
-            <element signature="e#54#69#0" expanded="true" />
+            <element signature="e#63#78#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -790,7 +720,7 @@
         <state relative-caret-position="608">
           <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding>
-            <element signature="e#54#69#0" expanded="true" />
+            <element signature="e#63#78#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -810,77 +740,68 @@
         <state relative-caret-position="608">
           <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding>
-            <element signature="e#54#69#0" expanded="true" />
+            <element signature="e#63#78#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2017.1/system/remote_sources/2024536394/1020429489/web/httpserver.py">
+    <entry file="file://$USER_HOME$/.PyCharm2017.1/system/remote_sources/2024536394/1020429489/web/httpserver.py" />
+    <entry file="file://$USER_HOME$/.PyCharm2017.1/system/remote_sources/2024536394/1020429489/web/wsgiserver/__init__.py" />
+    <entry file="file://$USER_HOME$/.PyCharm2017.1/system/remote_sources/2024536394/1046329483/threading.py" />
+    <entry file="file://$USER_HOME$/.PyCharm2017.1/system/remote_sources/2024536394/1020429489/web/application.py" />
+    <entry file="file://$USER_HOME$/.PyCharm2017.1/system/python_stubs/2024536394/__builtin__.py" />
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.2/remote_sources/-1172822587/1020429489/boto3/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5662">
-          <caret line="305" column="0" lean-forward="false" selection-start-line="305" selection-start-column="0" selection-end-line="305" selection-end-column="0" />
+        <state relative-caret-position="1200">
+          <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2017.1/system/remote_sources/2024536394/1020429489/web/wsgiserver/__init__.py">
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.2/remote_sources/-1172822587/1020429489/web/application.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26068">
-          <caret line="1374" column="0" lean-forward="false" selection-start-line="1374" selection-start-column="0" selection-end-line="1374" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2017.1/system/remote_sources/2024536394/1046329483/threading.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14744">
-          <caret line="776" column="0" lean-forward="false" selection-start-line="776" selection-start-column="0" selection-end-line="776" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2017.1/system/remote_sources/2024536394/1020429489/web/application.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8056">
+        <state relative-caret-position="6360">
           <caret line="437" column="0" lean-forward="false" selection-start-line="437" selection-start-column="0" selection-end-line="437" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2017.1/system/python_stubs/2024536394/__builtin__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34447">
-          <caret line="1813" column="8" lean-forward="false" selection-start-line="1813" selection-start-column="8" selection-end-line="1813" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="19" />
+        <state relative-caret-position="150">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding>
             <element signature="e#45#55#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GoogleNLP.py">
+    <entry file="file://$PROJECT_DIR$/GoogleHanlder.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="18" column="21" lean-forward="false" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+        <state relative-caret-position="435">
+          <caret line="34" column="32" lean-forward="false" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
           <folding>
-            <element signature="e#51#67#0" expanded="true" />
+            <element signature="e#63#78#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GoogleHanlder.py">
+    <entry file="file://$PROJECT_DIR$/GoogleNLP.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="35" column="27" lean-forward="false" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="27" />
+        <state relative-caret-position="630">
+          <caret line="46" column="23" lean-forward="false" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
           <folding>
-            <element signature="e#54#69#0" expanded="true" />
+            <element signature="e#59#75#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LexConnector.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="35" column="26" lean-forward="false" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>

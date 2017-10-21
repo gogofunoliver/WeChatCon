@@ -1,9 +1,12 @@
 import requests
 import json
+import boto3
 import traceback
 import web
 from WeChatCon import *
 from DBHandler import DBHandler
+import subprocess
+
 
 
 class AWSHandler(object):
@@ -36,3 +39,49 @@ class AWSHandler(object):
         except Exception as Argment:
             traceback.print_exc()
             return Argment
+
+
+
+class LexConnector(object):
+    def __init__(self):
+        self.lex_router = "http://google2:18080/lexcon"
+        pass
+
+    def connect(self, userId = 'test_wechat_bot', msg = 'book hotel'):
+        client = boto3.client('lex-runtime')
+        response = client.post_content(
+            botName = 'BookTrip',
+            botAlias = 'dev',
+            userId = userId,
+            contentType = 'text/plain; charset=utf-8',
+            accept = 'text/plain; charset=utf-8',
+            inputStream = msg.encode('utf-8')
+        )
+        print(response['message'])
+        return response['message']
+
+    def connectVoice(self, userId = 'test_wechat_bot', msg = 'book hotel', saveFile = "/tmp/aws_rsp.wav"):
+        client = boto3.client('lex-runtime')
+        response = client.post_content(
+            botName = 'BookTrip',
+            botAlias = 'dev',
+            userId = userId,
+            contentType = 'audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false',
+            accept = 'audio/mpeg',
+            inputStream = msg
+        )
+
+        print(response['inputTranscript'])
+        print(response['message'])
+
+        rsp = response['audioStream']
+        data = rsp.read()
+        with open(saveFile, "wb") as aws_rsp:
+            aws_rsp.write(data)
+
+        return response['message']
+
+
+
+if __name__ == "__main__":
+    LexConnector().connect()

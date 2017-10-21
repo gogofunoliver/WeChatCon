@@ -3,7 +3,7 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="047b9971-0f31-44d4-904e-8a68ef4df07f" name="google2" url="http://google2:18080/">
-        <fileTransfer host="google2" port="22" privateKey="C:\cygwin64\home\admin\.ssh\id_rsa" accessType="SFTP" keyPair="true">
+        <fileTransfer host="google2" port="22" privateKey="$USER_HOME$/.ssh/google_rsa" accessType="SFTP" keyPair="true">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>

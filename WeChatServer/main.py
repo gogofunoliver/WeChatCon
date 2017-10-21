@@ -26,13 +26,14 @@ if __name__ == '__main__':
 
     #other threads
     #send weather to  subscriber
-    ThreadPool.get_instance().add_thread("WeatherPublisher", PublisherToSub.run, "WeatherPublisher")
-    ThreadPool.get_instance().add_thread("HealthyNotifier", HealthyNotifier.get_instance().run)
-    ThreadPool.get_instance().add_thread("BirthNotifier", BirthDayNotifier().run, "Birth")
+    #ThreadPool.get_instance().add_thread("WeatherPublisher", PublisherToSub.run, "WeatherPublisher")
+    #ThreadPool.get_instance().add_thread("HealthyNotifier", HealthyNotifier.get_instance().run)
+    #ThreadPool.get_instance().add_thread("BirthNotifier", BirthDayNotifier().run, "Birth")
+
     ThreadPool.get_instance().add_thread("ActionExecutor", ActionsExecutor.run)
     ThreadPool.get_instance().run_threads()
 
-    ActionsExecutor.add_auto_action(Action(WeChatHandler().getAllNewsIntoDB))
+    #ActionsExecutor.add_auto_action(Action(WeChatHandler().getAllNewsIntoDB))
     #web
     app = web.application(urls, globals())
     app.run()

@@ -1,11 +1,13 @@
  # -*- coding: utf-8 -*-
 # filename: Main.py
 import web
+from LexConnector import LexConnector
 from GoogleHanlder import GoogleHanlder
 
 #Sepcify the rest api with a handler
 urls = (
-    '/google', 'GoogleHanlder'
+    '/google', 'GoogleHanlder',
+    '/lexcon', 'LexConnector'
 )
 
 

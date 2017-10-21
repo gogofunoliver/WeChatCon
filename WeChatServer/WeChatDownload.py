@@ -6,6 +6,7 @@ import base64
 import sys
 from WeChatCon import WeChatHandler
 from TypeDef import TypeDef
+from AWSHandler import LexConnector
 
 
 class GoogleCaller(object):
@@ -27,6 +28,12 @@ class GoogleCaller(object):
             with open("/tmp/voice_test.amr", "wb") as temp_voice:
                 temp_voice.write(ret.content)
 
+            with open("/tmp/t1.wav", "rb") as wave_file:
+                all_content = wave_file.read()
+
+            LexConnector().connectVoice(users, all_content)
+
+            '''
             #baidu, parse bytes audio
             output_baidu = BaiduCaller().callBaidu(audio_str)
             reply_msg = "百度识别：" + output_baidu
@@ -47,6 +54,7 @@ class GoogleCaller(object):
             #WeChatHandler().sendMsgToOneAsPreview(outcome)
             WeChatHandler().sendMsgViaCust(reply_msg, "touser", users)
             #WeChatHandler().sendMsgToOneAsPreview(outcome, "touser", users)
+            '''
         except Exception as ex:
             traceback.print_exc()
             raise ex

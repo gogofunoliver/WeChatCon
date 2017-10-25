@@ -2,26 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da0a326d-223d-4f55-a0a0-4d6d33e4ec14" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../GooglePyServer/.idea/LocalPyServer.iml" afterPath="$PROJECT_DIR$/../GooglePyServer/.idea/LocalPyServer.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../GooglePyServer/.idea/deployment.xml" afterPath="$PROJECT_DIR$/../GooglePyServer/.idea/deployment.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../GooglePyServer/.idea/misc.xml" afterPath="$PROJECT_DIR$/../GooglePyServer/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../GooglePyServer/.idea/webServers.xml" afterPath="$PROJECT_DIR$/../GooglePyServer/.idea/webServers.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../GooglePyServer/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../GooglePyServer/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../GooglePyServer/GoogleHanlder.py" afterPath="$PROJECT_DIR$/../GooglePyServer/GoogleHanlder.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../GooglePyServer/GoogleNLP.py" afterPath="$PROJECT_DIR$/../GooglePyServer/GoogleNLP.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../GooglePyServer/Main.py" afterPath="$PROJECT_DIR$/../GooglePyServer/Main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../WeChatClient/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../WeChatClient/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/WeChatServer.iml" afterPath="$PROJECT_DIR$/.idea/WeChatServer.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/deployment.xml" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/webServers.xml" afterPath="$PROJECT_DIR$/.idea/webServers.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AWSHandler.py" afterPath="$PROJECT_DIR$/AWSHandler.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ServerEntry.py" afterPath="$PROJECT_DIR$/ServerEntry.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WeChatCon.py" afterPath="$PROJECT_DIR$/WeChatCon.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WeChatDownload.py" afterPath="$PROJECT_DIR$/WeChatDownload.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reply.py" afterPath="$PROJECT_DIR$/reply.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,9 +16,10 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/WeChatServer$Python.coverage" NAME="Python Coverage Results" MODIFIED="1508597436972" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/WeChatServer$Python.coverage" NAME="Python Coverage Results" MODIFIED="1508896448737" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/WeChatServer$thread.coverage" NAME="thread Coverage Results" MODIFIED="1499181050891" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/WeChatServer$Unnamed.coverage" NAME="Unnamed Coverage Results" MODIFIED="1500385313844" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/WeChatServer$TestLex.coverage" NAME="TestLex Coverage Results" MODIFIED="1508860787062" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/WeChatServer$testVoice.coverage" NAME="testVoice Coverage Results" MODIFIED="1508593808991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/WeChatServer$onlytellgoogle.coverage" NAME="onlytellgoogle Coverage Results" MODIFIED="1505033011562" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/WeChatServer$Util.coverage" NAME="Util Coverage Results" MODIFIED="1505646035285" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -48,27 +34,18 @@
     <option name="SHOW_TABLE_DETAILS" value="true" />
     <option name="SHOW_EMPTY_GROUPS" value="false" />
     <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <expand>
-      <path>
-        <item name="" type="eadb38e5:DatabaseStructure$Root" />
-        <item name="oliver_cn_gogofun@123.207.172.207" type="e3449647:DbNodeDescriptor" />
-      </path>
-    </expand>
+    <expand />
     <select />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="WeChatEventHandler.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WeChatEventHandler.py">
+      <file leaf-file-name="WeChatDownload.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WeChatDownload.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="49" lean-forward="false" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
+            <state relative-caret-position="292">
+              <caret line="65" column="68" lean-forward="true" selection-start-line="65" selection-start-column="68" selection-end-line="65" selection-end-column="68" />
               <folding>
-                <element signature="e#0#11#0" expanded="true" />
-                <marker date="1506952179000" expanded="true" signature="736:876" ph="INSERT into UserInfo... " />
-                <marker date="1506952179000" expanded="true" signature="1240:1320" ph="UPDATE UserI... " />
-                <marker date="1506952179000" expanded="true" signature="2407:2459" ph="SELECT Wecha... UserInfo" />
-                <marker date="1506952179000" expanded="true" signature="3639:3669" ph="Select Messa... AWS_Record" />
+                <element signature="e#0#15#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -77,32 +54,22 @@
       <file leaf-file-name="WeChatCon.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WeChatCon.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="170" column="8" lean-forward="false" selection-start-line="170" selection-start-column="8" selection-end-line="170" selection-end-column="8" />
+            <state relative-caret-position="30">
+              <caret line="160" column="24" lean-forward="false" selection-start-line="160" selection-start-column="8" selection-end-line="160" selection-end-column="24" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
-                <marker date="1508594934000" expanded="true" signature="2645:2699" ph="SELECT Title... HistoryArticle" />
-                <marker date="1508594934000" expanded="true" signature="2835:2914" ph="INSERT into HistoryArticle... " />
+                <marker date="1508895709000" expanded="true" signature="2645:2699" ph="SELECT Title... HistoryArticle" />
+                <marker date="1508895709000" expanded="true" signature="2835:2914" ph="INSERT into HistoryArticle... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="api.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.2/remote_sources/-478401327/2044354413/requests/api.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1500">
-              <caret line="100" column="4" lean-forward="false" selection-start-line="100" selection-start-column="4" selection-end-line="100" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ServerEntry.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ServerEntry.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ServerEntry.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="78" column="55" lean-forward="false" selection-start-line="78" selection-start-column="55" selection-end-line="78" selection-end-column="55" />
+            <state relative-caret-position="127">
+              <caret line="186" column="39" lean-forward="false" selection-start-line="186" selection-start-column="39" selection-end-line="186" selection-end-column="39" />
               <folding>
                 <element signature="e#47#61#0" expanded="true" />
               </folding>
@@ -110,46 +77,64 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reply.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/reply.py">
+      <file leaf-file-name="application.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.2/remote_sources/1146655299/2044354413/web/application.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="59" column="8" lean-forward="false" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="8" />
+            <state relative-caret-position="2719">
+              <caret line="247" column="0" lean-forward="false" selection-start-line="247" selection-start-column="0" selection-end-line="247" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ThreadPool.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ThreadPool.py">
+      <file leaf-file-name="ActionHandler.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ActionHandler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="38" column="48" lean-forward="false" selection-start-line="38" selection-start-column="48" selection-end-line="38" selection-end-column="48" />
-              <folding>
-                <marker date="1506952179000" expanded="true" signature="775:812" ph="SELECT Open_... WeatherSub" />
-              </folding>
+            <state relative-caret-position="195">
+              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AWSHandler.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="threading.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.2/remote_sources/1146655299/1646052551/threading.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-4466">
+              <caret line="858" column="0" lean-forward="false" selection-start-line="858" selection-start-column="0" selection-end-line="858" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="receive.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/receive.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-127">
+              <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AWSHandler.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/AWSHandler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="80" column="0" lean-forward="true" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+            <state relative-caret-position="-79">
+              <caret line="85" column="17" lean-forward="false" selection-start-line="85" selection-start-column="17" selection-end-line="85" selection-end-column="17" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
-                <marker date="1508597258000" expanded="true" signature="570:636" ph="INSERT into AWS_Record... " />
+                <marker date="1508896430000" expanded="true" signature="570:636" ph="INSERT into AWS_Record... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WeatherHandler.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WeatherHandler.py">
+      <file leaf-file-name="codecs.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.2/remote_sources/1146655299/1646052551/codecs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state relative-caret-position="134">
+              <caret line="306" column="0" lean-forward="false" selection-start-line="306" selection-start-column="0" selection-end-line="306" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -163,16 +148,6 @@
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="subprocess.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.2/remote_sources/-478401327/1646052551/subprocess.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7875">
-              <caret line="525" column="4" lean-forward="false" selection-start-line="525" selection-start-column="4" selection-end-line="525" selection-end-column="4" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -247,12 +222,12 @@
         <option value="$PROJECT_DIR$/WeChatEventHandler.py" />
         <option value="$PROJECT_DIR$/DBHandler.py" />
         <option value="$PROJECT_DIR$/main.py" />
-        <option value="$PROJECT_DIR$/WeChatDownload.py" />
         <option value="$PROJECT_DIR$/reply.py" />
         <option value="$PROJECT_DIR$/VoiceFormater.py" />
+        <option value="$PROJECT_DIR$/WeChatDownload.py" />
         <option value="$PROJECT_DIR$/WeChatCon.py" />
-        <option value="$PROJECT_DIR$/AWSHandler.py" />
         <option value="$PROJECT_DIR$/ServerEntry.py" />
+        <option value="$PROJECT_DIR$/AWSHandler.py" />
       </list>
     </option>
   </component>
@@ -262,10 +237,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="817" />
+    <option name="height" value="828" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -372,7 +347,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="ssh://root@wechat:22/usr/bin/python3" />
+      <option name="SDK_HOME" value="ssh://olivershen@fcr_google:22/usr/bin/python3" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -382,7 +357,7 @@
       <PathMappingSettings>
         <option name="pathMappings">
           <list>
-            <mapping local-root="$PROJECT_DIR$" remote-root="/wechat/WeChatServer" />
+            <mapping local-root="$PROJECT_DIR$" remote-root="/home/olivershen/PyCode/WeChatServer" />
           </list>
         </option>
       </PathMappingSettings>
@@ -668,21 +643,22 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="828" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="828" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3181818" sideWeight="0.47655067" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30559346" sideWeight="0.5379113" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3042292" sideWeight="0.39985693" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31787175" sideWeight="0.47353363" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30559346" sideWeight="0.5579399" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3042292" sideWeight="0.3955651" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3278237" sideWeight="0.4969325" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32963988" sideWeight="0.47854078" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30559346" sideWeight="0.4620887" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30559346" sideWeight="0.44206008" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24217688" sideWeight="0.47567955" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1881259" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12517883" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36689037" sideWeight="0.47738385" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41200545" sideWeight="0.53361946" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41200545" sideWeight="0.5135909" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -691,7 +667,6 @@
       <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4015748" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41387025" sideWeight="0.52874434" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36689037" sideWeight="0.47738385" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Concurrent Activities Diagram" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3251634" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
     </layout>
@@ -845,34 +820,19 @@
           <option name="timeStamp" value="240" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/ServerEntry.py</url>
-          <line>119</line>
-          <option name="timeStamp" value="244" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/ServerEntry.py</url>
-          <line>121</line>
-          <option name="timeStamp" value="245" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/ServerEntry.py</url>
-          <line>116</line>
-          <option name="timeStamp" value="246" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/WeChatCon.py</url>
-          <line>171</line>
-          <option name="timeStamp" value="252" />
+          <url>file://$PROJECT_DIR$/AWSHandler.py</url>
+          <line>51</line>
+          <option name="timeStamp" value="261" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/AWSHandler.py</url>
-          <line>64</line>
-          <option name="timeStamp" value="253" />
+          <line>122</line>
+          <option name="timeStamp" value="265" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/AWSHandler.py</url>
-          <line>63</line>
-          <option name="timeStamp" value="254" />
+          <url>file://$PROJECT_DIR$/ServerEntry.py</url>
+          <line>86</line>
+          <option name="timeStamp" value="269" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -885,7 +845,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="255" />
+      <option name="time" value="270" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -896,8 +856,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/.PyCharm2017.1/system/remote_sources/1348920485/1646052551/threading.py" />
-    <entry file="dbDummy://dbtable:/dc483eb3/6508ff9c-26ee-45b0-b8bf-0637a993e8e9/gogofun.HistoryArticle" />
     <entry file="dbDummy://dbtable:/dc483eb3/6508ff9c-26ee-45b0-b8bf-0637a993e8e9/gogofun.WeatherSub" />
     <entry file="dbDummy://dbtable:/dc483eb3/6508ff9c-26ee-45b0-b8bf-0637a993e8e9/gogofun.HealthyRecord" />
     <entry file="dbDummy://dbtable:/dc483eb3/6508ff9c-26ee-45b0-b8bf-0637a993e8e9/gogofun.AWS_Record" />
@@ -971,21 +929,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/receive.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ActionHandler.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DBHandler.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="915">
@@ -1035,27 +978,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.2/remote_sources/1146655299/2044354413/web/application.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3420">
-          <caret line="245" column="21" lean-forward="false" selection-start-line="245" selection-start-column="21" selection-end-line="245" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.2/python_stubs/-478401327/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="159">
           <caret line="2810" column="8" lean-forward="false" selection-start-line="2810" selection-start-column="8" selection-end-line="2810" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WeChatDownload.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="24" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1064,7 +990,7 @@
         <state relative-caret-position="375">
           <caret line="25" column="49" lean-forward="false" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#0#11#0" expanded="false" />
             <marker date="1506952179000" expanded="true" signature="736:876" ph="INSERT into UserInfo... " />
             <marker date="1506952179000" expanded="true" signature="1240:1320" ph="UPDATE UserI... " />
             <marker date="1506952179000" expanded="true" signature="2407:2459" ph="SELECT Wecha... UserInfo" />
@@ -1125,35 +1051,85 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AWSHandler.py">
+    <entry file="file://$PROJECT_DIR$/receive.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="80" column="0" lean-forward="true" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+        <state relative-caret-position="-127">
+          <caret line="24" column="13" lean-forward="false" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.2/remote_sources/1146655299/1646052551/threading.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4466">
+          <caret line="858" column="0" lean-forward="false" selection-start-line="858" selection-start-column="0" selection-end-line="858" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WeChatDownload.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="65" column="68" lean-forward="true" selection-start-line="65" selection-start-column="68" selection-end-line="65" selection-end-column="68" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
-            <marker date="1508597258000" expanded="true" signature="570:636" ph="INSERT into AWS_Record... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.2/remote_sources/1146655299/1646052551/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="306" column="0" lean-forward="false" selection-start-line="306" selection-start-column="0" selection-end-line="306" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ActionHandler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2017.2/remote_sources/1146655299/2044354413/web/application.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2719">
+          <caret line="247" column="0" lean-forward="false" selection-start-line="247" selection-start-column="0" selection-end-line="247" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WeChatCon.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="170" column="8" lean-forward="false" selection-start-line="170" selection-start-column="8" selection-end-line="170" selection-end-column="8" />
+        <state relative-caret-position="30">
+          <caret line="160" column="24" lean-forward="false" selection-start-line="160" selection-start-column="8" selection-end-line="160" selection-end-column="24" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
-            <marker date="1508594934000" expanded="true" signature="2645:2699" ph="SELECT Title... HistoryArticle" />
-            <marker date="1508594934000" expanded="true" signature="2835:2914" ph="INSERT into HistoryArticle... " />
+            <marker date="1508895709000" expanded="true" signature="2645:2699" ph="SELECT Title... HistoryArticle" />
+            <marker date="1508895709000" expanded="true" signature="2835:2914" ph="INSERT into HistoryArticle... " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ServerEntry.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="78" column="55" lean-forward="false" selection-start-line="78" selection-start-column="55" selection-end-line="78" selection-end-column="55" />
+        <state relative-caret-position="127">
+          <caret line="186" column="39" lean-forward="false" selection-start-line="186" selection-start-column="39" selection-end-line="186" selection-end-column="39" />
           <folding>
             <element signature="e#47#61#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AWSHandler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-79">
+          <caret line="85" column="17" lean-forward="false" selection-start-line="85" selection-start-column="17" selection-end-line="85" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <marker date="1508896430000" expanded="true" signature="570:636" ph="INSERT into AWS_Record... " />
           </folding>
         </state>
       </provider>

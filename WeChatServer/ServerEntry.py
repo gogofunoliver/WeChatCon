@@ -75,39 +75,17 @@ class Handle(object):
                 else:
                     user_say = recMsg.Recognition#.replace("。", "").replace("，", "")
                     content = Resource.getMsg("USay") + user_say + "\n" + "Media ID: " + recMsg.MediaId + "\n"
+                    #content = self.callAWSLex(toUser, fromUser, recMsg.MediaId)
 
-                    #define temp file to save the voice
-                    saveWeChatAMRFile = "/tmp/wechat_tmp_voice.amr"
-                    saveWeChatWAVFile = "/tmp/wechat_tmp_voice.wav"
-                    saveAWSWAVFile = "/tmp/aws_reply_voice.wav"
-                    saveAWSAMRFile = "/tmp/aws_reply_voice.amr"
-
-                    #1. Get WeChat Voice
-                    WeChatHandler().downloadVoiceAsFile(recMsg.MediaId, saveWeChatAMRFile)
-
-                    #2 change format to wavsaveWeChatWAVFile
-                    VoiceFormater().amr2wav(saveWeChatAMRFile, saveWeChatWAVFile)
-
-                    with open(saveWeChatWAVFile, "rb") as fh:
-                        rspData = fh.read()
-
-                    #3 Call Lex
-                    LexConnector().connectVoice(toUser, rspData, saveAWSWAVFile)
-                    VoiceFormater().wav2amr(saveAWSWAVFile, saveAWSAMRFile)
-                    mediaReplyID = WeChatHandler().uploadVoiceFile(saveAWSAMRFile)
-
-                    replier = reply.VoiceMsg(toUser, fromUser, mediaReplyID)
-                    content = replier.send()
                     #content = "微信识别：" + user_say
                     #ActionsExecutor.add_auto_action(Action(GoogleCaller().callGoogle, recMsg.MediaId, toUser))
-
+                    ActionsExecutor.add_auto_action(Action(self.callAWSLex, toUser, fromUser, recMsg.MediaId))
+                    return ""
             elif isinstance(recMsg, receive.Msg) and recMsg.MsgType == 'text':
                 cnstr = recMsg.Content.decode()
                 self.logger.info("received msg : %s" % cnstr)
-                content = LexConnector().connect(toUser, cnstr)
-                replier = reply.TextMsg(toUser, fromUser, content)
-                content = replier.send()
-
+                content = self.callAWSLexWithText(toUser, fromUser, cnstr)
+                #ActionsExecutor.add_auto_action(Action(self.callAWSLexWithText, toUser, fromUser, cnstr))
             elif isinstance(recMsg, receive.Msg) and recMsg.MsgType == 'event':
                     func = EventRouter.get_envent_func(recMsg.event, recMsg.key_value)
                     content = func(toUser)
@@ -118,7 +96,7 @@ class Handle(object):
                 return "success"
             else:
                 self.logger.info("Reply : %s" % content)
-                print(content)
+                #print(content)
                 return content
 
         except Exception as Argment:
@@ -186,3 +164,46 @@ class Handle(object):
                               content = func(msg_str, recMsg.FromUserName, lang)
 
         '''
+
+    def callAWSLex(self, toUser, fromUser, mediaID, isAysnc = "Y"):
+        content = ""
+        try:
+            # define temp file to save the voice
+            saveWeChatAMRFile = "/tmp/wechat_tmp_voice.amr"
+            saveWeChatWAVFile = "/tmp/wechat_tmp_voice.wav"
+            saveAWSWAVFile = "/tmp/aws_reply_voice.wav"
+            saveAWSAMRFile = "/tmp/aws_reply_voice.amr"
+
+            # 1. Get WeChat Voice
+            WeChatHandler().downloadVoiceAsFile(mediaID, saveWeChatAMRFile)
+
+            # 2 change format to wavsaveWeChatWAVFile
+            VoiceFormater().amr2wav(saveWeChatAMRFile, saveWeChatWAVFile)
+
+            with open(saveWeChatWAVFile, "rb") as fh:
+                rspData = fh.read()
+
+            # 3 Call Lex
+            if LexConnector().connectVoice(toUser, rspData, saveAWSWAVFile) == 'mp3':
+                mediaReplyID = WeChatHandler().uploadVoiceFile("/tmp/polly.mp3")
+            else:
+                VoiceFormater().wav2amr(saveAWSWAVFile, saveAWSAMRFile)
+                mediaReplyID = WeChatHandler().uploadVoiceFile(saveAWSAMRFile)
+
+            replier = reply.VoiceMsg(toUser, fromUser, mediaReplyID)
+            content = replier.send()
+
+            if isAysnc == "Y":
+                WeChatHandler().sendVoiceMsgCust(mediaReplyID, toUser)
+                content = "success"
+        except Exception as ex:
+            traceback.print_exc()
+        finally:
+            print(content)
+            return content
+
+    def callAWSLexWithText(self, toUser, fromUser, msg):
+        content = LexConnector().connect(toUser, msg)
+        replier = reply.TextMsg(toUser, fromUser, content)
+        content = replier.send()
+        return content

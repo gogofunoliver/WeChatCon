@@ -158,6 +158,26 @@ class WeChatHandler(object):
         print(status)
         return ret
 
+    def sendVoiceMsgCust(self, mediaID, openID = "szwlove"):
+        wechatInput = {
+            "touser": openID,
+            "msgtype": "voice",
+            "voice":
+                {
+                    "media_id": mediaID
+                }
+        }
+
+        token = self.getWeChatToken()
+        sending_url = self.custSend + token
+        r = requests.post(sending_url, data=json.dumps(wechatInput, ensure_ascii=False).encode("utf-8"))
+        status = r.content
+        ret = r.json()['errcode']
+        self.logger.info("Sent to : %s. Msg : %s. Status: <%s>, <%s>" % (openID, mediaID, ret, status))
+        print(status)
+        return ret
+
+
     def downloadVoiceAsFile(self, mediaID, saveFile):
         token = self.getWeChatToken()
         url = self.downLoadVoiceUrl % (token, mediaID)

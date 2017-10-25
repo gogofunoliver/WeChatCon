@@ -57,31 +57,74 @@ class LexConnector(object):
             accept = 'text/plain; charset=utf-8',
             inputStream = msg.encode('utf-8')
         )
-        print(response['message'])
-        return response['message']
+
+        reply_msg = "ß"
+        if response['dialogState'] == 'ReadyForFulfillment' and response['intentName'] == 'IdentifyUser':
+            print(response['slots'])
+            if response['slots']['​StaffID'] == '44006524':
+                reply_msg = "OH! Oliver, it's you. You are my father. What can I do for you?"
+        else:
+            reply_msg = response['message']
+        print(reply_msg)
+        return reply_msg
 
     def connectVoice(self, userId = 'test_wechat_bot', msg = 'book hotel', saveFile = "/tmp/aws_rsp.wav"):
-        client = boto3.client('lex-runtime')
-        response = client.post_content(
-            botName = 'BookTrip',
-            botAlias = 'dev',
-            userId = userId,
-            contentType = 'audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false',
-            accept = 'audio/mpeg',
-            inputStream = msg
+        reply_type = "wav"
+        reply_msg = ""
+        try:
+            client = boto3.client('lex-runtime')
+            response = client.post_content(
+                botName = 'BookTrip',
+                botAlias = 'dev',
+                userId = userId,
+                contentType = 'audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false',
+                accept = 'audio/mpeg',
+                inputStream = msg
+            )
+
+            if response['dialogState'] == 'ReadyForFulfillment' and response['intentName'] == 'IdentifyUser':
+                #print(response['slots'])
+                if response['slots']['StaffID'] == str('624'):
+                    reply_msg = "OH! Oliver, it's you. You are my father. What can I do for you?"
+                else:
+                    reply_msg = "What can I do for you?"
+                #call Polly
+                VoiceGenerator().genVoiceByPolly(reply_msg, saveFile)
+                reply_type = 'mp3'
+            else:
+                reply_msg = response['message']
+                reply_type = "wav"
+                print(response['inputTranscript'])
+                #save voice file from Lex
+                rsp = response['audioStream']
+                data = rsp.read()
+                with open(saveFile, "wb") as aws_rsp:
+                    aws_rsp.write(data)
+        except Exception as ex:
+            traceback.print_exc()
+        finally:
+            print(reply_msg)
+            return reply_type
+
+class VoiceGenerator(object):
+    def __init__(self):
+        self.client = boto3.client('polly')
+        pass
+
+    def genVoiceByPolly(self, text, saveFile = "/tmp/polly.mp3", performer = "Salli"):
+        response = self.client.synthesize_speech(
+            OutputFormat = 'mp3', #mp3, pcm can be supported
+            SampleRate = '16000',
+            Text = text,
+            TextType = 'text',
+            VoiceId = performer
         )
 
-        print(response['inputTranscript'])
-        print(response['message'])
-
-        rsp = response['audioStream']
+        rsp = response['AudioStream']
         data = rsp.read()
         with open(saveFile, "wb") as aws_rsp:
             aws_rsp.write(data)
 
-        return response['message']
-
-
 
 if __name__ == "__main__":
-    LexConnector().connect()
+    VoiceGenerator().genVoiceByPolly("You are my boss. I am very happy to serve you!")

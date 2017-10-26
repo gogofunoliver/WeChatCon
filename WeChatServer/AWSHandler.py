@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+# filename: AWSHandler.py
+
 import requests
 import json
 import boto3
@@ -6,7 +9,7 @@ import web
 from WeChatCon import *
 from DBHandler import DBHandler
 import subprocess
-
+from TypeDef import TypeDef
 
 
 class AWSHandler(object):
@@ -58,11 +61,29 @@ class LexConnector(object):
             inputStream = msg.encode('utf-8')
         )
 
-        reply_msg = "ß"
-        if response['dialogState'] == 'ReadyForFulfillment' and response['intentName'] == 'IdentifyUser':
-            print(response['slots'])
-            if response['slots']['​StaffID'] == '44006524':
-                reply_msg = "OH! Oliver, it's you. You are my father. What can I do for you?"
+        reply_msg = ""
+        if response['dialogState'] == 'ReadyForFulfillment':
+            if response['intentName'] == 'IdentifyUser':
+                print(response['slots'])
+                if response['slots']['StaffID'] == '44006524':
+                    reply_msg = "OH! Oliver, it's you. You are my father. What can I do for you?"
+                else:
+                    reply_msg = "What can I do for you?"
+            elif response['intentName'] == 'OpenAccount':
+                reply_msg = "I have record your information and will inform you after it get approved. See you!"
+                user_dict = WeChatHandler().getUserInfo(userId)
+                tempSaveData = {
+                    "OpenID": {"S": userId},
+                    "WeChatName": {"S": user_dict['nickname']},
+                    "Sex": {"S": TypeDef.sex_dict[user_dict['sex']]},
+                    "Salary": {"S": response['slots']['Salary']},
+                    "Company": {"S": response['slots']['Company']}, #
+                    "JobPosition": {"S": response['slots']['JobPosition']},
+                    "ApplyCardType": {"S": response['slots']['CreditCardType']},
+                    "Province": {"S": user_dict['province']},
+                    "Country": {"S": user_dict['country']}
+                }
+                DynamoDBWriter().put_item("UserInfoWeChat", tempSaveData)
         else:
             reply_msg = response['message']
         print(reply_msg)
@@ -82,17 +103,34 @@ class LexConnector(object):
                 inputStream = msg
             )
 
-            if response['dialogState'] == 'ReadyForFulfillment' and response['intentName'] == 'IdentifyUser':
-                #print(response['slots'])
-                if response['slots']['StaffID'] == str('624'):
-                    reply_msg = "OH! Oliver, it's you. You are my father. What can I do for you?"
-                else:
-                    reply_msg = "What can I do for you?"
-                #call Polly
+            if response['dialogState'] == 'ReadyForFulfillment':
+                if response['intentName'] == 'IdentifyUser':
+                    #print(response['slots'])
+                    if response['slots']['StaffID'] == str('624'):
+                        reply_msg = "OH! Oliver, it's you. You are my father. What can I do for you?"
+                    else:
+                        reply_msg = "What can I do for you?"
+                elif response['intentName'] == 'OpenAccount':
+                    reply_msg = "I have record your information and will inform you after it get approved. See you!"
+
+                    user_dict = WeChatHandler().getUserInfo(userId)
+                    tempSaveData = {
+                        "OpenID" : {"S" : userId},
+                        "WeChatName" : {"S" : user_dict['nickname']},
+                        "Sex" : {"S" : TypeDef.sex_dict[user_dict['sex']]},
+                        "Salary" : {"S" : response['slots']['Salary']},
+                        "Company" : {"S", response['slots']['Company']},
+                        "JobPosition" : { "S" : response['slots']['JobPosition']},
+                        "ApplyCardType" : {"S" : response['slots']['CreditCardType']},
+                        "Province" : {"S" : user_dict['province']},
+                        "Country" : {"S" : user_dict['country']}
+                        }
+                    DynamoDBWriter().put_item("UserInfoWeChat", tempSaveData)
+                # call Polly
                 VoiceGenerator().genVoiceByPolly(reply_msg, saveFile)
                 reply_type = 'mp3'
+                pass
             else:
-                reply_msg = response['message']
                 reply_type = "wav"
                 print(response['inputTranscript'])
                 #save voice file from Lex
@@ -125,6 +163,29 @@ class VoiceGenerator(object):
         with open(saveFile, "wb") as aws_rsp:
             aws_rsp.write(data)
 
+class DynamoDBWriter(object):
+    def __init__(self):
+        self.client = boto3.client('dynamodb')
+        pass
+
+    def put_item(self, table, item_dict=None):
+        try:
+            response = self.client.put_item(TableName=table, Item=item_dict)
+        except Exception as ex:
+            traceback.print_exc()
+        finally:
+            return response
 
 if __name__ == "__main__":
-    VoiceGenerator().genVoiceByPolly("You are my boss. I am very happy to serve you!")
+    data = {
+        "OpenID" : {"S" : "TestID" },
+        "WeChatName" : {"S" : "AAAAAA" },
+        "Sex" : {"S" : "Male"},
+        "Age" : {"S" : "35"},
+        "Company" : {"S" : "HSBC"},
+        "JobPosition" : { "S" : "Manager" },
+        "ApplyCardType" : {"S" : "Gold"},
+        }
+    table_name = "UserInfoWeChat"
+    ret = DynamoDBWriter().put_item(table_name, data)
+    pass

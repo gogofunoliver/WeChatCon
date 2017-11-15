@@ -89,6 +89,13 @@ class Handle(object):
             elif isinstance(recMsg, receive.Msg) and recMsg.MsgType == 'event':
                     func = EventRouter.get_envent_func(recMsg.event, recMsg.key_value)
                     content = func(toUser)
+
+            elif isinstance(recMsg, receive.Msg) and recMsg.MsgType == 'image':
+                    func = EventRouter.upload_image_to_wechat(recMsg.image, recMsg.key_value)
+                    self.logger.info("image here")
+                    GCPCV.callGCPCV()
+
+                    content = func(toUser)
             else:
                 content = Resource.getMsg("WrongTypeMsg", lang)
 

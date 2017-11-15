@@ -33,6 +33,8 @@ class WeChatHandler(object):
         self.getAllNews = "https://api.weixin.qq.com/cgi-bin/material/batchget_material?access_token=%s"
         self.downLoadVoiceUrl = "https://api.weixin.qq.com/cgi-bin/media/get?access_token=%s&media_id=%s"
         self.uploadVoiceUrl = "https://api.weixin.qq.com/cgi-bin/media/upload?access_token=%s&type=voice"
+        self.downLoadIMGUrl = "https://api.weixin.qq.com/cgi-bin/media/get?access_token=%s&media_id=%s"
+        self.uploadIMGUrl = "https://api.weixin.qq.com/cgi-bin/media/upload?access_token=%s&type=image"
 
         self.jsonTextInputTep = '{ \
                 "@@TYPE@@": "@@USER@@", \
@@ -193,6 +195,32 @@ class WeChatHandler(object):
         url = self.uploadVoiceUrl % token
 
         files = {"file" : open(voiceFile, "rb")}
+
+        retMsg = ""
+        try:
+            ret = requests.post(url, files=files)
+            retMsg = ret.json()["media_id"]
+            print(retMsg)
+        except Exception as Ex:
+            traceback.print_exc()
+        finally:
+            return retMsg
+
+    def downloadImageAsFile(self, mediaID, saveFile):
+        token = self.getWeChatToken()
+        url = self.downLoadVoiceUrl % (token, mediaID)
+
+        ret = requests.get(url)
+        with open(saveFile, "wb") as fh:
+            fh.write(ret.content)
+
+        pass
+
+    def uploadImageFile(self, imgFile):
+        token = self.getWeChatToken()
+        url = self.uploadVoiceUrl % token
+
+        files = {"file": open(imgFile, "rb")}
 
         retMsg = ""
         try:

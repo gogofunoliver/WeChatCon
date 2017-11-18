@@ -3,6 +3,7 @@
 import web
 from LexConnector import LexConnector
 from GoogleHanlder import GoogleHanlder
+from CloudVision import GCPCV
 
 #Sepcify the rest api with a handler
 urls = (

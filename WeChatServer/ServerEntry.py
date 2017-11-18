@@ -19,6 +19,7 @@ from TypeDef import TypeDef
 from WeChatDownload import GoogleCaller
 from AWSHandler import  *
 from VoiceFormater import VoiceFormater
+from CloudVision import GCPCV
 
 class Handle(object):
     def __init__(self):
@@ -93,7 +94,8 @@ class Handle(object):
             elif isinstance(recMsg, receive.Msg) and recMsg.MsgType == 'image':
                     func = EventRouter.upload_image_to_wechat(recMsg.image, recMsg.key_value)
                     self.logger.info("image here")
-                    GCPCV.callGCPCV()
+                    ActionsExecutor.add_auto_action(Action(self.callGCPCV, toUser, fromUser, recMsg.MediaId))
+                    #GCPCV.callGCPCV()
 
                     content = func(toUser)
             else:
@@ -214,3 +216,31 @@ class Handle(object):
         replier = reply.TextMsg(toUser, fromUser, content)
         content = replier.send()
         return content
+
+
+    def callGCPCV(self, toUser, fromUser, mediaID, isAysnc = "Y"):
+        """called from wechat """
+        content = ""
+        try:
+            saveIMGLocation = "/tmp/aws_tmp_image.img"
+
+            # 1. Get WeChat IMG
+            WeChatHandler().downloadImageAsFile(mediaID, saveIMGLocation)
+
+
+            with open(saveIMGLocation, "rb") as fh:
+                rspData = fh.read()
+
+            # 2 Call Cloud Vision
+
+            GCPCV.detect_document(saveIMGLocation)
+
+            replier = reply.TextMsg(toUser, fromUser, content)
+            content = replier.send()
+            return content
+
+        except Exception as ex:
+            traceback.print_exc()
+        finally:
+            print(content)
+            return content

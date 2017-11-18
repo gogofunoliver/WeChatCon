@@ -10,7 +10,6 @@ from google.cloud import vision
 from google.cloud.vision import types
 
 
-<<<<<<< HEAD
 class GCPCV(object):
 
     def detect_document(path):

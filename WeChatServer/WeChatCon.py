@@ -33,7 +33,7 @@ class WeChatHandler(object):
         self.getAllNews = "https://api.weixin.qq.com/cgi-bin/material/batchget_material?access_token=%s"
         self.downLoadVoiceUrl = "https://api.weixin.qq.com/cgi-bin/media/get?access_token=%s&media_id=%s"
         self.uploadVoiceUrl = "https://api.weixin.qq.com/cgi-bin/media/upload?access_token=%s&type=voice"
-
+        self.uploadImageUrl = "https://api.weixin.qq.com/cgi-bin/media/upload?access_token=%s&type=image"
         self.jsonTextInputTep = '{ \
                 "@@TYPE@@": "@@USER@@", \
                  "text": { \
@@ -177,6 +177,24 @@ class WeChatHandler(object):
         print(status)
         return ret
 
+    def sendImageMsgCust(self, mediaID, openID="szwlove"):
+        wechatInput = {
+            "touser": openID,
+            "msgtype": "image",
+            "image":
+                {
+                    "media_id": mediaID
+                }
+        }
+
+        token = self.getWeChatToken()
+        sending_url = self.custSend + token
+        r = requests.post(sending_url, data=json.dumps(wechatInput, ensure_ascii=False).encode("utf-8"))
+        status = r.content
+        ret = r.json()['errcode']
+        self.logger.info("Sent to : %s. Msg : %s. Status: <%s>, <%s>" % (openID, mediaID, ret, status))
+        print(status)
+        return ret
 
     def downloadVoiceAsFile(self, mediaID, saveFile):
         token = self.getWeChatToken()
@@ -204,6 +222,21 @@ class WeChatHandler(object):
         finally:
             return retMsg
 
+    def uploadImageFile(self, voiceFile):
+        token = self.getWeChatToken()
+        url = self.uploadImageUrl % token
+
+        files = {"file": open(voiceFile, "rb")}
+
+        retMsg = ""
+        try:
+            ret = requests.post(url, files=files)
+            retMsg = ret.json()["media_id"]
+            print(retMsg)
+        except Exception as Ex:
+            traceback.print_exc()
+        finally:
+            return retMsg
 
     #send MSG to dedicated group with ID
     def send2Group(self, groupID):

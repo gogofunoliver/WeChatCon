@@ -6,10 +6,9 @@ import web
 import traceback
 import receive
 import reply
-from UserHandler import UserHandler
-from FileHandler import FileHandler
 import traceback
 import logging
+import base64
 from Operator import *
 from Resource import *
 from HealthyNotifier import HealthyNotifier
@@ -19,6 +18,8 @@ from TypeDef import TypeDef
 from WeChatDownload import GoogleCaller
 from AWSHandler import  *
 from VoiceFormater import VoiceFormater
+from UserHandler import UserHandler
+from FileHandler import FileHandler
 
 class Handle(object):
     def __init__(self):
@@ -84,11 +85,15 @@ class Handle(object):
             elif isinstance(recMsg, receive.Msg) and recMsg.MsgType == 'text':
                 cnstr = recMsg.Content.decode()
                 self.logger.info("received msg : %s" % cnstr)
-                content = self.callAWSLexWithText(toUser, fromUser, cnstr)
-                #ActionsExecutor.add_auto_action(Action(self.callAWSLexWithText, toUser, fromUser, cnstr))
+                #content = self.callAWSLexWithText(toUser, fromUser, cnstr)
+                ActionsExecutor.add_auto_action(Action(self.callAWSLexWithText, toUser, fromUser, cnstr))
+                return "success"
             elif isinstance(recMsg, receive.Msg) and recMsg.MsgType == 'event':
                     func = EventRouter.get_envent_func(recMsg.event, recMsg.key_value)
                     content = func(toUser)
+            elif isinstance(recMsg, receive.Msg) and recMsg.MsgType == 'image':
+                ActionsExecutor.add_auto_action(Action(self.analysisPic, toUser, fromUser, recMsg.MediaId))
+                return "success"
             else:
                 content = Resource.getMsg("WrongTypeMsg", lang)
 
@@ -96,7 +101,7 @@ class Handle(object):
                 return "success"
             else:
                 self.logger.info("Reply : %s" % content)
-                #print(content)
+                print("___________________")
                 return content
 
         except Exception as Argment:
@@ -206,4 +211,18 @@ class Handle(object):
         content = LexConnector().connect(toUser, msg)
         replier = reply.TextMsg(toUser, fromUser, content)
         content = replier.send()
+        print("**** content: %s" % content)
         return content
+
+    def analysisPic(self, toUser, fromUser, mediaID):
+        # 1. Image
+        WeChatHandler().downloadVoiceAsFile(mediaID, "/tmp/image.jpg")
+
+        # 2
+        with open("/tmp/image.jpg", "rb") as reader:
+            content = reader.read()
+        str_content = str(base64.b64encode(content), encoding="utf-8")
+        result = GoogleNLPPorocesor().getTextFromImage(str_content)
+        msg = result['responses'][0]['fullTextAnnotation']['text']
+        print(result['responses'][0]['fullTextAnnotation']['text'])
+        WeChatHandler().sendMsgViaCust(msg, to_user=toUser)

@@ -18,6 +18,14 @@
           <option name="port" value="22" />
         </fileTransfer>
       </webServer>
+      <webServer id="a5a55780-ea94-4af5-9c72-5964c2972cca" name="EC2_new" url="http://34.237.93.96">
+        <fileTransfer host="34.237.93.96" port="22" privateKey="$USER_HOME$/hackathon2.pem" accessType="SFTP" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>

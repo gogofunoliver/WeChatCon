@@ -1,4 +1,4 @@
- # -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 # filename: BirthDayNotifier.py
 import time
 import threading

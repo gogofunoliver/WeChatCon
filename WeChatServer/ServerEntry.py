@@ -77,25 +77,33 @@ class Handle(object):
                 else:
                     user_say = recMsg.Recognition#.replace("。", "").replace("，", "")
                     content = Resource.getMsg("USay") + user_say + "\n" + "Media ID: " + recMsg.MediaId + "\n"
+
+                    #sync manner
                     #content = self.callAWSLex(toUser, fromUser, recMsg.MediaId)
 
                     #content = "微信识别：" + user_say
                     #ActionsExecutor.add_auto_action(Action(GoogleCaller().callGoogle, recMsg.MediaId, toUser))
+
+                    #async manner
                     ActionsExecutor.add_auto_action(Action(self.callAWSLex, toUser, fromUser, recMsg.MediaId))
-                    return "success"
             elif isinstance(recMsg, receive.Msg) and recMsg.MsgType == 'text':
                 cnstr = recMsg.Content.decode()
                 self.logger.info("received msg : %s" % cnstr)
+
+                #sync manner
                 #content = self.callAWSLexWithText(toUser, fromUser, cnstr)
+
+                #async manner
                 ActionsExecutor.add_auto_action(Action(self.callAWSLexWithText, toUser, fromUser, cnstr))
-                return "success"
+            #handle WeChat Event
             elif isinstance(recMsg, receive.Msg) and recMsg.MsgType == 'event':
                     func = EventRouter.get_envent_func(recMsg.event, recMsg.key_value)
                     content = func(toUser)
 
+            #handle WeChat Image
             elif isinstance(recMsg, receive.Msg) and recMsg.MsgType == 'image':
+                #Async manner
                 ActionsExecutor.add_auto_action(Action(self.analysisPic, toUser, fromUser, recMsg.MediaId))
-                return "success"
             else:
                 content = Resource.getMsg("WrongTypeMsg", lang)
 
@@ -103,7 +111,6 @@ class Handle(object):
                 return "success"
             else:
                 self.logger.info("Reply : %s" % content)
-                print("___________________")
                 return content
 
         except Exception as Argment:
@@ -219,14 +226,24 @@ class Handle(object):
 
 
     def analysisPic(self, toUser, fromUser, mediaID):
-        # 1. Image
-        WeChatHandler().downloadVoiceAsFile(mediaID, "/tmp/image.jpg")
+        content = ""
+        try:
+            # 1. Image
+            WeChatHandler().downloadVoiceAsFile(mediaID, "/tmp/image.jpg")
 
-        # 2
-        with open("/tmp/image.jpg", "rb") as reader:
-            content = reader.read()
-        str_content = str(base64.b64encode(content), encoding="utf-8")
-        result = GoogleNLPPorocesor().getTextFromImage(str_content)
-        msg = result['responses'][0]['fullTextAnnotation']['text']
-        print(result['responses'][0]['fullTextAnnotation']['text'])
-        WeChatHandler().sendMsgViaCust(msg, to_user=toUser)
+            # 2
+            with open("/tmp/image.jpg", "rb") as reader:
+                content = reader.read()
+
+            # 3. base64 encoding
+            str_content = str(base64.b64encode(content), encoding="utf-8")
+            result = GoogleNLPPorocesor().getTextFromImage(str_content)
+            msg = result['responses'][0]['fullTextAnnotation']['text']
+            #print(result['responses'][0]['fullTextAnnotation']['text'])
+            WeChatHandler().sendMsgViaCust(msg, to_user=toUser)
+        except Exception as Ex:
+            traceback.print_exc
+            content = ""
+        finally:
+            return content
+

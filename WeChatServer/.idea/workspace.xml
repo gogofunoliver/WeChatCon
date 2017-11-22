@@ -33,16 +33,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="WeChatEventHandler.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WeChatEventHandler.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="20" column="17" lean-forward="false" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="BirthDayNotifier.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BirthDayNotifier.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -82,14 +72,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ServerEntry.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ServerEntry.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ServerEntry.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3480">
-              <caret line="232" column="0" lean-forward="true" selection-start-line="232" selection-start-column="0" selection-end-line="232" selection-end-column="0" />
+            <state relative-caret-position="-1998">
+              <caret line="65" column="19" lean-forward="false" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="19" />
               <folding>
                 <element signature="e#47#61#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CloudVision.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/CloudVision.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-265">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -904,7 +904,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="dbDummy://dbtable:/dc483eb3/6508ff9c-26ee-45b0-b8bf-0637a993e8e9/gogofun.AWS_Record" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/6508ff9c-26ee-45b0-b8bf-0637a993e8e9/console.sql" />
     <entry file="dbDummy://dbtable:/dc483eb3/cb02b80d-3be1-4cd0-a8b5-ca31ede029fd/oliver_cn_gogofun.AWS_Record" />
     <entry file="dbDummy://dbtable:/dc483eb3/cb02b80d-3be1-4cd0-a8b5-ca31ede029fd/oliver_cn_gogofun.HealthyRecord" />
@@ -1116,11 +1115,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ServerEntry.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3480">
-          <caret line="232" column="0" lean-forward="true" selection-start-line="232" selection-start-column="0" selection-end-line="232" selection-end-column="0" />
+        <state relative-caret-position="-1998">
+          <caret line="65" column="19" lean-forward="false" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="19" />
           <folding>
             <element signature="e#47#61#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CloudVision.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-265">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

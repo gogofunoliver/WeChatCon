@@ -20,6 +20,7 @@ from AWSHandler import  *
 from VoiceFormater import VoiceFormater
 from UserHandler import UserHandler
 from FileHandler import FileHandler
+#from CloudVision import GCPCV
 
 class Handle(object):
     def __init__(self):
@@ -91,6 +92,7 @@ class Handle(object):
             elif isinstance(recMsg, receive.Msg) and recMsg.MsgType == 'event':
                     func = EventRouter.get_envent_func(recMsg.event, recMsg.key_value)
                     content = func(toUser)
+
             elif isinstance(recMsg, receive.Msg) and recMsg.MsgType == 'image':
                 ActionsExecutor.add_auto_action(Action(self.analysisPic, toUser, fromUser, recMsg.MediaId))
                 return "success"
@@ -207,12 +209,14 @@ class Handle(object):
             print(content)
             return content
 
+
     def callAWSLexWithText(self, toUser, fromUser, msg):
         content = LexConnector().connect(toUser, msg)
         replier = reply.TextMsg(toUser, fromUser, content)
         content = replier.send()
         print("**** content: %s" % content)
         return content
+
 
     def analysisPic(self, toUser, fromUser, mediaID):
         # 1. Image

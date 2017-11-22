@@ -4,6 +4,7 @@ from DBHandler import DBHandler
 from WeChatCon import WeChatHandler
 from UserHandler import UserHandler
 from Resource import  Resource
+from CloudVision import GCPCV
 import threading
 from ActionHandler import *
 from time import sleep
@@ -157,6 +158,15 @@ class EventRouter(object):
 
     @staticmethod
     def get_envent_func(event, key_value):
+        func = ""
+        if event in TypeDef.SystemEvent:
+            func = EventRouter.__sys_event.get(event, TypeDef.Undefined)
+        elif event in TypeDef.CustEvent:
+            func = EventRouter.__self_func.get(key_value, EventRouter.undefined_event)
+        return func
+
+    @staticmethod
+    def upload_image_to_wechat(event, key_value):
         func = ""
         if event in TypeDef.SystemEvent:
             func = EventRouter.__sys_event.get(event, TypeDef.Undefined)

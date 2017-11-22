@@ -10,7 +10,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/WeChatServer$Python.coverage" NAME="Python Coverage Results" MODIFIED="1511238242478" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/WeChatServer$Python.coverage" NAME="Python Coverage Results" MODIFIED="1511255084590" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/WeChatServer$thread.coverage" NAME="thread Coverage Results" MODIFIED="1499181050891" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/WeChatServer$Unnamed.coverage" NAME="Unnamed Coverage Results" MODIFIED="1500385313844" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/WeChatServer$TestLex.coverage" NAME="TestLex Coverage Results" MODIFIED="1509248656585" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -37,13 +37,8 @@
         <entry file="file://$PROJECT_DIR$/WeChatEventHandler.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
-              <caret line="19" column="17" lean-forward="false" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
-              <folding>
-                <marker date="1506952179000" expanded="true" signature="736:876" ph="INSERT into UserInfo... " />
-                <marker date="1506952179000" expanded="true" signature="1240:1320" ph="UPDATE UserI... " />
-                <marker date="1506952179000" expanded="true" signature="2407:2459" ph="SELECT Wecha... UserInfo" />
-                <marker date="1506952179000" expanded="true" signature="3639:3669" ph="Select Messa... AWS_Record" />
-              </folding>
+              <caret line="20" column="17" lean-forward="false" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -64,12 +59,12 @@
       <file leaf-file-name="WeChatCon.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WeChatCon.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="33" column="13" lean-forward="false" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+            <state relative-caret-position="-25">
+              <caret line="235" column="0" lean-forward="true" selection-start-line="235" selection-start-column="0" selection-end-line="235" selection-end-column="0" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
-                <marker date="1509251119000" expanded="true" signature="2750:2804" ph="SELECT Title... HistoryArticle" />
-                <marker date="1509251119000" expanded="true" signature="2940:3019" ph="INSERT into HistoryArticle... " />
+                <marker date="1511318685796" expanded="true" signature="2855:2909" ph="SELECT Title... HistoryArticle" />
+                <marker date="1511318685796" expanded="true" signature="3045:3124" ph="INSERT into HistoryArticle... " />
               </folding>
             </state>
           </provider>
@@ -78,8 +73,8 @@
       <file leaf-file-name="WeChatDownload.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WeChatDownload.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="45" column="26" lean-forward="true" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="59" />
+            <state relative-caret-position="675">
+              <caret line="45" column="26" lean-forward="false" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="59" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -90,8 +85,8 @@
       <file leaf-file-name="ServerEntry.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ServerEntry.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="94" column="107" lean-forward="false" selection-start-line="94" selection-start-column="107" selection-end-line="94" selection-end-column="107" />
+            <state relative-caret-position="3480">
+              <caret line="232" column="0" lean-forward="true" selection-start-line="232" selection-start-column="0" selection-end-line="232" selection-end-column="0" />
               <folding>
                 <element signature="e#47#61#0" expanded="true" />
               </folding>
@@ -102,7 +97,7 @@
       <file leaf-file-name="ThreadPool.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ThreadPool.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
+            <state relative-caret-position="405">
               <caret line="38" column="48" lean-forward="false" selection-start-line="38" selection-start-column="48" selection-end-line="38" selection-end-column="48" />
               <folding>
                 <marker date="1506952179000" expanded="true" signature="775:812" ph="SELECT Open_... WeatherSub" />
@@ -114,7 +109,7 @@
       <file leaf-file-name="receive.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/receive.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-33">
+            <state relative-caret-position="675">
               <caret line="46" column="8" lean-forward="false" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
               <folding />
             </state>
@@ -134,8 +129,8 @@
       <file leaf-file-name="AWSHandler.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AWSHandler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="130" column="39" lean-forward="true" selection-start-line="130" selection-start-column="39" selection-end-line="130" selection-end-column="39" />
+            <state relative-caret-position="-563">
+              <caret line="81" column="62" lean-forward="false" selection-start-line="81" selection-start-column="54" selection-end-line="81" selection-end-column="62" />
               <folding>
                 <element signature="e#51#66#0" expanded="true" />
                 <marker date="1510734897000" expanded="true" signature="683:749" ph="INSERT into AWS_Record... " />
@@ -147,8 +142,8 @@
       <file leaf-file-name="GoogleNLP.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GoogleNLP.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="163" column="63" lean-forward="true" selection-start-line="159" selection-start-column="4" selection-end-line="163" selection-end-column="63" />
+            <state relative-caret-position="1800">
+              <caret line="120" column="0" lean-forward="false" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
               <folding>
                 <element signature="e#59#75#0" expanded="true" />
               </folding>
@@ -167,8 +162,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>FileHandler</find>
-      <find>Night Time, don't send any messag</find>
       <find>check_time</find>
       <find>json</find>
       <find>time</find>
@@ -197,6 +190,8 @@
       <find>TYPE</find>
       <find>text</find>
       <find>sentimentAnalysis</find>
+      <find>upload</find>
+      <find>uploadImageFile</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -230,9 +225,9 @@
         <option value="$PROJECT_DIR$/WeChatDownload.py" />
         <option value="$PROJECT_DIR$/ActionHandler.py" />
         <option value="$PROJECT_DIR$/BirthDayNotifier.py" />
-        <option value="$PROJECT_DIR$/WeChatCon.py" />
         <option value="$PROJECT_DIR$/AWSHandler.py" />
         <option value="$PROJECT_DIR$/GoogleNLP.py" />
+        <option value="$PROJECT_DIR$/WeChatCon.py" />
         <option value="$PROJECT_DIR$/ServerEntry.py" />
       </list>
     </option>
@@ -244,7 +239,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
+    <option name="x" value="-1" />
+    <option name="y" value="24" />
     <option name="width" value="1440" />
     <option name="height" value="815" />
   </component>
@@ -330,8 +326,8 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
-        <env name="BAIDU_SEC_KEY" value="f2fQSyhL9UCO2zUwNjQWBL7gd3LjCesG " />
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="BAIDU_SEC_KEY" value="f2fQSyhL9UCO2zUwNjQWBL7gd3LjCesG " />
         <env name="BAIDU_API_KEY" value="7d2RGeMZTa0vSMuf0ivFyAg9" />
         <env name="GOOGLE_KEY" value="AIzaSyA-GDhKCYC4lW8LsMJDAJJc_T3A-iD7NoE" />
         <env name="LD_LIBRARY_PATH" value="/usr/local/lib" />
@@ -650,21 +646,21 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="815" extended-state="0" />
+    <frame x="-1" y="24" width="1440" height="815" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31787175" sideWeight="0.47353363" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4625" sideWeight="0.3597997" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3611111" sideWeight="0.38197425" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3611111" sideWeight="0.62017167" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3611111" sideWeight="0.37982833" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4625" sideWeight="0.62947065" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3278237" sideWeight="0.4969325" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32963988" sideWeight="0.47854078" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4625" sideWeight="0.64020026" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24217688" sideWeight="0.47567955" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1981402" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20100144" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12517883" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40833333" sideWeight="0.64020026" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40833333" sideWeight="0.64735335" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -763,12 +759,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/WeChatCon.py</url>
-          <line>76</line>
+          <line>78</line>
           <option name="timeStamp" value="129" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/WeChatEventHandler.py</url>
-          <line>56</line>
+          <line>57</line>
           <option name="timeStamp" value="139" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -897,7 +893,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="301" />
+      <option name="time" value="303" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -1032,13 +1028,8 @@
     <entry file="file://$PROJECT_DIR$/WeChatEventHandler.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="19" column="17" lean-forward="false" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
-          <folding>
-            <marker date="1506952179000" expanded="true" signature="736:876" ph="INSERT into UserInfo... " />
-            <marker date="1506952179000" expanded="true" signature="1240:1320" ph="UPDATE UserI... " />
-            <marker date="1506952179000" expanded="true" signature="2407:2459" ph="SELECT Wecha... UserInfo" />
-            <marker date="1506952179000" expanded="true" signature="3639:3669" ph="Select Messa... AWS_Record" />
-          </folding>
+          <caret line="20" column="17" lean-forward="false" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1064,8 +1055,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WeChatDownload.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="45" column="26" lean-forward="true" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="59" />
+        <state relative-caret-position="675">
+          <caret line="45" column="26" lean-forward="false" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="59" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
@@ -1074,27 +1065,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/receive.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-33">
+        <state relative-caret-position="675">
           <caret line="46" column="8" lean-forward="false" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WeChatCon.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="33" column="13" lean-forward="false" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-            <marker date="1509251119000" expanded="true" signature="2750:2804" ph="SELECT Title... HistoryArticle" />
-            <marker date="1509251119000" expanded="true" signature="2940:3019" ph="INSERT into HistoryArticle... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ThreadPool.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
+        <state relative-caret-position="405">
           <caret line="38" column="48" lean-forward="false" selection-start-line="38" selection-start-column="48" selection-end-line="38" selection-end-column="48" />
           <folding>
             <marker date="1506952179000" expanded="true" signature="775:812" ph="SELECT Open_... WeatherSub" />
@@ -1104,8 +1083,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/GoogleNLP.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="163" column="63" lean-forward="true" selection-start-line="159" selection-start-column="4" selection-end-line="163" selection-end-column="63" />
+        <state relative-caret-position="1800">
+          <caret line="120" column="0" lean-forward="false" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
           <folding>
             <element signature="e#59#75#0" expanded="true" />
           </folding>
@@ -1114,8 +1093,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/AWSHandler.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="130" column="39" lean-forward="true" selection-start-line="130" selection-start-column="39" selection-end-line="130" selection-end-column="39" />
+        <state relative-caret-position="-563">
+          <caret line="81" column="62" lean-forward="false" selection-start-line="81" selection-start-column="54" selection-end-line="81" selection-end-column="62" />
           <folding>
             <element signature="e#51#66#0" expanded="true" />
             <marker date="1510734897000" expanded="true" signature="683:749" ph="INSERT into AWS_Record... " />
@@ -1123,10 +1102,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/WeChatCon.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-25">
+          <caret line="235" column="0" lean-forward="true" selection-start-line="235" selection-start-column="0" selection-end-line="235" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <marker date="1511318685796" expanded="true" signature="2855:2909" ph="SELECT Title... HistoryArticle" />
+            <marker date="1511318685796" expanded="true" signature="3045:3124" ph="INSERT into HistoryArticle... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ServerEntry.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="94" column="107" lean-forward="false" selection-start-line="94" selection-start-column="107" selection-end-line="94" selection-end-column="107" />
+        <state relative-caret-position="3480">
+          <caret line="232" column="0" lean-forward="true" selection-start-line="232" selection-start-column="0" selection-end-line="232" selection-end-column="0" />
           <folding>
             <element signature="e#47#61#0" expanded="true" />
           </folding>

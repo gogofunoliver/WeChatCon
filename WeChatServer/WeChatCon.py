@@ -34,6 +34,8 @@ class WeChatHandler(object):
         self.downLoadVoiceUrl = "https://api.weixin.qq.com/cgi-bin/media/get?access_token=%s&media_id=%s"
         self.uploadVoiceUrl = "https://api.weixin.qq.com/cgi-bin/media/upload?access_token=%s&type=voice"
         self.uploadImageUrl = "https://api.weixin.qq.com/cgi-bin/media/upload?access_token=%s&type=image"
+        self.downLoadIMGUrl = "https://api.weixin.qq.com/cgi-bin/media/get?access_token=%s&media_id=%s"
+
         self.jsonTextInputTep = '{ \
                 "@@TYPE@@": "@@USER@@", \
                  "text": { \
@@ -222,11 +224,21 @@ class WeChatHandler(object):
         finally:
             return retMsg
 
-    def uploadImageFile(self, voiceFile):
+
+    def downloadImageAsFile(self, mediaID, saveFile):
+        token = self.getWeChatToken()
+        url = self.downLoadVoiceUrl % (token, mediaID)
+
+        ret = requests.get(url)
+        with open(saveFile, "wb") as fh:
+            fh.write(ret.content)
+
+
+    def uploadImageFile(self, imgFile):
         token = self.getWeChatToken()
         url = self.uploadImageUrl % token
 
-        files = {"file": open(voiceFile, "rb")}
+        files = {"file": open(imgFile, "rb")}
 
         retMsg = ""
         try:
@@ -237,6 +249,7 @@ class WeChatHandler(object):
             traceback.print_exc()
         finally:
             return retMsg
+
 
     #send MSG to dedicated group with ID
     def send2Group(self, groupID):

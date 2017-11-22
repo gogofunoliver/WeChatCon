@@ -40,4 +40,4 @@ class GCPCV(object):
                 print('Block Content: {}'.format(block_text))
                 print('Block Bounds:\n {}'.format(block.bounding_box))
 
-        return format(block_text)
+

@@ -240,7 +240,7 @@ class Handle(object):
             result = GoogleNLPPorocesor().getTextFromImage(str_content)
             msg = result['responses'][0]['fullTextAnnotation']['text']
             #print(result['responses'][0]['fullTextAnnotation']['text'])
-            WeChatHandler().sendMsgViaCust(msg, to_user=toUser)
+            WeChatHandler().sendMsgViaCust(msg, "text",toUser)
         except Exception as Ex:
             traceback.print_exc
             content = ""

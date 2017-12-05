@@ -4,7 +4,7 @@ from DBHandler import DBHandler
 from WeChatCon import WeChatHandler
 from UserHandler import UserHandler
 from Resource import  Resource
-from CloudVision import GCPCV
+#from CloudVision import GCPCV
 import threading
 from ActionHandler import *
 from time import sleep

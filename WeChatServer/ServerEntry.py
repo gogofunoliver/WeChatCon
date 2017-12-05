@@ -240,7 +240,7 @@ class Handle(object):
                 content = reader.read()
 
             print("uploading")
-            # 4 upload to S3
+            # 3 upload to S3
             temp_key = "work/oliver_upload.jpg"
             print(AWSS3().write(content, temp_key))
             
@@ -258,13 +258,11 @@ class Handle(object):
                 msg = json.dumps(face_info)
             elif face_info['FaceCount'] == -1 : # no face in the pahoto
                 print("googling")
-                # 3. base64 encoding
+                # 4. base64 encoding
                 str_content = str(base64.b64encode(content), encoding="utf-8")
                 result = GoogleNLPPorocesor().getTextFromImage(str_content)
                 msg = result['responses'][0]['fullTextAnnotation']['text']
                 print(result['responses'][0]['fullTextAnnotation']['text'])
-            print(msg)
-            print("ending")
             WeChatHandler().sendMsgViaCust(msg, to_user=toUser)
         except Exception as Ex:
             traceback.print_exc

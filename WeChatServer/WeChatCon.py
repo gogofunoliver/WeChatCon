@@ -227,7 +227,7 @@ class WeChatHandler(object):
 
     def downloadImageAsFile(self, mediaID, saveFile):
         token = self.getWeChatToken()
-        url = self.downLoadVoiceUrl % (token, mediaID)
+        url = self.downLoadIMGUrl % (token, mediaID)
 
         ret = requests.get(url)
         with open(saveFile, "wb") as fh:

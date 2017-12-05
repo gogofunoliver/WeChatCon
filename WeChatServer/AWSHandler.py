@@ -5,6 +5,7 @@ import requests
 import json
 import boto3
 import traceback
+import base64
 import web
 from WeChatCon import *
 from DBHandler import DBHandler
@@ -295,6 +296,7 @@ class AWSMLConnector(object):
         print(response['Prediction'])
         return response['Prediction']['predictedLabel']
         pass
+
         '''
         {
             "Prediction": {
@@ -312,14 +314,173 @@ class AWSMLConnector(object):
         }
         '''
 
+        
+class AWSS3(object):
+    def __init__(self):
+        self.client = boto3.client("s3")
+        self.bucket = "oliver-face-detection-store"
+    
+    def write(self, content, key = "work/upload.jpg"):
+        save_result = False
+            
+        response = self.client.put_object(
+            ACL = 'private',
+            Body = content,
+            Bucket = self.bucket,
+            Key = key
+        )
+
+        if response['ResponseMetadata']['HTTPStatusCode'] == 200:
+            save_result = True
+        return save_result
+
+    def write_file(self, file, key = "work/upload.jpg"):
+        save_result = False
+            
+        with open(file, "rb") as data:
+            body = data.read()
+            
+        response = self.client.put_object(
+            ACL = 'private',
+            Body = body,
+            Bucket = self.bucket,
+            Key = key
+        )
+
+        if response['ResponseMetadata']['HTTPStatusCode'] == 200:
+            save_result = True
+        return save_result
+
+
+class Face(object):
+    def __init__(self, faceID, name):
+        self.__faceID = faceID
+        self.__name = name
+
+        
+class AWSFaceAnalysis(object):
+    def __init__(self, image=None):
+        self.BUCKET = "oliver-face-detection-store"
+        self.image_folder = "oliver"
+        self.region = "us-west-2"
+        if image is not None:
+            self.image = image
+        self.COLLECTION = "oliver-us-west"
+        self.rekognition = boto3.client("rekognition", self.region)
+
+    # create the collection ID, should only create onece 
+    def create_collection(self):
+        response = self.rekognition.create_collection(CollectionId=self.COLLECTION)
+        return response
+
+    # generate faceID
+    def index_faces(self, key, image_id, attributes=()):
+        face=""
+        try:
+            print("here: %s " % image_id)
+            response = self.rekognition.index_faces(
+                Image={
+                    "S3Object": {
+                        "Bucket": self.BUCKET,
+                        "Name": key,
+                    }
+                },
+                CollectionId = self.COLLECTION,
+                ExternalImageId = image_id,
+                DetectionAttributes=attributes,
+            )
+            print(response)
+            record = response['FaceRecords'][0]
+            face = record['Face']
+        except Exception as ex:
+            traceback.print_exc()
+        finally:
+            print("return")
+            return face
+
+    #search by photo
+    def search_faces_by_image(self, key = "work/upload.jpg", threshold=80):
+        output = {}
+        faceCount = 0
+        try:
+            response = self.rekognition.search_faces_by_image(
+                Image={
+                    "S3Object": {
+                        "Bucket": self.BUCKET,
+                        "Name": key                
+                    }
+                },
+                CollectionId = self.COLLECTION,
+                FaceMatchThreshold = threshold,
+            )
+            print("size: %d " % len(response['FaceMatches']))
+            faceCount = len(response['FaceMatches'])
+            if faceCount > 0:
+                output = { 
+                    "Name" : response['FaceMatches'][0]['Face']['ExternalImageId'],
+                    "Face" : response['FaceMatches'][0]['Face']['FaceId'],
+                    "Confidence" : response['FaceMatches'][0]['Face']['Confidence'],
+                    "Similarity" : response['FaceMatches'][0]['Similarity'],
+                    "FaceCount" : faceCount
+                }
+            else:
+                output = {
+                "FaceCount" : 0
+            }
+        except self.rekognition.exceptions.InvalidParameterException as awsex:
+            # hack here, no faces case
+            print(awsex.response['Error']['Message'])
+            output = {
+                "FaceCount" : -1
+            }
+        except Exception as ex:
+            traceback.print_exc()
+            raise ex
+        finally:
+            print(output)
+            return output
+    
+    
+    def search_faces_by_image_content(self, content, threshold = 80):
+        response = self.rekognition.search_faces_by_image(
+            Image={
+                'Bytes': content
+            },
+            CollectionId=self.COLLECTION,
+            FaceMatchThreshold=threshold,
+        )
+        
+        print("size: %d " % len(response['FaceMatches']))
+        if len(response['FaceMatches']) > 0:
+            output = { 
+            "Name" : response['FaceMatches'][0]['Face']['ExternalImageId'],
+            "Face" : response['FaceMatches'][0]['Face']['FaceId'],
+            "Confidence" : response['FaceMatches'][0]['Face']['Confidence'],
+            "Similarity" : response['FaceMatches'][0]['Similarity']
+        }
+        else:
+            output = {}
+        return output
+
 
 
 if __name__ == "__main__":
-    data = {
-        "ApplyCardType" : "Normal" ,
-        "Country" : "China",
-        "JobPosition" : "CEO",
-        "Salary": "99999",
-        "Sex" : "mail"
-    }
-    AWSMLConnector().connect(data)
+     temp_image = "/tmp/image.jpg"
+     with open(temp_image, "rb") as reader:
+         content = reader.read()
+     print("uploading")
+     # upload to S3
+     # temp_key = "work/oliver_upload.jpg"
+     #print(AWSS3().write(content))
+     
+     # os.system("aws s3 cp /tmp/image.jpg s3://jerryliu-rekognition-test/work/upload.jpg")
+     #AWSFaceAnalysis().create_collection()
+     #print(AWSFaceAnalysis().index_faces("src/WechatIMG14.jpeg", "oliver"))
+     print("face detection")
+
+     # face rekonginition
+     output = AWSFaceAnalysis().search_faces_by_image("work/oliver_upload.jpg")
+     if len(output) != 1:
+            AWSFaceAnalysis().index_faces("work/oliver_upload.jpg", "oHBF6wUHaE4L2yUfhKMBqcrjoi0g")
+            AWSS3().write("collection_photo/Jerry.jpeg")
+            print(AWSFaceAnalysis().search_faces_by_image("work/oliver_upload.jpg"))

@@ -227,19 +227,44 @@ class Handle(object):
 
     def analysisPic(self, toUser, fromUser, mediaID):
         content = ""
+        
+        #for face
         try:
+            user_name = WeChatHandler().getUserInfo(toUser)['nickname']
             # 1. Image
-            WeChatHandler().downloadVoiceAsFile(mediaID, "/tmp/image.jpg")
+            temp_image = "/tmp/image.jpg"
+            WeChatHandler().downloadVoiceAsFile(mediaID, temp_image)
 
             # 2
-            with open("/tmp/image.jpg", "rb") as reader:
+            with open(temp_image, "rb") as reader:
                 content = reader.read()
 
-            # 3. base64 encoding
-            str_content = str(base64.b64encode(content), encoding="utf-8")
-            result = GoogleNLPPorocesor().getTextFromImage(str_content)
-            msg = result['responses'][0]['fullTextAnnotation']['text']
-            #print(result['responses'][0]['fullTextAnnotation']['text'])
+            print("uploading")
+            # 4 upload to S3
+            temp_key = "work/oliver_upload.jpg"
+            print(AWSS3().write(content, temp_key))
+            
+            print("face detection")
+            # face rekonginition
+            face_info = AWSFaceAnalysis().search_faces_by_image(key = temp_key)
+            if face_info['FaceCount'] == 0 : # new face in the collection
+                print("temp key: %s, user name: %s" % (temp_key, toUser))
+                AWSFaceAnalysis().index_faces(temp_key, toUser)
+                key = "collection_photo/" + str(time.time() + ".jpg")
+                print("key : %s" % key)
+                AWSS3().write(content, key)
+                msg = "Fisrt time to see <%s> photo. Create index already." % user_name 
+            elif face_info['FaceCount'] > 0 : # correct case
+                msg = json.dumps(face_info)
+            elif face_info['FaceCount'] == -1 : # no face in the pahoto
+                print("googling")
+                # 3. base64 encoding
+                str_content = str(base64.b64encode(content), encoding="utf-8")
+                result = GoogleNLPPorocesor().getTextFromImage(str_content)
+                msg = result['responses'][0]['fullTextAnnotation']['text']
+                print(result['responses'][0]['fullTextAnnotation']['text'])
+            print(msg)
+            print("ending")
             WeChatHandler().sendMsgViaCust(msg, to_user=toUser)
         except Exception as Ex:
             traceback.print_exc

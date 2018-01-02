@@ -11,39 +11,38 @@ from WeChatCon import *
 from DBHandler import DBHandler
 import subprocess
 import time
+from utill import  *
 from TypeDef import TypeDef
 from GoogleNLP import *
 
 class AWSHandler(object):
     def GET(self):
+        output = ""
         try:
             data = web.input()
             if len(data) == 0:
+                output = "hello, this is handle view"
+            else:
+                output = "Test"
 
-                return "hello, this is handle view"
-            return "Test"
-
-        except Exception as Argument:
-            return Argument
+        except Exception as ex:
+            traceback.pr()
+        finally:
+            return output
 
     def POST(self):
+        output = ""
         try:
             webData = web.data().decode('utf-8')
             aws_msg = json.loads(webData)
-
-            DBHandler().insert("INSERT into AWS_Record VALUES (null, '%s', '%s', '%s', '%s', null)"
-                % (aws_msg['Region'], aws_msg['ResID'], aws_msg['message'], aws_msg['Resource']) )
-
-            message_to_send = aws_msg["message"]
-            wechat_con = WeChatHandler()
-            if int(wechat_con.sendMsgToOneAsPreview(message_to_send, "touser", "oHBF6wRiecgOOlymR73g-Xa8OcD8")) == 0:
-                return "sending to wechat successfully"
-            else:
-                return "failed sending to wechat"
-
-        except Exception as Argment:
+            key = "src/" + aws_msg['key']
+            print(AWSFaceAnalysis().index_faces(key, aws_msg['name']))
+            #AWSS3().write("collection_photo/" + aws_msg['name'] + ".jpeg")
+            print(aws_msg)
+        except Exception as ex:
             traceback.print_exc()
-            return Argment
+        finally:
+            return output
 
 
 
@@ -66,8 +65,12 @@ class LexConnector(object):
         timestamp = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
         reply_msg = ""
         if response['dialogState'] == 'ReadyForFulfillment':
+            # remove context for all kind of fullfillment
+            ConText.rm_con(userId)
+
             if response['intentName'] == 'IdentifyUser':
                 print(response['slots'])
+                '''
                 if response['slots']['StaffID'] == '44006524':
                     reply_msg = "OH! Oliver, it's you. You are my father. What can I do for you?"
                     mediaID = WeChatHandler().uploadImageFile("/tmp/Oliver.jpg")
@@ -85,7 +88,8 @@ class LexConnector(object):
                     mediaID = WeChatHandler().uploadImageFile("/tmp/lee.jpg")
                     WeChatHandler().sendImageMsgCust(mediaID, userId)
                 else:
-                    reply_msg = "What can I do for you?"
+                '''
+                reply_msg = "What can I do for you?"
             elif response['intentName'] == 'OpenAccount':
                 reply_msg = "I have record your information and will inform you after it get approved. See you!"
                 user_dict = WeChatHandler().getUserInfo(userId)
@@ -109,6 +113,7 @@ class LexConnector(object):
                             "Sex": TypeDef.sex_dict[user_dict['sex']]}
                 ret = AWSMLConnector().connect(dataSort)
                 if ret == "1":
+                    AWSCWatch().put_data("potential customer", 1)
                     reply_msg = "Since you own the high credit in our bank,  we " \
                                 "have a product you may be interested. Do you want to know more?"
                 else:
@@ -125,10 +130,16 @@ class LexConnector(object):
                 "TimeStamp" : {"S" : timestamp},
                 "Text" : {"S" : msg}
             }
+
             if analysis["documentSentiment"]["score"] < 0:
+                AWSCWatch().put_data(userId, 0 - analysis["documentSentiment"]["magnitude"])
                 #re write
                 reply_msg = response['message'] + " (It seems you are unhappy. I will improve my ability to server you.)"
+            else:
+                AWSCWatch().put_data(userId, analysis["documentSentiment"]["magnitude"])
+
             DynamoDBWriter().put_item("UserEmotion", Emotion)
+            ConText.add_con(userId, "photo")
         print("******* %s" % reply_msg)
         WeChatHandler().sendMsgViaCust(reply_msg, to_user=userId)
         return reply_msg
@@ -149,6 +160,9 @@ class LexConnector(object):
 
             timestamp = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
             if response['dialogState'] == 'ReadyForFulfillment':
+                # remove context for all kind of fullfillment
+                ConText.rm_con(userId)
+
                 if response['intentName'] == 'IdentifyUser':
                     #print(response['slots'])
                     if response['slots']['StaffID'] == str('624'):
@@ -200,6 +214,7 @@ class LexConnector(object):
                         "Sex" : TypeDef.sex_dict[user_dict['sex']]}
                     ret = AWSMLConnector().connect(dataSort)
                     if ret == "1":
+                        AWSCWatch().put_data("potential customer", 1)
                         reply_msg = "Since you own the high credit in our bank,  we" \
                                     "have a product you may be interested. Do you want to know more?"
                     else:
@@ -209,6 +224,7 @@ class LexConnector(object):
                 reply_type = 'mp3'
                 pass
             else:
+                ConText.add_con(userId, "photo")
                 reply_type = "wav"
                 print(response['inputTranscript'])
 
@@ -395,7 +411,6 @@ class AWSFaceAnalysis(object):
         except Exception as ex:
             traceback.print_exc()
         finally:
-            print("return")
             return face
 
     #search by photo
@@ -463,24 +478,33 @@ class AWSFaceAnalysis(object):
         return output
 
 
+class AWSCWatch(object):
+    def __init__(self):
+        self.client = boto3.client('cloudwatch', region_name="us-west-2")
+        self.metrics = 'UserEmotion'
+        self.Namespace = 'WeChatBot'
+        pass
+
+    def put_data(self, user_name, strength):
+        print("User: %s, value: %s" % (user_name, str(strength)))
+        response = self.client.put_metric_data(
+            MetricData=[
+                {
+                    'MetricName': self.metrics,
+                    'Dimensions': [
+                        {
+                            'Name': 'UserName',
+                            'Value': user_name
+                        },
+                    ],
+                    'Unit': 'None',
+                    'Value': strength
+                },
+            ],
+            Namespace='WeChatBot'
+        )
+        print(response)
+
 
 if __name__ == "__main__":
-     temp_image = "/tmp/image.jpg"
-     with open(temp_image, "rb") as reader:
-         content = reader.read()
-     print("uploading")
-     # upload to S3
-     # temp_key = "work/oliver_upload.jpg"
-     #print(AWSS3().write(content))
-     
-     # os.system("aws s3 cp /tmp/image.jpg s3://jerryliu-rekognition-test/work/upload.jpg")
-     #AWSFaceAnalysis().create_collection()
-     #print(AWSFaceAnalysis().index_faces("src/WechatIMG14.jpeg", "oliver"))
-     print("face detection")
-
-     # face rekonginition
-     output = AWSFaceAnalysis().search_faces_by_image("work/oliver_upload.jpg")
-     if len(output) != 1:
-            AWSFaceAnalysis().index_faces("work/oliver_upload.jpg", "oHBF6wUHaE4L2yUfhKMBqcrjoi0g")
-            AWSS3().write("collection_photo/Jerry.jpeg")
-            print(AWSFaceAnalysis().search_faces_by_image("work/oliver_upload.jpg"))
+    pass

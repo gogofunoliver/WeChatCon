@@ -76,7 +76,7 @@ class Handle(object):
                     content = "Invalid Message"
                 else:
                     user_say = recMsg.Recognition#.replace("。", "").replace("，", "")
-                    content = Resource.getMsg("USay") + user_say + "\n" + "Media ID: " + recMsg.MediaId + "\n"
+                    #content = Resource.getMsg("USay") + user_say + "\n" + "Media ID: " + recMsg.MediaId + "\n"
 
                     #sync manner
                     #content = self.callAWSLex(toUser, fromUser, recMsg.MediaId)
@@ -250,12 +250,21 @@ class Handle(object):
             if face_info['FaceCount'] == 0 : # new face in the collection
                 print("temp key: %s, user name: %s" % (temp_key, toUser))
                 AWSFaceAnalysis().index_faces(temp_key, toUser)
-                key = "collection_photo/" + str(time.time() + ".jpg")
+                key = "collection_photo/" + str(time.time()) + ".jpg"
                 print("key : %s" % key)
                 AWSS3().write(content, key)
                 msg = "Fisrt time to see <%s> photo. Create index already." % user_name 
             elif face_info['FaceCount'] > 0 : # correct case
-                msg = json.dumps(face_info)
+                str_content = str(base64.b64encode(content), encoding="utf-8")
+                try:
+                    result = GoogleNLPPorocesor().getTextFromImage(str_content)
+                    text_result = result['responses'][0]['fullTextAnnotation']['text']
+                    print(result['responses'][0]['fullTextAnnotation']['text'])
+                    msg = json.dumps(face_info) + "\n----------------\n" + text_result
+                    msg = "Hello " + face_info['Name'] + ", what can I help you with?" + "\n----------------\n" + text_result
+                except Exception as ex:
+                    # any error, as no text case
+                    msg = "Hello " + face_info['Name'] + ", what can I help you with?"
             elif face_info['FaceCount'] == -1 : # no face in the pahoto
                 print("googling")
                 # 4. base64 encoding
@@ -264,6 +273,8 @@ class Handle(object):
                 msg = result['responses'][0]['fullTextAnnotation']['text']
                 print(result['responses'][0]['fullTextAnnotation']['text'])
             WeChatHandler().sendMsgViaCust(msg, to_user=toUser)
+            if ConText.context_list.get(toUser) is not None:
+                LexConnector().connect(toUser, "oliver-face-detection-store/src")
         except Exception as Ex:
             traceback.print_exc
             content = ""

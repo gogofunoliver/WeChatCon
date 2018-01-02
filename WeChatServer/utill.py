@@ -101,6 +101,24 @@ class Test1(object):
         print("test2 END")
         self.__lock.release()
 
+class ConText(object):
+    context_list = {}
+
+    def __init__(self):
+        pass
+
+    @staticmethod
+    def add_con(openID, context):
+        ConText.context_list[openID] = context
+        pass
+
+    @staticmethod
+    def rm_con(openID):
+        ConText.context_list.pop(openID)
+        pass
+
+
+
 if __name__ == "__main__":
    from WeChatDownload import BaiduCaller
    import base64, sys, os

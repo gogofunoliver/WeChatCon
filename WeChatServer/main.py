@@ -1,8 +1,8 @@
- # -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 # filename: main.py
 import web
 import utill
-from ServerEntry import Handle
+from ServerEntry import *
 from AWSHandler import AWSHandler
 from ThreadPool import *
 from HealthyNotifier import HealthyNotifier

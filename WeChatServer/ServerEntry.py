@@ -3,6 +3,7 @@
 
 import hashlib
 import web
+import time
 import traceback
 import receive
 import reply
@@ -76,8 +77,11 @@ class Handle(object):
                     content = "Invalid Message"
                 else:
                     user_say = recMsg.Recognition#.replace("。", "").replace("，", "")
-                    #content = Resource.getMsg("USay") + user_say + "\n" + "Media ID: " + recMsg.MediaId + "\n"
+                    content = Resource.getMsg("USay") + user_say + "\n" + "Media ID: " + recMsg.MediaId + "\n"
+                    ActionsExecutor.add_auto_action(Action(self.verifySpeaker, toUser, recMsg.MediaId))
+                    #self.verifySpeaker(toUser, recMsg.MediaId)
 
+                    #self.trainVoiceID(toUser, recMsg.MediaId)
                     #sync manner
                     #content = self.callAWSLex(toUser, fromUser, recMsg.MediaId)
 
@@ -85,16 +89,17 @@ class Handle(object):
                     #ActionsExecutor.add_auto_action(Action(GoogleCaller().callGoogle, recMsg.MediaId, toUser))
 
                     #async manner
-                    ActionsExecutor.add_auto_action(Action(self.callAWSLex, toUser, fromUser, recMsg.MediaId))
+                    #ActionsExecutor.add_auto_action(Action(self.callAWSLex, toUser, fromUser, recMsg.MediaId))
             elif isinstance(recMsg, receive.Msg) and recMsg.MsgType == 'text':
                 cnstr = recMsg.Content.decode()
                 self.logger.info("received msg : %s" % cnstr)
 
+                content = cnstr
                 #sync manner
                 #content = self.callAWSLexWithText(toUser, fromUser, cnstr)
 
                 #async manner
-                ActionsExecutor.add_auto_action(Action(self.callAWSLexWithText, toUser, fromUser, cnstr))
+                #ActionsExecutor.add_auto_action(Action(self.callAWSLexWithText, toUser, fromUser, cnstr))
             #handle WeChat Event
             elif isinstance(recMsg, receive.Msg) and recMsg.MsgType == 'event':
                     func = EventRouter.get_envent_func(recMsg.event, recMsg.key_value)
@@ -111,6 +116,8 @@ class Handle(object):
                 return "success"
             else:
                 self.logger.info("Reply : %s" % content)
+                replier = reply.TextMsg(toUser, fromUser, content)
+                content = replier.send()
                 return content
 
         except Exception as Argment:
@@ -280,4 +287,34 @@ class Handle(object):
             content = ""
         finally:
             return content
+
+    def trainVoiceID(self, toUser, mediaID):
+        timestamp = time.strftime('%Y%m%d%H%M%S', time.localtime(time.time()))
+        vocieAMR = "/tmp/gogofun/voice_" + toUser + "_" + timestamp + ".amr"
+        vocieWAV = "/tmp/gogofun/voice_" + toUser + "_" + timestamp + ".wav"
+        WeChatHandler().downloadVoiceAsFile(mediaID, vocieAMR)
+        VoiceFormater().amr2wavWithPara(vocieAMR, vocieWAV, "16000", "1")
+        # Azure to trainVoice ID
+        # 1, create profile on Azure for the UserID
+        #"identificationProfileId": "de62bb89-20c4-449a-a70f-b2ef8bcaeba3",
+        from AzureHandler import AzureHandler
+        profile = "de62bb89-20c4-449a-a70f-b2ef8bcaeba3"
+        print(vocieWAV)
+        AzureHandler().index_voice_person(profile, vocieWAV)
+        AzureHandler().get_profile(profile)
+
+    def verifySpeaker(self, toUser, mediaID):
+        timestamp = time.strftime('%Y%m%d%H%M%S', time.localtime(time.time()))
+        vocieAMR = "/tmp/gogofun/voice_" + toUser + "_" + timestamp + ".amr"
+        vocieWAV = "/tmp/gogofun/voice_" + toUser + "_" + timestamp + ".wav"
+        WeChatHandler().downloadVoiceAsFile(mediaID, vocieAMR)
+        VoiceFormater().amr2wavWithPara(vocieAMR, vocieWAV, "16000", "1")
+        # Azure to trainVoice ID
+        from AzureHandler import AzureHandler
+        profile = "de62bb89-20c4-449a-a70f-b2ef8bcaeba3"
+        if AzureHandler().identify_user(profile, vocieWAV) == False:
+            WeChatHandler().sendMsgViaCust("Detect Fraud!!")
+        else:
+            print("Normal Voice")
+
 

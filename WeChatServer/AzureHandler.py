@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# filename: AWSHandler.py
+# filename: AzureHandler.py
 
 import requests
 import json
@@ -62,13 +62,15 @@ class AzureHandler(object):
             print("%d : %s" % (ret.status_code, op_location))
 
             op_result = self.get_op_status(op_location)
+            '''
             while (op_result['status'] == "running"):
                 sleep(1)
                 op_result = self.get_op_status(op_location)
+            '''
         except Exception as ex:
             traceback.print_exc()
         finally:
-            return op_result['status']
+            print(op_result)
 
 
     def verify_user(self, profile = "9f342db7-4f24-492c-bdd1-aadea49ac503", voice_file = "/tmp/oliver.wav"):
@@ -87,12 +89,13 @@ class AzureHandler(object):
         print("%d : %s" % (ret.status_code, json.dumps(json_ret, indent=4, sort_keys=False, ensure_ascii=False)))
 
 
-    def identify_user(self, *profile_id):
+    def identify_user(self, profile_id, voice_file):
         try:
             url = "https://westus.api.cognitive.microsoft.com/spid/v1.0/identify"
-            profiles = ",".join(profile_id)
+            #profiles = ",".join(profile_id)
+            #print(profiles)
             parameters = {
-                "identificationProfileIds": profiles,
+                "identificationProfileIds": profile_id,
                 "shortAudio" : "true",
             }
 
@@ -101,8 +104,8 @@ class AzureHandler(object):
                 'Content-Type': 'multipart/form-data',
                 'Ocp-Apim-Subscription-Key': self.key,
             }
-
-            voice_file = "/Users/olivershen/Desktop/Sample_Voice/oliver2.wav"
+            print(voice_file)
+            #voice_file = "/Users/olivershen/Desktop/Sample_Voice/oliver2.wav"
             with open(voice_file, "rb") as voice_f:
                 data = voice_f.read()
 
@@ -111,14 +114,18 @@ class AzureHandler(object):
             print("%d : %s" % (ret.status_code, op_location))
 
             op_result = self.get_op_status(op_location)
-            while (op_result['status'] == "running"):
+            while (op_result['status'] != "succeeded" and
+                           op_result['status'] != "failed"):
                 sleep(1)
                 op_result = self.get_op_status(op_location)
         except Exception as ex:
             traceback.print_exc()
         finally:
-            pass
-        pass
+            result = False
+            if op_result['status'] == "succeeded" and \
+                op_result['processingResult']['identifiedProfileId'] == profile_id:
+                result = True
+            return result
 
 
     def get_all_profile(self):
@@ -133,8 +140,8 @@ class AzureHandler(object):
         print("%d : %s" % (ret.status_code, json.dumps(json_ret, indent=4, sort_keys=False, ensure_ascii=False)))
 
 
-    def get_profile(self, profile_id):
-        url = "https://westus.api.cognitive.microsoft.com/spid/v1.0/identificationProfiles/"
+    def get_profile(self, profile_id = "de62bb89-20c4-449a-a70f-b2ef8bcaeba3"):
+        url = "https://westus.api.cognitive.microsoft.com/spid/v1.0/identificationProfiles/" + profile_id
 
         headers = {
             # Request headers
@@ -142,9 +149,14 @@ class AzureHandler(object):
             'Ocp-Apim-Subscription-Key': self.key,
         }
 
+        ret = requests.get(url, headers=headers)
+        json_ret = ret.json()
+        print("%d : %s" % (ret.status_code, json.dumps(json_ret, indent=4, sort_keys=False, ensure_ascii=False)))
+
 
 if __name__ == "__main__":
     #AzureHandler().index_voice_person("34aed66e-509d-4ed3-9355-630733bed1cb", "/Users/olivershen/Desktop/Sample_Voice/lulu.wav")
-    #AzureHandler().get_all_profile()
+    AzureHandler().get_all_profile()
+    #AzureHandler().get_profile()
     #AzureHandler().verify_user("248cf092-55c1-4403-a3a2-c27565a56e22", )
-    AzureHandler().identify_user("248cf092-55c1-4403-a3a2-c27565a56e22", "34aed66e-509d-4ed3-9355-630733bed1cb")
+    AzureHandler().identify_user("de62bb89-20c4-449a-a70f-b2ef8bcaeba3", voice_file="/tmp/gogofun/voice_oHBF6wUHaE4L2yUfhKMBqcrjoi0g_20180109092309.wav")

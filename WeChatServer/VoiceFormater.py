@@ -11,6 +11,10 @@ class VoiceFormater(object):
         ret = subprocess.call([self.cmd, "-i", amr_file, wave_file, "-y"])
         return ret
 
+    def amr2wavWithPara(self, amr_file, wave_file, rate = "8000", channel = "1"):
+        ret = subprocess.call([self.cmd, "-i", amr_file, "-ar", rate, "-ac", channel, wave_file, "-y"])
+        return ret
+
     def wav2amr(self, wave_file, amr_file):
         ret = subprocess.call([self.cmd, "-i", wave_file, "-ar", "8000", amr_file, "-y"])
         return ret
